@@ -1,0 +1,10 @@
+body{
+    font-family: 'IBM Plex Mono', monospace;
+    background-image: url(./background.jpg);
+    color: whitesmoke;
+}
+h3{
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    color: mediumseagreen;
+}

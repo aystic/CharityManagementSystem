@@ -1,0 +1,42 @@
+body{
+    font-family: 'Fredericka the Great', cursive;
+    background-image: url(./background.jpg);
+    color: lightyellow;
+    
+}
+.requestform{
+    margin: auto;
+    text-align: center;
+    background-color: whitesmoke;
+    width: 75%;
+    border-radius: 20px;
+    height: fit-content;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10pt;
+    color: black;
+}
+input{
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    outline: none;
+
+}
+label{
+    color: black;
+}
+.submitbtn{
+    margin:20px;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px;
+    background-color: green;
+}
+.uploadbtn{
+    background-color: darkgoldenrod;
+}
+#textarea{
+    height: 200px;
+    width: 400px;
+    resize: none;
+}
