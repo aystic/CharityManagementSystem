@@ -1,13 +1,4 @@
-body{
-    font-family: 'IBM Plex Mono', monospace;
-    background-image: url(./background.jpg);
-    color: whitesmoke;
-}
-h3{
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    color: mediumseagreen;
-}
+<button id="homebtn"><a href="../index.html" style="text-decoration: none; color: black;">HOME</a></button>
 #homebtn{
     background-color: #ffbf00;
     height: 30px;

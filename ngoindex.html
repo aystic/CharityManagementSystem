@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO details</title>
+    <link rel="stylesheet" href="ngoindexstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="homebtn"><a href="../index.html" style="text-decoration: none; color: black;">HOME</a></button>
+
+    <p style="display: block; text-align:center;font-size: 25pt;">Submit your details here for verification :</P>
+        <div class="requestform">
+            
+            <form>
+                <input id='name' type="text" placeholder="Enter the name of NGO" style="width: 75%;"><br>
+                <input id='address' type="text" placeholder="Enter the address" style="width: 75%;"><br>
+                <input id='city' type="text" placeholder="City" style="width: 20%;display: inline-block;">
+                <input id='state' type="text" placeholder="State" style="width: 20%;display: inline-block;">
+                <input id='pincode' type="text" placeholder="Pincode" style="width: 20%;display: inline-block;"><br>
+                <input id='contact' type="text" placeholder="Contact details" style="width: 20%;display: inline-block;"><br>
+<!--     
+                <p style="display: inline-block;">Type of donation needed :</p>
+                <input type="checkbox" class="donation">
+                <label>Money</label>
+                <input type="checkbox" class="donation">
+                <label>Books</label>
+                <input type="checkbox" class="donation">
+                <label>Medicines</label>
+                <input type="checkbox" class="donation">
+                <label>clothes</label><br> -->
+                <p style="display: inline-block;">Please upload the registration Documents (.jpeg, .png or .jpg only):</p>
+                <div id="filelistdiv">
+                    <ol id="filelist">
+                    <li><input type="file" class="Uploadbtn" placeholder="Upload"></li>
+                    </ol>
+                    <button id="addnewfile"> 📎 </button>
+                    <button id="removenewfile"> ❌ </button>
+                </div>
+                <br>
+                <p>Enter the difficulties and other details faced by the NGO, Please specify :</p>
+                <textarea id="textarea"></textarea>
+                <hr>
+                <button id="submitbtn">Submit</button>
+                
+    
+            </form>
+        </div>
+</body>
+<script src="ngoindexscript.js"></script>
+</html>

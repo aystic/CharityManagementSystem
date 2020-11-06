@@ -7,7 +7,7 @@ body{
 .signupform{
     font-family: 'Fredericka the Great', cursive;
     width: 300px;
-    height: 500px;
+    height: 400px;
     box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
     padding: 20px;
     margin:5% auto 0;
@@ -28,10 +28,35 @@ body{
 .signupbtn{
     font-family: 'Fredericka the Great', cursive;
     border-radius: 20px;
+    border: green;
     padding: 5px;
     width: 100%;
     outline: none;
     background-color: green;
     color: lightyellow;
     cursor: pointer;
+}
+.signupbtn:hover{
+    background-color: #ffbf00;
+    transition: 100ms;
+}
+.signupbtn:active{
+    background-color: green;
+    transition : 100ms;
+}
+#homebtn{
+    background-color: #ffbf00;
+    height: 30px;
+    width:100px;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
+    transition: 300ms;
+}
+#homebtn:hover{
+    border: 3px solid black;
+    transition: 300ms;
+}
+#homebtn:active{
+    border: 3px solid whitesmoke;
+    transition: 300ms;
 }

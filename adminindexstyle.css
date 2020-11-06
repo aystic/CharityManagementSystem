@@ -1,0 +1,86 @@
+body{
+    font-family: 'IBM Plex Mono', monospace;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+/* font-family: 'Fredericka the Great', cursive; */
+#head{
+    display: flex;
+    font-family:'Fredericka the Great', cursive; 
+    color: whitesmoke;
+    font-size: 30px;
+    justify-content: center;
+}
+#list{
+    color: whitesmoke;
+}
+#fetchbtn{
+    margin-left: 45%;
+    background-color: green;
+    height: 50px;
+    font-size: 20px;
+}
+#fetchbtn:hover{
+    background-color: #ffbf00;
+    transition : 100ms;
+}
+#fetchbtn:active{
+    border: 3px solid black;
+    transition : 100ms;
+}
+#documentsdownloadbtn{
+    margin: 5px;
+    background-color: #ffbf00;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 400ms;
+
+}
+#documentsdownloadbtn:hover{
+    border: 2px solid white;
+    transition: 400ms;
+
+}
+#acceptbtn{
+    margin: 5px;
+    background-color: #ffbf00;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 400ms;
+
+}
+#acceptbtn:hover{
+    border: 2px solid white;
+    transition: 400ms;
+
+}
+#rejectbtn{
+    margin: 5px;
+    background-color: #ffbf00;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 400ms;
+
+}
+#rejectbtn:hover{
+    border: 2px solid white;
+    transition: 400ms;
+
+}
+#homebtn{
+    background-color: #ffbf00;
+    height: 30px;
+    width:100px;
+    font-family: 'Fredericka the Great', cursive;
+    transition: 300ms;
+    font-weight: bold;
+}
+#homebtn:hover{
+    border: 3px solid black;
+    transition: 300ms;
+}
+#homebtn:active{
+    border: 3px solid whitesmoke;
+    transition: 300ms;
+}

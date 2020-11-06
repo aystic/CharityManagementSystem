@@ -6,6 +6,7 @@ body{
 }
 .requestform{
     margin: auto;
+    margin-bottom: 50px;
     text-align: center;
     background-color: whitesmoke;
     width: 75%;
@@ -25,12 +26,21 @@ input{
 label{
     color: black;
 }
-.submitbtn{
+#submitbtn{
     margin:20px;
     border-radius: 20px;
     outline: none;
+    border: green;
     padding: 10px;
     background-color: green;
+    transition: 400ms;
+}
+#submitbtn:hover{
+    background-color: #ffbf00;
+    transition: 400ms;
+}
+#submitbtn:active{
+    border: 2px solid black;
 }
 .uploadbtn{
     background-color: darkgoldenrod;
@@ -39,6 +49,25 @@ label{
     height: 200px;
     width: 400px;
     resize: none;
+}
+#addnewfile{
+    height: 30px;
+    width: 30px;
+    background: green;
+    margin: auto;
+
+}
+#removenewfile{
+    height: 30px;
+    width: 30px;
+    background: red;
+    margin: auto;
+}
+#filelistdiv{
+    width: 300px;
+    height: fit-content;
+    margin: auto;
+    margin-top:10px;
 }
 #homebtn{
     background-color: #ffbf00;
