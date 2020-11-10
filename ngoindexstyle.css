@@ -70,18 +70,18 @@ label{
     margin-top:10px;
 }
 #homebtn{
-    background-color: #ffbf00;
-    height: 30px;
-    width:100px;
+    background-color: #ffbf0059;
+    border: solid #ffbf00;
+    border-radius: 15px;
+    height: 50px;
+    width:50px;
     font-family: 'Fredericka the Great', cursive;
     transition: 300ms;
     font-weight: bold;
+    margin-left: 30px;
+    margin-top: 20px;
 }
 #homebtn:hover{
-    border: 3px solid black;
-    transition: 300ms;
-}
-#homebtn:active{
-    border: 3px solid whitesmoke;
+    background-color: #ffbf00;
     transition: 300ms;
 }
