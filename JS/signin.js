@@ -6,6 +6,9 @@ let pwd = document.getElementsByClassName("pwdbox")[0];
 let btn = document.getElementsByClassName("signupbtn")[0];
 let usernames = ["admin@admin.com", "test@test.com"];
 let passwords = ["admin", "test"];
+document.getElementById("form").submit(function(e) {
+  e.preventDefault();
+});
 btn.addEventListener("click",function(){
   if(email.value == usernames[0] && pwd.value == passwords[0]) {
     document.getElementsByClassName("loginmessage")[0].textContent="Login as ADMIN.";
@@ -28,4 +31,7 @@ function redirect(usertype){
   else{
     window.location.replace("/HTML/ngoindex.html");
   }
+}
+function redirecttosignuppage(){
+  window.location.replace("/HTML/signup.html");
 }

@@ -21,22 +21,27 @@ input{
     padding: 5px;
     border-radius: 20px;
     outline: none;
+    text-align: center;
 
 }
 label{
     color: black;
 }
 #submitbtn{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+    width: 100px;
     margin:20px;
-    border-radius: 20px;
+    border-radius: 15px;
+    border: 3px solid green;
     outline: none;
-    border: green;
     padding: 10px;
     background-color: green;
     transition: 400ms;
 }
 #submitbtn:hover{
     background-color: #ffbf00;
+    border: 3px solid black;
     transition: 400ms;
 }
 #submitbtn:active{
@@ -51,17 +56,19 @@ label{
     resize: none;
 }
 #addnewfile{
-    height: 30px;
-    width: 30px;
-    background: green;
-    margin: auto;
+    height: 20px;
+    width: 20px;
+    background-color: lightgreen;
+    border-radius: 3px;
+    padding: 3px;
 
 }
 #removenewfile{
-    height: 30px;
-    width: 30px;
-    background: red;
-    margin: auto;
+    height: 20px;
+    width: 20px;
+    background-color:#ff000099;
+    border-radius: 3px;
+    padding: 3px;
 }
 #filelistdiv{
     width: 300px;
