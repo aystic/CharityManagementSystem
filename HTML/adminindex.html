@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn</title>
-    <link rel="stylesheet" href="signin.css">
+    <title>Admin Access</title>
+    <link rel="stylesheet" href="/CSS/adminindexstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <button id="homebtn">
-        <a href="../index.html" style="text-decoration: none; color: black"
+        <a href="index.html" style="text-decoration: none; color: black"
           ><img
-            src="../home-icon.png"
+            src="/IMAGES/home-icon.png"
             alt="home button"
             title="Icon made by Freepik from www.flaticon.com"
             style="height: 25px;width: 25px;"
         /></a>
         </button>
-    <div class="signupform">
-        <form>
-            <p>Forgot your password?</p>
-            <p>Don't worry we got your back :)</p>
-            <input type="email" class="input-box" placeholder="Your Email">
-            <button type="button" class="signupbtn">Get Password Reset Link</button>
-        </form>
+
+    <div>
+        <p id="head">Pending Verification Requests :</p>
+        <ol id="list">
+
+        </ol>
+        <button id="fetchbtn">Fetch details!</button>
     </div>
+    <script src="/JS/adminindexscript.js"></script>
 </body>
 </html>

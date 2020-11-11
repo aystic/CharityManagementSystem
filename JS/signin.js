@@ -11,14 +11,14 @@ btn.addEventListener("click",function(){
     document.getElementsByClassName("loginmessage")[0].textContent="Login as ADMIN.";
     message.classList.remove("invisible");
     messagebtn.addEventListener("click",function(){
-        window.location.replace("../adminindex.html");
+        window.location.replace("/HTML/adminindex.html");
     });
 
    } else if (email.value == usernames[1] && pwd.value == passwords[1]) {
     document.getElementsByClassName("loginmessage")[0].textContent="Login as NGO.";
     message.classList.remove("invisible");
     messagebtn.addEventListener("click",function(){
-      window.location.replace("../ngoindex.html");
+      window.location.replace("/HTML/ngoindex.html");
   });
    }
 });

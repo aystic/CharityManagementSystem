@@ -1,42 +1,46 @@
-/* *{
-    font-family: 'Fredericka the Great', cursive;
-} */
-body{ 
-    background-image: url(./background.jpg);
-    background-position: center;
-    background-size: cover;
+body{
     font-family: 'IBM Plex Mono', monospace;
+    background-image: url(/IMAGES/background.jpg);
+    
 }
 .signupform{
     font-family: 'Fredericka the Great', cursive;
-    width: 300px;
-    height: 500px;
-    box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
-    padding: 20px;
-    margin:5% auto 0;
     text-align: center;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
+    margin: auto;
+    padding: 20px;
     border-radius: 10px;
     background: whitesmoke ;
     background-color: whitesmoke;
     
 }
 .input-box{
-    width: 100%;
-    margin: 5px 0;
+    width: 80%;
+    margin: 10px auto 0px auto;
     border-radius: 20px;
     border: 1px solid #252526FF;
     outline: none;
     padding: 5px;
+    text-align: center;
 }
 .signupbtn{
     font-family: 'Fredericka the Great', cursive;
     border-radius: 20px;
     padding: 5px;
-    width: 100%;
-    outline: none;
+    width: 80%;
     background-color: green;
     color: lightyellow;
-    cursor: pointer;
+    border: 3px solid green;
+    transition: 400ms;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.signupbtn:hover{
+    border: 3px solid black;
+    color: black;
+    background-color: #ffbf00;
 }
 #homebtn{
     background-color: #ffbf0059;
