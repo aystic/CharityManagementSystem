@@ -222,8 +222,11 @@ hr{
     height: fit-content;
     width: fit-content;
     margin-left:93% ;
-    margin-top:30% ;
+    margin-top:43% ;
     transition: 400ms;
 }.floatingbtn:hover{
     opacity: 100%;
+}
+.invisible{
+    display: none;
 }

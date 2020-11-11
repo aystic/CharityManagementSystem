@@ -3,12 +3,15 @@ body{
     background-image: url(./background.jpg);
     color: whitesmoke;
 }
-h3{
+h2{
+    display: inline;
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
     color: mediumseagreen;
+    margin-left : 35%;
 }
 #homebtn{
+    display: inline;
     background-color: #ffbf0059;
     border: solid #ffbf00;
     border-radius: 15px;
@@ -17,6 +20,9 @@ h3{
     font-family: 'Fredericka the Great', cursive;
     transition: 300ms;
     font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
 #homebtn:hover{
     background-color: #ffbf00;

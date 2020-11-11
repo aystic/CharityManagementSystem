@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignIn</title>
-    <link rel="stylesheet" href="signin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="signin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <button id="homebtn">
-        <a href="../index.html" style="text-decoration: none; color: black"
-          ><img
-            src="../home-icon.png"
-            alt="home button"
-            title="Icon made by Freepik from www.flaticon.com"
-            style="height: 25px;width: 25px;"
-        /></a>
-        </button>
+      <a href="../index.html" style="text-decoration: none; color: black"
+        ><img
+          src="../home-icon.png"
+          alt="home button"
+          title="Icon made by Freepik from www.flaticon.com"
+          style="height: 25px; width: 25px"
+      /></a>
+    </button>
+    <div class="message" style="margin-left: 462px;margin-top: -30px;;">
+      <img
+        src="..\check.png"
+        alt="check image"
+        title="Icon made by Pixel perfect from www.flaticon.com"
+        style="height: 75px; width: 75px; margin-bottom: 50px;"
+      />
+      <p >Success!!</p>
+      <p class="loginmessage" style="margin:2px;"></p>
+      <button id="messagebtn">OK!</button>
+
+    </div>
     <div class="signupform">
-        <form >
-            <p>Enter Credentials!</p>
-            <input class="input-box emailbox" placeholder="Your Email">
-            <input class="input-box pwdbox" placeholder="Password">
-            <button type="button" class="signupbtn">SignIn</button>
-            <p><a href="forgotpassword.html" style="text-decoration: none;">Forgot Password?</a></p>
-        </form>
+      <form id="form" action="">
+        <p>Enter Credentials!</p>
+        <input
+          type="email"
+          class="input-box emailbox"
+          placeholder="Your Email"
+          required
+        />
+        <input type="password" class="input-box pwdbox" placeholder="Password" required />
+        <button class="signupbtn">SignIn</button>
+        <p>
+          <a href="forgotpassword.html" style="text-decoration: none"
+            >Forgot Password?</a
+          >
+        </p>
+      </form>
     </div>
     <script src="signin.js"></script>
-</body>
+  </body>
 </html>

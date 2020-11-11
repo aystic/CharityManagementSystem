@@ -1,12 +1,14 @@
 
+let scrollinpx=window.scrollY;
 let btn=document.getElementById('gototop');
+btn.classList.add("invisible");
 function myscrollfunction(){
-    if (window.scrollY >=300)
+    if (window.scrollY <= 500)
     {
-        btn.style.visibility= 'visible';
+        btn.classList.add("invisible");  
     }
     else{
-        btn.style.visibility= 'hidden';
-
+        btn.classList.remove("invisible")
     }
 }
+
