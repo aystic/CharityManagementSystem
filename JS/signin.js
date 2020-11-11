@@ -11,22 +11,21 @@ btn.addEventListener("click",function(){
     document.getElementsByClassName("loginmessage")[0].textContent="Login as ADMIN.";
     message.classList.remove("invisible");
     messagebtn.addEventListener("click",function(){
-        window.location.replace("/HTML/adminindex.html");
-    });
-
+      redirect("admin");
+  });
    } else if (email.value == usernames[1] && pwd.value == passwords[1]) {
     document.getElementsByClassName("loginmessage")[0].textContent="Login as NGO.";
     message.classList.remove("invisible");
     messagebtn.addEventListener("click",function(){
-      window.location.replace("/HTML/ngoindex.html");
+      redirect("ngo");
   });
    }
 });
-// function redirect(usertype){
-//   if(usertype=="admin"){
-//     window.location.replace("../adminindex.html");
-//   }
-//   else{
-//     window.location.replace("../ngoindex.html");
-//   }
-// }
+function redirect(usertype){
+  if(usertype=="admin"){
+    window.location.replace("/HTML/adminindex.html");
+  }
+  else{
+    window.location.replace("/HTML/ngoindex.html");
+  }
+}
