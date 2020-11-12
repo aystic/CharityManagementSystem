@@ -58,3 +58,42 @@ body{
     background-color: #ffbf00;
     transition: 300ms;
 }
+.message{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    position: fixed;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: black;
+    color:lightyellow;
+    opacity: 80%;
+    transition: 400ms;
+}
+.invisible{
+    display: none;
+}
+#messagebtn{
+    font-family: 'Fredericka the Great', cursive;  
+    font-weight: bold;
+    font-size: 20px; 
+    background-color: #ffbf00;
+    border: 2px solid #ffbf00;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 30px;
+    border-radius: 5px;
+    outline: none;
+    transition: 400ms;
+}
+#messagebtn:hover{
+    border: 2px solid lightyellow;
+
+}
+#successmsg{
+    margin-top: -30px;
+}
