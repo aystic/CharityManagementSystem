@@ -24,14 +24,15 @@
           style="height: 25px; width: 25px"
       /></a>
     </button>
-    <div class="message" style="margin-left: 462px;margin-top: -30px;;">
+    <div class="message" style="margin-left: 462px;margin-top: -15px;;">
       <img
+        id="msgimage"
         src="/IMAGES/check.png"
         alt="check image"
         title="Icon made by Pixel perfect from www.flaticon.com"
         style="height: 75px; width: 75px; margin-bottom: 50px;"
       />
-      <p >Success!</p>
+      <p id="successmsg">Success!</p>
       <p class="loginmessage" style="margin:2px;"></p>
       <button id="messagebtn">OK!</button>
 
@@ -47,6 +48,7 @@
         />
         <input type="password" class="input-box pwdbox" placeholder="Password" required />
         <button type="submit" class="signupbtn">SignIn</button>
+        <hr>
       </form>
       <p>New user?<span id="signuplink" onclick="redirecttosignuppage()" style="color: blue;"> SignUp!</span></p>
         <p>

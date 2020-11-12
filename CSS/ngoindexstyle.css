@@ -47,9 +47,6 @@ label{
 #submitbtn:active{
     border: 2px solid black;
 }
-.uploadbtn{
-    background-color: darkgoldenrod;
-}
 #textarea{
     height: 200px;
     width: 400px;
@@ -59,22 +56,37 @@ label{
     height: 20px;
     width: 20px;
     background-color: lightgreen;
+    border: 2px solid lightgreen;
     border-radius: 3px;
     padding: 3px;
+    transition: 400ms;
 
+}
+#addnewfile:hover{
+    border: 2px solid black;
 }
 #removenewfile{
     height: 20px;
     width: 20px;
     background-color:#ff000099;
+    border: 2px solid #ff000099 ;
     border-radius: 3px;
     padding: 3px;
+    transition: 400ms;
+}
+#removenewfile:hover{
+    border: 2px solid black ;
+
 }
 #filelistdiv{
     width: 300px;
     height: fit-content;
-    margin: auto;
-    margin-top:10px;
+    margin:auto;
+}
+#filelistdiv li{
+    color: red;
+    padding: 0;
+    margin: 0;
 }
 #homebtn{
     background-color: #ffbf0059;
