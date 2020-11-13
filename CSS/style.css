@@ -28,7 +28,12 @@ body{
 }
 .topbtn{
     display: inline-flex;
-    margin: 20px;
+    /* margin: 10px; */
+    /* margin-left: 50px; */
+    /* width: 150px; */
+    /* flex-grow:1; */
+    /* align-self: center; */
+    justify-content: center;
     margin-inline-end: 50px;
     background-color: #252526FF;
     font-family: 'Fredericka the Great', cursive;
@@ -40,8 +45,9 @@ body{
 
 }
 #topbtnparent{
+    margin: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #252526FF;
 }
 .toplink{
@@ -61,7 +67,7 @@ body{
     transition: 400ms;
 }
 .topbtn:active{
-    transform: scale(0.75,0.75);
+    transform: scale(0.95,0.95);
     transition: 400ms;
 } 
 #image{
@@ -230,4 +236,66 @@ hr{
 }
 .invisible{
     display: none;
+}
+#messagebg{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* margin-left: 5%; */
+    margin-top: -175px;
+    padding-top: 150px;
+
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.message{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 0;
+    border-radius: 10px;
+    background-color: black;
+    color:lightyellow;
+    opacity: 80%;
+    transition: 400ms;
+}
+.invisible{
+    display: none;
+}
+#messagebtn{
+    font-family: 'Fredericka the Great', cursive;  
+    font-weight: bold;
+    font-size: 20px; 
+    background-color: #ffbf00;
+    border: 2px solid rgba(255, 191, 0,0.5);
+    height: fit-content;
+    width: fit-content;
+    margin-top: 30px;
+    border-radius: 5px;
+    outline: none;
+    transition: 400ms;
+}
+#messagebtn:hover{
+    border: 2px solid rgba(255,255,255,1);
+
+}
+#successmsg{
+    margin-top: -30px;
+}
+#messagecrossbtn{
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    border-radius: 100%;
+    transition: 400ms;
+}
+#messagecrossbtn:hover{
+    border: 2px solid rgba(255, 255, 224,0.5);
+    border-radius: 100%;
 }

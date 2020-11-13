@@ -1,134 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="/CSS/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/IMAGES/favicon.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link href="/CSS/style.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/IMAGES/favicon.png" />
-</head>
-
-<body onscroll="myscrollfunction()">
-  <div class="floatingbtn" id="gototop">
-    <a href="#projectname" style="text-decoration: none;"><img src="/IMAGES/gototopbtn.png" alt="Floating go to top btn"
-        style="height: 50px; width: 50px" /></a>
-  </div>
-  <div id="projectname">Charity Management System</div>
-  <hr />
-  <!-- <div
+  <body onscroll="myscrollfunction()">
+    <div class="floatingbtn" id="gototop">
+      <a href="#projectname" style="text-decoration: none"
+        ><img
+          src="/IMAGES/gototopbtn.png"
+          alt="Floating go to top btn"
+          style="height: 50px; width: 50px"
+      /></a>
+    </div>
+    <div id="projectname">Charity Management System</div>
+    <hr />
+    <!-- <div
       style="
         display: block;
         height: 2px;
         background-color: rgba(200, 200, 200, 0.3);
       "
     ></div> -->
-  <div id="topbtnparent">
-    <div class="topbtn" id="donatebtn">
-      <a class="toplink" href="#" style="text-decoration: none" onclick="donateredirect()">Donate</a>
+    <div id="topbtnparent">
+      <div class="topbtn" id="donatebtn">
+        <a
+          class="toplink"
+          href="#"
+          style="text-decoration: none"
+          onclick="donateredirect()"
+          >Donate</a
+        >
+      </div>
+      <div class="topbtn" id="requestbutton">
+        <a
+          class="toplink"
+          href="#"
+          style="text-decoration: none"
+          onclick="requestfordonationredirect()"
+          >Request for Donation</a
+        >
+      </div>
+      <div class="topbtn">
+        <a
+          class="toplink"
+          href="#howitworksnavigate"
+          style="text-decoration: none"
+          >How it works?</a
+        >
+      </div>
+      <div class="topbtn">
+        <a class="toplink" href="#contactushead" style="text-decoration: none"
+          >Contact Us</a
+        >
+      </div>
+      <div class="topbtn" id="accountbtn" onclick="account()">
+        <a class="toplink" href="#" style="text-decoration: none">My Account</a>
+      </div>
+      <div class="topbtn" id="tosignin" onclick="signup()">
+        <a class="toplink" href="#" style="text-decoration: none"
+          >Login/SignUp</a
+        >
+      </div>
+      <div class="topbtn" id="isloggedin" onclick="signout()">
+        <a class="toplink" href="#" style="text-decoration: none">SignOut</a>
+      </div>
     </div>
-    <div class="topbtn" id="requestbutton">
-      <a class="toplink" href="#" style="text-decoration: none" onclick="requestfordonationredirect()">Request for Donation</a>
-    </div>
-    <div class="topbtn">
-      <a class="toplink" href="#howitworksnavigate" style="text-decoration: none">How it works?</a>
-    </div>
-    <div class="topbtn">
-      <a class="toplink" href="#contactushead" style="text-decoration: none">Contact Us</a>
-    </div>
-    <div class="topbtn" id="accountbtn" onclick="account()">
-      <a class="toplink" href="#" style="text-decoration: none">My Account</a>
-    </div>
-    <div class="topbtn" id="tosignin" onclick="signup()">
-      <a class="toplink" href="#" style="text-decoration: none">Login/SignUp</a>
-    </div>
-    <div class="topbtn" id="isloggedin" onclick="signout()">
-      <a class="toplink" href="#" style="text-decoration: none">SignOut</a>
-    </div>
-  </div>
-  <div class="background">
-    <img src="/IMAGES/charity.jpg" id="image" />
-  </div>
+    <div id="messagebg">
+      <div class="message" style="margin-left: 462px; margin-top: -15px">
+        <div>
+          <img
+            id="messagecrossbtn"
+            src="/IMAGES/cross.png"
+            alt="popup close
+        button"
+            style="
+              height: 20px;
+              width: 20px;
+              padding: 0;
+              margin: 0;
+              margin-left: 95%;
+            "
+            onclick="messagecrossbtn()"
+          />
+        </div>
 
-  <hr />
+        <div>
+          <img
+            id="msgimage"
+            src="/IMAGES/caution.png"
+            alt="check image"
+            title="Icon made by Pixel perfect from www.flaticon.com"
+            style="height: 75px; width: 75px; margin-bottom: 50px"
+          />
+        </div>
+        <p class="loginmessage" style="margin: 2px"></p>
+        <button id="messagebtn" onclick="signup()">OK!</button>
+      </div>
+    </div>
+    <div class="background">
+      <img src="/IMAGES/charity.jpg" id="image" />
+    </div>
 
-  <div class="howitworksparentdiv">
-    <div class="howitworks" id="howitworksnavigate">
-      <div id="howitworkstitle">How it Works?</div>
+    <hr />
+
+    <div class="howitworksparentdiv">
+      <div class="howitworks" id="howitworksnavigate">
+        <div id="howitworkstitle">How it Works?</div>
+        <hr class="innerhr" />
+        <ol>
+          <li class="listitems" id="item1">1. Signup to create an account.</li>
+          <li class="listitems" id="item2">
+            2. After successfully signing up, Go to 'MyAccount' section to
+            provide the details required based on if you are a NGO or an
+            individual who is interested in donating and helping others in need.
+          </li>
+          <li class="listitems" id="item3">
+            3. Fill up your information in the 'MyAccount' & upload the required
+            documents.
+          </li>
+          <li class="listitems" id="item4">
+            4. Once your details are verified, You are ready to go and access
+            all the features.
+          </li>
+          <li class="listitems" id="item5">
+            5. If you are an individual and want to donate you can click on the
+            'Donate' button and then select the appropriate option to donate.
+          </li>
+          <li class="listitems" id="item6">
+            6. You can donate the following:
+            <ul>
+              <li>Money</li>
+              <li>Clothes</li>
+              <li>Medicines</li>
+              <li>Books</li>
+              <li>
+                Services, For eg. If you are a psychologist then you can provide
+                free service to mentor the kids of NGOs.
+              </li>
+            </ul>
+          </li>
+          <li class="listitems" id="item7">
+            7. On the donate page you can filter NGOs based on their needs,
+            Names, Location, Ratings.
+          </li>
+          <li class="listitems" id="item8">
+            8. If you are a NGO, You can choose to create a request for donation
+            and your needs by filling required information.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <hr />
+    <div id="contactus" class="contactusmain">
+      <div id="contactushead">Contact Us</div>
       <hr class="innerhr" />
-      <ol>
-        <li class="listitems" id="item1">1. Signup to create an account.</li>
-        <li class="listitems" id="item2">
-          2. After successfully signing up, Go to 'MyAccount' section to
-          provide the details required based on if you are a NGO or an
-          individual who is interested in donating and helping others in need.
-        </li>
-        <li class="listitems" id="item3">
-          3. Fill up your information in the 'MyAccount' & upload the required
-          documents.
-        </li>
-        <li class="listitems" id="item4">
-          4. Once your details are verified, You are ready to go and access
-          all the features.
-        </li>
-        <li class="listitems" id="item5">
-          5. If you are an individual and want to donate you can click on the
-          'Donate' button and then select the appropriate option to donate.
-        </li>
-        <li class="listitems" id="item6">
-          6. You can donate the following:
-          <ul>
-            <li>Money</li>
-            <li>Clothes</li>
-            <li>Medicines</li>
-            <li>Books</li>
-            <li>
-              Services, For eg. If you are a psychologist then you can provide
-              free service to mentor the kids of NGOs.
-            </li>
-          </ul>
-        </li>
-        <li class="listitems" id="item7">
-          7. On the donate page you can filter NGOs based on their needs,
-          Names, Location, Ratings.
-        </li>
-        <li class="listitems" id="item8">
-          8. If you are a NGO, You can choose to create a request for donation
-          and your needs by filling required information.
-        </li>
-      </ol>
-    </div>
-  </div>
-  <hr />
-  <div id="contactus" class="contactusmain">
-    <div id="contactushead">Contact Us</div>
-    <hr class="innerhr" />
-    <br />
-    <div class="contactusitems" id="usericon">
-      <img src="/IMAGES/profile-user.png" title="Icon made by Freepik from www.flaticon.com"
-        style="height: 75px; width: 75px;" />
-    </div>
-    <br />
-    <div class="contactusitems">MOHIT PATHAK</div>
+      <br />
+      <div class="contactusitems" id="usericon">
+        <img
+          src="/IMAGES/profile-user.png"
+          title="Icon made by Freepik from www.flaticon.com"
+          style="height: 75px; width: 75px"
+        />
+      </div>
+      <br />
+      <div class="contactusitems">MOHIT PATHAK</div>
 
-    <div class="contactusitems">
-      <img src="/IMAGES/phone-call.png" height="35px" width="35px" class="smallicon"
-        title="Icon made by Creaticca Design Agency from www.flaticon.com" style="margin-right: 15px;" ; />
-      : 1234567890
+      <div class="contactusitems">
+        <img
+          src="/IMAGES/phone-call.png"
+          height="35px"
+          width="35px"
+          class="smallicon"
+          title="Icon made by Creaticca Design Agency from www.flaticon.com"
+          style="margin-right: 15px"
+          ;
+        />
+        : 1234567890
+      </div>
+
+      <div class="contactusitems">
+        <img
+          src="/IMAGES/email.png"
+          height="35px"
+          width="35px"
+          class="smallicon"
+          title="Icon made by iconixar from www.flaticon.com"
+          style="margin-right: 15px"
+        />
+        : xyz@abc.com
+      </div>
     </div>
 
-    <div class="contactusitems">
-      <img src="/IMAGES/email.png" height="35px" width="35px" class="smallicon"
-        title="Icon made by iconixar from www.flaticon.com" style="margin-right: 15px;" />
-      : xyz@abc.com
-    </div>
-  </div>
-
-  <script src="/JS/script.js"></script>
-</body>
-
+    <script src="/JS/script.js"></script>
+  </body>
 </html>
