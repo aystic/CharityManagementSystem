@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SignUP</title>
-  <link rel="stylesheet" href="/CSS/signup.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-  <button id="homebtn">
-    <a href="/HTML/index.html" style="text-decoration: none; color: black"><img src="/IMAGES/home-icon.png"
-        alt="home button" title="Icon made by Freepik from www.flaticon.com" style="height: 25px;width: 25px;" /></a>
-  </button>
-  <div class="message" style="margin-left: 462px;margin-top: -15px;;">
-    <img
-      id="msgimage"
-      src="/IMAGES/check.png"
-      alt="check image"
-      title="Icon made by Pixel perfect from www.flaticon.com"
-      style="height: 75px; width: 75px; margin-bottom: 50px;"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/CSS/signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
+      rel="stylesheet"
     />
-    <p id="successmsg">Success!</p>
-    <p class="loginmessage" style="margin:2px;"></p>
-    <button id="messagebtn">OK!</button>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  </div>
-  <div class="signupform">
-    <form id="form" action="#">
-      <p style="font-size: 25px;  font-weight: bold;">SignUp Now!</p>
-        <input type="email" class="input-box" placeholder="Your Email" required />
-        <input type="password" class="input-box" placeholder="Password" /><br>
-        <p>SignUp as :
-          <input type="radio" name="signupas" id="Individual" required>
+  <body>
+    <div id="messagebg">
+      <div class="message" style="margin-left: 462px; margin-top: -15px">
+        <img
+          id="msgimage"
+          src="/IMAGES/check.png"
+          alt="check image"
+          title="Icon made by Pixel perfect from www.flaticon.com"
+          style="height: 75px; width: 75px; margin-bottom: 50px"
+        />
+        <p id="successmsg">Success!</p>
+        <p class="loginmessage" style="margin: 2px"></p>
+        <button id="messagebtn">OK!</button>
+      </div>
+    </div>
+    <button id="homebtn">
+      <a href="/HTML/index.html" style="text-decoration: none; color: black"
+        ><img
+          src="/IMAGES/home-icon.png"
+          alt="home button"
+          title="Icon made by Freepik from www.flaticon.com"
+          style="height: 25px; width: 25px"
+      /></a>
+    </button>
+    <div class="signupform">
+      <form id="form" action="#" onsubmit="return false;">
+        <p style="font-size: 25px; font-weight: bold">SignUp Now!</p>
+        <input
+          type="email"
+          class="input-box"
+          placeholder="Your Email"
+          required
+        />
+        <input type="password" class="input-box" placeholder="Password" /><br />
+        <p>
+          SignUp as :
+          <input type="radio" name="signupas" id="Individual" required />
           <label for="Individual">Individual</label>
-          <input type="radio" name="signupas" id="NGO" required>
+          <input type="radio" name="signupas" id="NGO" required />
           <label for="NGO">NGO</label>
           <!-- <input type="radio" id="male" name="gender" value="male">
           <label for="male">Male</label><br>
@@ -48,18 +64,24 @@
         </p>
 
         <p>
-          <span><input type="checkbox" required /></span>I agree to the
-          <a href="/HTML/terms.html" style="text-decoration: none;color: blue;">terms and coditions</a>
+          <span><input type="checkbox" id="termsbox" required /></span>I agree to the
+          <a href="/HTML/terms.html" style="text-decoration: none; color: blue"
+            >terms and coditions</a
+          >
         </p>
         <button type="submit" class="signupbtn">SignUp</button>
         <hr />
         <p>
           Already a member?
-          <span id="signinlink" onclick="redirecttosigninpage()" style="color: blue;">SignIn</span>
+          <span
+            id="signinlink"
+            onclick="redirecttosigninpage()"
+            style="color: blue"
+            >SignIn</span
+          >
         </p>
-    </form>
-  </div>
-  <script src="/JS/signup.js"></script>
-</body>
-
+      </form>
+    </div>
+    <script src="/JS/signup.js"></script>
+  </body>
 </html>

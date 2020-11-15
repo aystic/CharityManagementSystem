@@ -30,7 +30,7 @@ btn.addEventListener("click",function(){
     messagebtn.addEventListener("click",function(){
       redirect("ngo");
   });
-   }else{
+   }else if(email.value!=""){
     document.getElementById("successmsg").textContent="Failure!";
     document.getElementById("msgimage").setAttribute("src","/IMAGES/cross.png");
     document.getElementById("messagebtn").textContent="Try Again";
