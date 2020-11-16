@@ -68,7 +68,8 @@ submitbtn.addEventListener("click", function () {
       ) {
         // storingthevaluesinlocalstorage
         newuser.push(email.value,pwd.value,isindividual.checked,detailssubmitted,documentverified);
-        localStorage.setItem("user"+usercount,newuser)
+        localStorage.setItem("user"+usercount,newuser);
+        localStorage.loggedinuser=newuser[0];
         localStorage.setItem("usercount", usercount);
         message.classList.remove("invisible");
         messagebg.classList.remove("invisible");

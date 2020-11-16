@@ -39,6 +39,7 @@ btn.addEventListener("click",function(){
           if(users[i].split(",")[2]=="false"){//ngo
             localStorage.isloggedin=true;
             localStorage.loggedinas="ngo";
+            localStorage.loggedinuser=users[i];
             document.getElementsByClassName("loginmessage")[0].textContent="Login as NGO.";
             messagebg.classList.remove("invisible");
             message.classList.remove("invisible");
@@ -49,6 +50,7 @@ btn.addEventListener("click",function(){
           }else{
             localStorage.isloggedin=true;
             localStorage.loggedinas="individual";
+            localStorage.loggedinuser=users[i];
             document.getElementsByClassName("loginmessage")[0].textContent="Login as Donor";
             messagebg.classList.remove("invisible");
             message.classList.remove("invisible");

@@ -14,6 +14,7 @@ if (!JSON.parse(localStorage.getItem("storageavailable"))) {
   localStorage.setItem("storageavailable", "true");
   localStorage.setItem("isloggedin", false);
   localStorage.setItem("loggedinas", "");
+  localStorage.setItem("loggedinuser","");
 }
 
 // hiding and showing the signoutbutton
@@ -45,9 +46,19 @@ let messagecross = document.getElementById("messagecrossbtn");
 
 
 function donateredirect() {
-  if (JSON.parse(localStorage.isloggedin)) {
+  if ((localStorage.isloggedin)=="true" && localStorage.getItem("loggedinuser").split(",")[3]=="true") {
     window.location.replace("/HTML/donate.html");
-  } else {
+  }else if(JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.getElementsByClassName("loginmessage")[0].textContent =
+      "Please submit your details for verification first!";
+    messagebtn.addEventListener("click",function(){
+        window.location.replace("/HTML/individualindex.html");
+    })
+    
+  } 
+  else {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
@@ -57,9 +68,18 @@ function donateredirect() {
 }
 
 function requestfordonationredirect() {
-  if (JSON.parse(localStorage.isloggedin)) {
+  if (JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="true") {
     window.location.replace("/HTML/requestfordonation.html");
-  } else {
+  }else if(JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
+    messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
+    document.getElementsByClassName("loginmessage")[0].textContent =
+      "Please submit your details for verification first!";
+    messagebtn.addEventListener("click",function(){
+        window.location.replace("/HTML/ngoindex.html");
+    })
+  } 
+  else {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
@@ -71,6 +91,7 @@ function requestfordonationredirect() {
 function signout() {
     localStorage.isloggedin = false;
     localStorage.loggedinas = "";
+    localStorage.loggedinuser="";
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     messagecross.classList.add("invisible");
