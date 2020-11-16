@@ -77,8 +77,13 @@ submitbtn.addEventListener("click", function () {
           .getElementById("msgimage")
           .setAttribute("src", "/IMAGES/check.png");
         document.getElementById("successmsg").textContent = "Success!!";
-        document.getElementsByClassName("loginmessage")[0].textContent =
-          "SignUp Successfull.";
+        if(newuser[2]==true){
+          document.getElementsByClassName("loginmessage")[0].textContent =
+          "SignUp as donor Successfull.";
+        }else{
+          document.getElementsByClassName("loginmessage")[0].textContent =
+          "SignUp as NGO Successfull.";
+        }
         document
           .getElementById("messagebtn")
           .addEventListener("click", function () {

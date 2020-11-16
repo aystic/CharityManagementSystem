@@ -31,7 +31,8 @@ btn.addEventListener("click",function(){
         messagebg.classList.remove("invisible");
         message.classList.remove("invisible");
         messagebtn.addEventListener("click",function(){
-          redirect("admin");
+          //redirect("admin");
+          window.location.replace("/HTML/adminindex.html");
       });
     }else{
       for(let i=0;i<users.length;i++){
@@ -71,7 +72,8 @@ btn.addEventListener("click",function(){
         messagebg.classList.remove("invisible");
         message.classList.remove("invisible");
         messagebtn.addEventListener("click",function(){
-        redirect("error");
+        //redirect("error");
+        window.location.replace("/HTML/signin.html");
       });
     }
   }

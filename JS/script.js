@@ -48,14 +48,14 @@ let messagecross = document.getElementById("messagecrossbtn");
 function donateredirect() {
   if ((localStorage.isloggedin)=="true" && localStorage.getItem("loggedinuser").split(",")[3]=="true") {
     window.location.replace("/HTML/donate.html");
-  }else if(JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
+  }else if((localStorage.isloggedin)=="true" && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
     messagebtn.addEventListener("click",function(){
         window.location.replace("/HTML/individualindex.html");
-    })
+    });
     
   } 
   else {
@@ -68,22 +68,26 @@ function donateredirect() {
 }
 
 function requestfordonationredirect() {
-  if (JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="true") {
+  if (localStorage.isloggedin=="true" && localStorage.getItem("loggedinuser").split(",")[3]=="true") {
     window.location.replace("/HTML/requestfordonation.html");
-  }else if(JSON.parse(localStorage.isloggedin)==true && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
+    // console.log("loggedin=true, detailssubmitted=true");
+  }else if(localStorage.isloggedin=="true" && localStorage.getItem("loggedinuser").split(",")[3]=="false"){
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
     messagebtn.addEventListener("click",function(){
+        // console.log("loggedin=true, detailssubmitted=false");
         window.location.replace("/HTML/ngoindex.html");
-    })
+    });
   } 
   else {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
+      // console.log("loggedin=false");
+      
     // window.location.replace("/HTML/signin.html");
   }
 }
@@ -105,7 +109,9 @@ function signout() {
 }
 
 function signup() {
+  if(localStorage.isloggedin=="false"){
   window.location.replace("/HTML/signin.html");
+  }
 }
 
 function account() {

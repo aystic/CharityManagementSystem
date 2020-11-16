@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      window.history.forward();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignUp</title>
@@ -51,7 +54,7 @@
         <input type="password" class="input-box" placeholder="Password" /><br />
         <p>
           SignUp as :
-          <input type="radio" name="signupas" id="Individual" required />
+          <input type="radio" name="signupas" id="Individual" required checked />
           <label for="Individual">Individual</label>
           <input type="radio" name="signupas" id="NGO" required />
           <label for="NGO">NGO</label>
@@ -65,7 +68,7 @@
 
         <p>
           <span><input type="checkbox" id="termsbox" required /></span>I agree to the
-          <a href="/HTML/terms.html" style="text-decoration: none; color: blue"
+          <a href="/HTML/terms.html" target="blank" style="text-decoration: none; color: blue"
             >terms and coditions</a
           >
         </p>
