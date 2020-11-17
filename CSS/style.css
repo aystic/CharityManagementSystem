@@ -34,7 +34,7 @@ body{
     /* flex-grow:1; */
     /* align-self: center; */
     justify-content: center;
-    margin-inline-end: 50px;
+    margin-inline-end: 100px;
     background-color: #252526FF;
     font-family: 'Fredericka the Great', cursive;
     border-radius: 10px;
@@ -46,8 +46,10 @@ body{
 }
 #topbtnparent{
     margin: 20px;
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
+    padding-left: 50px;
+    text-align: center;
+    /* justify-content: space-around; */
     background-color: #252526FF;
 }
 .toplink{
@@ -61,7 +63,8 @@ body{
     transform: scale(1.25,1.25);
     transition: 400ms;
 }
-.topbtn:hover .toplink{
+/* .topbtn:hover .toplink */
+.toplink:hover .topbtn{
     background-color: #FFBF00;
     color: black;
     transition: 400ms;
