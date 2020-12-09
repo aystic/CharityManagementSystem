@@ -2,7 +2,8 @@ body {
   font-family: "IBM Plex Mono", monospace;
   background-image: url(/IMAGES/background.jpg);
   animation-name: start;
-  animation-duration: 1000ms;
+  /* animation-duration: 1000ms;
+  transition: 400ms; */
 }
 @keyframes start{
   from{

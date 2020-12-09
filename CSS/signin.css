@@ -4,10 +4,12 @@ body {
   background-position: center;
   background-size: cover;
   animation-name: start;
-  animation-duration: 1000ms;
+  /* animation-duration: 1000ms;
+  transition: 400ms; */
 }
 @keyframes start{
   from{
+
     opacity: 0;
   }
   to{

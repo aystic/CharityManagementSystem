@@ -3,7 +3,7 @@ body {
   background-image: url(/IMAGES/background.jpg);
   color: lightyellow;
   animation-name: start;
-  animation-duration: 1000ms;
+  /* animation-duration: 1000ms; */
 }
 @keyframes start{
   from{
