@@ -1,3 +1,12 @@
+// document.querySelector("body").classList.add("invisible")
+// document.querySelector(".loader").classList.remove("invisible")
+window.addEventListener(
+  "contextmenu",
+  function (e) {
+    e.preventDefault();
+  },
+  false
+);
 document.querySelector("video").play();
 document.querySelector("video").playbackRate = 1.25;
 
@@ -7,16 +16,9 @@ document.onreadystatechange = function () {
       document.querySelector(".loader").classList.add("fadeloader");
     }, 3000);
     setInterval(() => {
+      document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
     }, 3500);
-  } else {
-    window.addEventListener(
-      "contextmenu",
-      function (e) {
-        e.preventDefault();
-      },
-      false
-    );
   }
 };
 let scrollinpx = window.scrollY;
