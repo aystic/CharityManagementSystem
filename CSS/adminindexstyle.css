@@ -4,7 +4,7 @@ body {
   background-position: center;
   background-size: cover;
   animation-name: start;
-  animation-duration: 2000ms;
+  animation-duration: 1000ms;
 }
 @keyframes start{
   from{
