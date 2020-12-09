@@ -1,5 +1,5 @@
 document.querySelector("video").play();
-document.querySelector("video").playbackRate=1.25;
+document.querySelector("video").playbackRate=2;
 
 document.onreadystatechange=function(){
     if(document.readyState==="complete"){
@@ -41,15 +41,19 @@ let ngostate = document.getElementById('state');
 let ngocontact = document.getElementById('contact');
 let ngodifficulties = document.getElementById('textarea');
 let btn = document.getElementById('submitbtn');
+let detailsSubmitted=[];
 btn.onclick = function () {
     if (ngoname != "" && ngoaddress != "" && ngopincode != "" && ngocity != "" && ngostate != "" && ngocontact != "") {
-        localStorage.setItem("nameofngo", ngoname.value);
-        localStorage.setItem("addressofngo", ngoaddress.value);
-        localStorage.setItem("cityofngo", ngocity.value);
-        localStorage.setItem("stateofngo", ngostate.value);
-        localStorage.setItem("pincodeofngo", ngopincode.value);
-        localStorage.setItem("contactofngo", ngocontact.value);
-        localStorage.setItem("difficultiesofngo", ngodifficulties.value);
+        detailsSubmitted.push(
+            localStorage.loggedinuser,
+            ngoname,
+            ngoaddress,
+            ngopincode,
+            ngocity,
+            ngostate,
+            ngocontact,
+            ngodifficulties
+        )
         alert("form submitted successfully!")
     }
     else{

@@ -1,5 +1,5 @@
 document.querySelector("video").play();
-document.querySelector("video").playbackRate = 1.25;
+document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {

@@ -3,6 +3,16 @@ body {
   background-image: url(/IMAGES/background.jpg);
   background-position: center;
   background-size: cover;
+  animation-name: start;
+  animation-duration: 2000ms;
+}
+@keyframes start{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 /* font-family: 'Fredericka the Great', cursive; */
 #head {

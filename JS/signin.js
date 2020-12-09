@@ -1,5 +1,5 @@
 document.querySelector("video").play();
-document.querySelector("video").playbackRate = 1.25;
+document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {
@@ -41,9 +41,11 @@ document.getElementById("form").submit(function (e) {
 //getting all the users in an array
 let users = [];
 let newuser = [];
+let key=[];
 for (let i = 0; i < localStorage.length; i++) {
   if (localStorage.key(i).slice(0, 4) == "user") {
     users.push(localStorage.getItem(localStorage.key(i)));
+    key.push(i);
   }
 }
 
@@ -67,7 +69,10 @@ btn.addEventListener("click", function () {
           //ngo
           localStorage.isloggedin = true;
           localStorage.loggedinas = "ngo";
-          localStorage.loggedinuser = users[i];
+          // let loggedin=[];
+          // loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
+          // loggedin.push(users[i]);
+          localStorage.loggedinuser = "user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length);
           document.getElementsByClassName("loginmessage")[0].textContent =
             "Login as NGO.";
           messagebg.classList.remove("invisible");
@@ -79,7 +84,10 @@ btn.addEventListener("click", function () {
         } else {
           localStorage.isloggedin = true;
           localStorage.loggedinas = "individual";
-          localStorage.loggedinuser = users[i];
+          // let loggedin=[];
+          // loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
+          // loggedin.push(users[i]);
+          localStorage.loggedinuser = "user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length);
           document.getElementsByClassName("loginmessage")[0].textContent =
             "Login as Donor";
           messagebg.classList.remove("invisible");

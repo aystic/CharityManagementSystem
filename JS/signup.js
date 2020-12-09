@@ -1,5 +1,5 @@
 document.querySelector("video").play();
-document.querySelector("video").playbackRate = 1.25;
+document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {
@@ -103,8 +103,11 @@ submitbtn.addEventListener("click", function () {
       detailssubmitted,
       documentverified
     );
+    // let loggedin=[];
     localStorage.setItem("user" + usercount, newuser);
-    localStorage.loggedinuser = newuser[0];
+    // loggedin.push("user"+usercount);
+    // // loggedin.push(newuser[0]);
+    localStorage.loggedinuser = "user"+usercount;
     localStorage.setItem("usercount", usercount);
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");

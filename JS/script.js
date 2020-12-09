@@ -8,17 +8,17 @@ window.addEventListener(
   false
 );
 document.querySelector("video").play();
-document.querySelector("video").playbackRate = 1.25;
+document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {
     setTimeout(function () {
       document.querySelector(".loader").classList.add("fadeloader");
-    }, 3000);
+    }, 2500);
     setInterval(() => {
       document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
-    }, 3500);
+    }, 3000);
   }
 };
 let scrollinpx = window.scrollY;
