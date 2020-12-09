@@ -17,7 +17,7 @@ document.onreadystatechange=function(){
       window.addEventListener('contextmenu', function (e) {
         e.preventDefault();
       }, false);
-
+F
     }
 }
 

@@ -1,64 +1,63 @@
-body{
-    font-family: 'IBM Plex Mono', monospace;
-    background-image: url(/IMAGES/background.jpg);
-    color: whitesmoke;
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background-image: url(/IMAGES/background.jpg);
+  color: whitesmoke;
 }
-h2{
-    display: inline;
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    color: mediumseagreen;
-    margin-left : 35%;
+h2 {
+  display: inline;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  color: mediumseagreen;
+  margin-left: 35%;
 }
-#homebtn{
-    display: inline;
-    background-color: #ffbf0059;
-    border: solid #ffbf00;
-    border-radius: 15px;
-    height: 50px;
-    width:50px;
-    font-family: 'Fredericka the Great', cursive;
-    transition: 300ms;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 20px;
+#homebtn {
+  display: inline;
+  background-color: #ffbf0059;
+  border: solid #ffbf00;
+  border-radius: 15px;
+  height: 50px;
+  width: 50px;
+  font-family: "Fredericka the Great", cursive;
+  transition: 300ms;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
 }
-#homebtn:hover{
-    background-color: #ffbf00;
-    transition: 300ms;
+#homebtn:hover {
+  background-color: #ffbf00;
+  transition: 300ms;
 }
 
-#video{
-    height: 100px;
-    width: 100px;
-    margin-top: 20%;
-    margin-left: 47%;
-    border-radius: 10px;
-    background-color: black;
+#video {
+  height: 100px;
+  width: 100px;
+  margin-top: 20%;
+  margin-left: 47%;
+  border-radius: 10px;
+  background-color: black;
+}
+.loader {
+  background-color: rgb(30, 30, 30);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+.fadeloader {
+  animation-name: fading;
+  animation-duration: 500ms;
+}
+@keyframes fading {
+  from {
+    opacity: 1;
   }
-  .loader{
-    background-color: rgb(30, 30, 30);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
-  
+  to {
+    opacity: 0;
   }
-  .fadeloader{
-    animation-name: fading;
-    animation-duration: 500ms;
-  }
-  @keyframes fading{
-    from{
-      opacity: 1;
-    }
-    to{
-      opacity: 0;
-    }
-  }
-.invisible{
-    display: none;
-}  
+}
+.invisible {
+  display: none;
+}

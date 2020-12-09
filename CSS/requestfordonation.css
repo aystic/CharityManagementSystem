@@ -1,92 +1,89 @@
-body{
-    font-family: 'Fredericka the Great', cursive;
-    background-image: url(/IMAGES/background.jpg);
-    color: lightyellow;
-    
+body {
+  font-family: "Fredericka the Great", cursive;
+  background-image: url(/IMAGES/background.jpg);
+  color: lightyellow;
 }
-.requestform{
-    margin: auto;
-    text-align: center;
-    background-color: whitesmoke;
-    width: 75%;
-    border-radius: 20px;
-    height: fit-content;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10pt;
-    color: black;
+.requestform {
+  margin: auto;
+  text-align: center;
+  background-color: whitesmoke;
+  width: 75%;
+  border-radius: 20px;
+  height: fit-content;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10pt;
+  color: black;
 }
-input{
-    margin-top: 20px;
-    padding: 5px;
-    border-radius: 20px;
-    outline: none;
-    text-align: center;
-
+input {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
 }
-label{
-    color: black;
+label {
+  color: black;
 }
-.submitbtn{
-    margin:20px;
-    border-radius: 20px;
-    outline: none;
-    padding: 10px;
-    background-color: green;
+.submitbtn {
+  margin: 20px;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  background-color: green;
 }
-.uploadbtn{
-    background-color: darkgoldenrod;
+.uploadbtn {
+  background-color: darkgoldenrod;
 }
-#textarea{
-    height: 200px;
-    width: 400px;
-    resize: none;
+#textarea {
+  height: 200px;
+  width: 400px;
+  resize: none;
 }
-#homebtn{
-    background-color: #ffbf0059;
-    border: solid #ffbf00;
-    border-radius: 15px;
-    height: 50px;
-    width:50px;
-    font-family: 'Fredericka the Great', cursive;
-    transition: 300ms;
-    font-weight: bold;
-    margin-left: 30px;
-    margin-top: 20px;
+#homebtn {
+  background-color: #ffbf0059;
+  border: solid #ffbf00;
+  border-radius: 15px;
+  height: 50px;
+  width: 50px;
+  font-family: "Fredericka the Great", cursive;
+  transition: 300ms;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 20px;
 }
-#homebtn:hover{
-    background-color: #ffbf00;
-    transition: 300ms;
+#homebtn:hover {
+  background-color: #ffbf00;
+  transition: 300ms;
 }
-#video{
-    height: 100px;
-    width: 100px;
-    margin-top: 20%;
-    margin-left: 47%;
-    border-radius: 10px;
-    background-color: black;
+#video {
+  height: 100px;
+  width: 100px;
+  margin-top: 20%;
+  margin-left: 47%;
+  border-radius: 10px;
+  background-color: black;
+}
+.loader {
+  background-color: rgb(30, 30, 30);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+.fadeloader {
+  animation-name: fading;
+  animation-duration: 500ms;
+}
+@keyframes fading {
+  from {
+    opacity: 1;
   }
-  .loader{
-    background-color: rgb(30, 30, 30);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
-  
+  to {
+    opacity: 0;
   }
-  .fadeloader{
-    animation-name: fading;
-    animation-duration: 500ms;
-  }
-  @keyframes fading{
-    from{
-      opacity: 1;
-    }
-    to{
-      opacity: 0;
-    }
-  }
-  .invisible{
-      display: none;
-  }
+}
+.invisible {
+  display: none;
+}

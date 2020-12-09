@@ -1,10 +1,9 @@
-body{
-  font-family: 'Fredericka the Great', cursive;
+body {
+  font-family: "Fredericka the Great", cursive;
   background-image: url(/IMAGES/background.jpg);
   color: lightyellow;
-  
 }
-.requestform{
+.requestform {
   margin: auto;
   margin-bottom: 50px;
   text-align: center;
@@ -12,26 +11,25 @@ body{
   width: 75%;
   border-radius: 20px;
   height: fit-content;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 10pt;
   color: black;
 }
-input{
+input {
   margin-top: 20px;
   padding: 5px;
   border-radius: 20px;
   outline: none;
   text-align: center;
-
 }
-label{
+label {
   color: black;
 }
-#submitbtn{
-  font-family: 'Fredericka the Great', cursive;
+#submitbtn {
+  font-family: "Fredericka the Great", cursive;
   font-size: 20px;
   width: 100px;
-  margin:20px;
+  margin: 20px;
   border-radius: 15px;
   border: 3px solid green;
   outline: none;
@@ -39,20 +37,20 @@ label{
   background-color: green;
   transition: 400ms;
 }
-#submitbtn:hover{
+#submitbtn:hover {
   background-color: #ffbf00;
   border: 3px solid black;
   transition: 400ms;
 }
-#submitbtn:active{
+#submitbtn:active {
   border: 2px solid black;
 }
-#textarea{
+#textarea {
   height: 200px;
   width: 400px;
   resize: none;
 }
-#addnewfile{
+#addnewfile {
   height: 20px;
   width: 20px;
   background-color: lightgreen;
@@ -60,51 +58,49 @@ label{
   border-radius: 3px;
   padding: 3px;
   transition: 400ms;
-
 }
-#addnewfile:hover{
+#addnewfile:hover {
   border: 2px solid black;
 }
-#removenewfile{
+#removenewfile {
   height: 20px;
   width: 20px;
-  background-color:#ff000099;
-  border: 2px solid #ff000099 ;
+  background-color: #ff000099;
+  border: 2px solid #ff000099;
   border-radius: 3px;
   padding: 3px;
   transition: 400ms;
 }
-#removenewfile:hover{
-  border: 2px solid black ;
-
+#removenewfile:hover {
+  border: 2px solid black;
 }
-#filelistdiv{
+#filelistdiv {
   width: 300px;
   height: fit-content;
-  margin:auto;
+  margin: auto;
 }
-#filelistdiv li{
+#filelistdiv li {
   color: red;
   padding: 0;
   margin: 0;
 }
-#homebtn{
+#homebtn {
   background-color: #ffbf0059;
   border: solid #ffbf00;
   border-radius: 15px;
   height: 50px;
-  width:50px;
-  font-family: 'Fredericka the Great', cursive;
+  width: 50px;
+  font-family: "Fredericka the Great", cursive;
   transition: 300ms;
   font-weight: bold;
   margin-left: 30px;
   margin-top: 20px;
 }
-#homebtn:hover{
+#homebtn:hover {
   background-color: #ffbf00;
   transition: 300ms;
 }
-#video{
+#video {
   height: 100px;
   width: 100px;
   margin-top: 20%;
@@ -112,7 +108,7 @@ label{
   border-radius: 10px;
   background-color: black;
 }
-.loader{
+.loader {
   background-color: rgb(30, 30, 30);
   position: fixed;
   height: 100%;
@@ -120,20 +116,19 @@ label{
   z-index: 10;
   top: 0;
   left: 0;
-
 }
-.fadeloader{
+.fadeloader {
   animation-name: fading;
   animation-duration: 500ms;
 }
-@keyframes fading{
-  from{
+@keyframes fading {
+  from {
     opacity: 1;
   }
-  to{
+  to {
     opacity: 0;
   }
 }
-.invisible{
+.invisible {
   display: none;
 }

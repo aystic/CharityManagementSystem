@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <script>
-        window.history.forward();
+      window.history.forward();
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NGO details</title>
-    <link rel="stylesheet" href="/CSS/ngoindexstyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/ngoindexstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="/IMAGES/favicon.png" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="loader">
-        <div id="loader_animation"><video id="video" src="/IMAGES/loader.mp4" muted="muted" autoplay loop></video></div>
-</div>
-    <div style="margin-bottom: 10px;">
-        <button id="homebtn">
-            <a href="index.html" style="text-decoration: none; color: black"><img src="/IMAGES/home-icon.png"
-                    alt="home button" title="Icon made by Freepik from www.flaticon.com"
-                    style="height: 25px;width: 25px;" /></a>
-        </button>
-        <p style="display: inline; margin-left: 17%;margin-bottom: 20px;font-size: 25pt;">Submit your details here for
-            verification :</P>
+      <div id="loader_animation">
+        <video
+          id="video"
+          src="/IMAGES/loader.mp4"
+          muted="muted"
+          autoplay
+          loop
+        ></video>
+      </div>
+    </div>
+    <div style="margin-bottom: 10px">
+      <button id="homebtn">
+        <a href="index.html" style="text-decoration: none; color: black"
+          ><img
+            src="/IMAGES/home-icon.png"
+            alt="home button"
+            title="Icon made by Freepik from www.flaticon.com"
+            style="height: 25px; width: 25px"
+        /></a>
+      </button>
+      <p
+        style="
+          display: inline;
+          margin-left: 17%;
+          margin-bottom: 20px;
+          font-size: 25pt;
+        "
+      >
+        Submit your details here for verification :
+      </p>
     </div>
     <div class="requestform">
-        <form id="form" action="#">
-            <input id='name' required type="text" placeholder="Enter the name of NGO" style="width: 75%;"><br>
-            <input id='address' required type="text" placeholder="Enter the address" style="width: 75%;"><br>
-            <input id='city' required type="text" placeholder="City" style="width: 20%;display: inline-block;">
-            <input id='state' required type="text" placeholder="State" style="width: 20%;display: inline-block;">
-            <input id='pincode' required minlength="6" maxlength="6" type="text" placeholder="Pincode"
-                style="width: 20%;display: inline-block;"><br>
-            <input id='contact' required minlength="10" maxlength="10" type="text" placeholder="Contact details"
-                style="width: 20%;display: inline-block;"><br>
-            <!--     
+      <form id="form" action="#">
+        <input
+          id="name"
+          required
+          type="text"
+          placeholder="Enter the name of NGO"
+          style="width: 75%"
+        /><br />
+        <input
+          id="address"
+          required
+          type="text"
+          placeholder="Enter the address"
+          style="width: 75%"
+        /><br />
+        <input
+          id="city"
+          required
+          type="text"
+          placeholder="City"
+          style="width: 20%; display: inline-block"
+        />
+        <input
+          id="state"
+          required
+          type="text"
+          placeholder="State"
+          style="width: 20%; display: inline-block"
+        />
+        <input
+          id="pincode"
+          required
+          minlength="6"
+          maxlength="6"
+          type="text"
+          placeholder="Pincode"
+          style="width: 20%; display: inline-block"
+        /><br />
+        <input
+          id="contact"
+          required
+          minlength="10"
+          maxlength="10"
+          type="text"
+          placeholder="Contact details"
+          style="width: 20%; display: inline-block"
+        /><br />
+        <!--     
                 <p style="display: inline-block;">Type of donation needed :</p>
                 <input type="checkbox" class="donation">
                 <label>Money</label>
@@ -48,27 +110,45 @@
                 <label>Medicines</label>
                 <input type="checkbox" class="donation">
                 <label>clothes</label><br> -->
-            <p style="display: inline-block;">Please upload the registration Documents (.jpeg, .png or .jpg only):</p>
-            <div>
-                <img id="addnewfile" src="/IMAGES/clip.png" alt="add new attachment"
-                    title="Icon made by Freepik from flaticons.com">
-                <img id="removenewfile" src="/IMAGES/error.png" alt="remove attachment"
-                    title="Icon made by Freepik from flaticons.com">
-            </div>
-            <div id="filelistdiv">
-                <ol id="filelist">
-                    <li><input type="file" required class="Uploadbtn" placeholder="Upload"></li>
-                </ol>
-            </div>
-            <br>
-            <p>Enter the difficulties and other details faced by the NGO, Please specify :</p>
-            <textarea id="textarea"></textarea>
-            <hr>
-            <button id="submitbtn">Submit</button>
-            </form>
+        <p style="display: inline-block">
+          Please upload the registration Documents (.jpeg, .png or .jpg only):
+        </p>
+        <div>
+          <img
+            id="addnewfile"
+            src="/IMAGES/clip.png"
+            alt="add new attachment"
+            title="Icon made by Freepik from flaticons.com"
+          />
+          <img
+            id="removenewfile"
+            src="/IMAGES/error.png"
+            alt="remove attachment"
+            title="Icon made by Freepik from flaticons.com"
+          />
+        </div>
+        <div id="filelistdiv">
+          <ol id="filelist">
+            <li>
+              <input
+                type="file"
+                required
+                class="Uploadbtn"
+                placeholder="Upload"
+              />
+            </li>
+          </ol>
+        </div>
+        <br />
+        <p>
+          Enter the difficulties and other details faced by the NGO, Please
+          specify :
+        </p>
+        <textarea id="textarea"></textarea>
+        <hr />
+        <button id="submitbtn">Submit</button>
+      </form>
     </div>
-</body>
-<script src="/JS/ngoindexscript.js">
-</script>
-
+  </body>
+  <script src="/JS/ngoindexscript.js"></script>
 </html>
