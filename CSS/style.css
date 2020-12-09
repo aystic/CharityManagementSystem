@@ -1,307 +1,432 @@
-
-body{
-    overflow-x: hidden;
-    background-color: #252526FF;
-    font-family: 'IBM Plex Mono', monospace;
-    color: lightyellow;
-    margin: 0px;
-    animation-name: start;
-    animation-duration: 2000ms;
+body {
+  overflow-x: hidden;
+  background-color: #252526ff;
+  font-family: "IBM Plex Mono", monospace;
+  color: lightyellow;
+  margin: 0px;
+  animation-name: start;
+  animation-duration: 2000ms;
 }
-@keyframes start{
-    from{
-        filter: blur(5px);
-    }
-    to{
-        filter: blur(0px);
-    }
+@keyframes start {
+  from {
+    filter: blur(5px);
+  }
+  to {
+    filter: blur(0px);
+  }
 }
-#projectname{
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 25pt;
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    background-color: #252526FF;
-    margin:0px;
-    
+#projectname {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25pt;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  background-color: #252526ff;
+  margin: 0px;
 }
-.topbtn{
-    display: inline-flex;
-    /* margin: 10px; */
-    /* margin-left: 50px; */
-    /* width: 150px; */
-    /* flex-grow:1; */
-    /* align-self: center; */
-    justify-content: center;
-    margin-inline-end: 100px;
-    background-color: #252526FF;
-    font-family: 'Fredericka the Great', cursive;
-    border-radius: 10px;
-    padding: 10px;
-    transform: scale(1,1);
-    transition-duration: 400ms;
-    border: solid 2px #FFBF00;
-
+.topbtn {
+  display: inline-flex;
+  /* margin: 10px; */
+  /* margin-left: 50px; */
+  /* width: 150px; */
+  /* flex-grow:1; */
+  /* align-self: center; */
+  justify-content: center;
+  margin-inline-end: 100px;
+  background-color: #252526ff;
+  font-family: "Fredericka the Great", cursive;
+  border-radius: 10px;
+  padding: 10px;
+  transform: scale(1, 1);
+  transition-duration: 400ms;
+  border: solid 2px #ffbf00;
 }
-#topbtnparent{
-    margin: 20px;
-    display: block;
-    padding-left: 50px;
-    text-align: center;
-    /* justify-content: space-around; */
-    background-color: #252526FF;
+#topbtnparent {
+  margin: 20px;
+  display: block;
+  padding-left: 50px;
+  text-align: center;
+  /* justify-content: space-around; */
+  background-color: #252526ff;
 }
-.toplink{
-    color:lightyellow;
-    background-color: #252526FF;
-    transform: scale(1,1);
-    transition-duration: 400ms;
+.toplink {
+  color: lightyellow;
+  background-color: #252526ff;
+  transform: scale(1, 1);
+  transition-duration: 400ms;
 }
-.topbtn:hover{
-    background-color: #FFBF00;
-    transform: scale(1.25,1.25);
-    transition: 400ms;
+.topbtn:hover {
+  background-color: #ffbf00;
+  transform: scale(1.25, 1.25);
+  transition: 400ms;
 }
 /* .topbtn:hover .toplink */
-.toplink:hover .topbtn{
-    background-color: #FFBF00;
-    color: black;
-    transition: 400ms;
+.toplink:hover .topbtn {
+  background-color: #ffbf00;
+  color: black;
+  transition: 400ms;
 }
-.topbtn:active{
-    transform: scale(0.95,0.95);
-    transition: 400ms;
-} 
-#image{
-    display: block;
-    margin:auto;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    border-radius: 50px;
-    max-width: 100%;
-    max-height: 75%;
-    transform: scaleX(1);
-    transition: 15s;
+.topbtn:active {
+  transform: scale(0.95, 0.95);
+  transition: 400ms;
 }
-#image:hover{
-    transform: scaleX(1.2);
-    transition: 15s;
+#image {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border-radius: 50px;
+  max-width: 100%;
+  max-height: 75%;
+  transform: scaleX(1);
+  transition: 15s;
 }
-.howitworksparentdiv{
-    margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 100px;
+#image:hover {
+  transform: scaleX(1.2);
+  transition: 15s;
 }
-.howitworks{
-/* 
+.howitworksparentdiv {
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+}
+.howitworks {
+  /* 
     margin: 75px;
     margin-bottom: 150px;
     padding: 20px; */
-    /* display: block; */
-    border: solid 2px #636e72;
-    border-radius: 20px;
-    height: fit-content;
-    transform: scale(1,1);
-    transition-duration: 400ms;
-} 
-.howitworks:hover{
-    background-color: #FFBF00;
-    /* transform: scale(1.10,1.10); */
-    transition: 400ms;
-    color: black;
+  /* display: block; */
+  border: solid 2px #636e72;
+  border-radius: 20px;
+  height: fit-content;
+  transform: scale(1, 1);
+  transition-duration: 400ms;
 }
-.howitworks:hover #howitworkstitle{
-    background-color: #FFBF00;
-    transition: 400ms;
-    color: black;
+.howitworks:hover {
+  background-color: #ffbf00;
+  /* transform: scale(1.10,1.10); */
+  transition: 400ms;
+  color: black;
 }
-.howitworks:hover .innerhr{
-    border-color: #00000099;
+.howitworks:hover #howitworkstitle {
+  background-color: #ffbf00;
+  transition: 400ms;
+  color: black;
 }
-#howitworkstitle{
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 25pt;
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    background-color: #252526FF;
-    border-radius: 20px;
-    transform: scale(1,1);
-    transition-duration: 400ms;
-    
+.howitworks:hover .innerhr {
+  border-color: #00000099;
 }
-.howitworksitems{
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 25pt;
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    background-color: #252526FF;
-    margin:0px;
+#howitworkstitle {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25pt;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  background-color: #252526ff;
+  border-radius: 20px;
+  transform: scale(1, 1);
+  transition-duration: 400ms;
 }
-.listitems{
-    display: inline-block;
-    margin: 10px;
-    transform: scale(1,1);
-    transition: 400ms;
-    color: whitesmoke;
+.howitworksitems {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25pt;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  background-color: #252526ff;
+  margin: 0px;
 }
-.listitems:hover{
-    transform: scale(1.05);
-    transition: 400ms;
-    color: black;
+.listitems {
+  display: inline-block;
+  margin: 10px;
+  transform: scale(1, 1);
+  transition: 400ms;
+  color: whitesmoke;
 }
-.contactusmain{
-    display: block;
-    width: 500px;
-    height: fit-content;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin: auto;
+.listitems:hover {
+  transform: scale(1.05);
+  transition: 400ms;
+  color: black;
+}
+.contactusmain {
+  display: block;
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: auto;
     margin-top: 50px;
     margin-bottom: 200px; */
-    border: 2px solid #636e72;
-    border-radius: 20px;
-    transform: scale(1,1);
-    transition: 400ms;
+  border: 2px solid #636e72;
+  border-radius: 20px;
+  transform: scale(1, 1);
+  transition: 400ms;
+}
+#contactushead {
+  display: inline-block;
+  padding-top: 10px;
+  font-size: 25pt;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  background-color: #252526ff;
+  /* margin:0px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transform: scale(1, 1);
+  transition: 400ms;
+}
+.contactusmain:hover {
+  /* transform: scale(1.2,1.2); */
+  transition: 400ms;
+  background-color: #ffbf00;
+}
+.contactusmain:hover #contactushead {
+  background-color: #ffbf00;
+  color: black;
+}
+.contactusmain:hover .innerhr {
+  border-color: #00000099;
+}
+
+.contactusitems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  transform: scale(1, 1);
+  transition: 400ms;
+  color: whitesmoke;
+}
+.contactusitems:hover {
+  transform: scale(1.2, 1.2);
+  transition: 400ms;
+  color: black;
+}
+hr {
+  border: dotted;
+  border-top: none;
+  border-width: 10px;
+  width: 10%;
+  border-color: #636e7299;
+}
+.innerhr {
+  border-color: #ffffe099;
+  transition: 400ms;
+}
+.floatingbtn {
+  position: fixed;
+  z-index: 1;
+  opacity: 50%;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 93%;
+  margin-top: 43%;
+  transition: 400ms;
+  /* border: solid rgba(99, 110, 114,0.5); */
+  /* border-radius: 15px; */
+}
+.floatingbtn:hover {
+  opacity: 100%;
+}
+.invisible {
+  display: none;
+}
+#messagebg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  /* margin-left: 5%; */
+  margin-top: -175px;
+  padding-top: 150px;
+
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.message {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 30px;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+  width: 300px;
+  height: fit-content;
+  box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
+  padding: 20px;
+  padding-bottom: 30px;
+  padding-top: 0;
+  border-radius: 10px;
+  background-color: black;
+  color: lightyellow;
+  opacity: 80%;
+  transition: 400ms;
+}
+.invisible {
+  display: none;
+}
+#messagebtn {
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #ffbf00;
+  border: 2px solid rgba(255, 191, 0, 0.5);
+  height: fit-content;
+  width: fit-content;
+  margin-top: 30px;
+  border-radius: 5px;
+  outline: none;
+  transition: 400ms;
+}
+#messagebtn:hover {
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+#successmsg {
+  margin-top: -30px;
+}
+#messagecrossbtn {
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  border-radius: 100%;
+  transition: 400ms;
+}
+#messagecrossbtn:hover {
+  border: 2px solid rgba(255, 255, 224, 0.5);
+  border-radius: 100%;
+}
+
+
+.loader {
+  background-color: rgb(10, 10, 10);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
 
 }
-#contactushead{
-    display: inline-block;
-    padding-top: 10px;
-    font-size: 25pt;
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
-    background-color: #252526FF;
-    /* margin:0px; */
-    margin-top: 10px;
-    margin-bottom: 10px;
-    transform: scale(1,1);
-    transition: 400ms;
-}
-.contactusmain:hover{
-    /* transform: scale(1.2,1.2); */
-    transition: 400ms;
-    background-color:#FFBF00 ;
-}
-.contactusmain:hover #contactushead{
-    background-color:#FFBF00 ;
-    color: black;
-}
-.contactusmain:hover .innerhr{
-    border-color: #00000099;
+
+.pswp__preloader__icn {
+  opacity: 0.75;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  margin-top: 25%;
+  -webkit-animation: clockwise 500ms linear infinite;
+  animation: clockwise 500ms linear infinite;
 }
 
-.contactusitems{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    transform: scale(1,1);
-    transition: 400ms;
-    color: whitesmoke;
-}
-.contactusitems:hover{
-    transform: scale(1.2,1.2);
-    transition: 400ms;
-    color: black;
-}
-hr{
-    border: dotted;
-    border-top: none;
-    border-width: 10px; 
-    width: 10%;   
-    border-color: #636e7299;
-    ;
-}
-.innerhr{
-    border-color: #ffffe099;
-    transition: 400ms;
-}
-.floatingbtn{
-    position: fixed;
-    z-index: 1;
-    opacity: 50%;
-    height: fit-content;
-    width: fit-content;
-    margin-left:93% ;
-    margin-top:43% ;
-    transition: 400ms;
-    /* border: solid rgba(99, 110, 114,0.5); */
-    /* border-radius: 15px; */
-}.floatingbtn:hover{
-    opacity: 100%;
-}
-.invisible{
-    display: none;
-}
-#messagebg{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    /* margin-left: 5%; */
-    margin-top: -175px;
-    padding-top: 150px;
+/* The idea of animating inner circle is based on Polymer loading indicator by Keanu Lee https://blog.keanulee.com/2014/10/20/the-tale-of-three-spinners.html */
+.pswp__preloader__cut {
+  position: relative;
+  width: 25px;
+  height: 50px;
+  overflow: hidden;
 
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pswp__preloader__donut--fake {
+  box-sizing: border-box;
+
+  width: 50px;
+  height: 50px;
+
+  border: 2px solid red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: none;
+  margin: 0;
+}
+
+.pswp__preloader__donut {
+  box-sizing: border-box;
+
+  width: 50px;
+  height: 50px;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: none;
+  margin: 0;
+
+  -webkit-animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+  animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+}
+
+@-webkit-keyframes clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes donut-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(-140deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+  }
+}
+@keyframes donut-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-140deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.loaderfadeout{
+    animation-name: fadingloader;
+    animation-duration: 2000ms;
 
 }
-.message{
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 30px;
-    position: fixed;
-    z-index: 1;
-    text-align: center;
-    width: 300px;
-    height: fit-content;
-    box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
-    padding: 20px;
-    padding-bottom: 30px;
-    padding-top: 0;
-    border-radius: 10px;
-    background-color: black;
-    color:lightyellow;
-    opacity: 80%;
-    transition: 400ms;
-}
-.invisible{
-    display: none;
-}
-#messagebtn{
-    font-family: 'Fredericka the Great', cursive;  
-    font-weight: bold;
-    font-size: 20px; 
-    background-color: #ffbf00;
-    border: 2px solid rgba(255, 191, 0,0.5);
-    height: fit-content;
-    width: fit-content;
-    margin-top: 30px;
-    border-radius: 5px;
-    outline: none;
-    transition: 400ms;
-}
-#messagebtn:hover{
-    border: 2px solid rgba(255,255,255,1);
-
-}
-#successmsg{
-    margin-top: -30px;
-}
-#messagecrossbtn{
-    border: 2px solid rgba(255, 0, 0, 0.5);
-    border-radius: 100%;
-    transition: 400ms;
-}
-#messagecrossbtn:hover{
-    border: 2px solid rgba(255, 255, 224,0.5);
-    border-radius: 100%;
+@keyframes fadingloader{
+    0%{
+        opacity: 1;
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        display: none;
+    }
 }

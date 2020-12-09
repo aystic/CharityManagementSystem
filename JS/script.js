@@ -1,3 +1,10 @@
+function disableloader(){
+  setTimeout(function(){
+    document.getElementsByClassName("loader")[0].classList.add("invisible");
+    // document.getElementsByClassName("loader")[0].classList.add("invisible");
+  },3000)
+}
+
 let scrollinpx = window.scrollY;
 let btn = document.getElementById("gototop");
 btn.classList.add("invisible");

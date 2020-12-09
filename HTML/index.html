@@ -23,7 +23,14 @@
     <link rel="icon" href="/IMAGES/favicon.png" />
   </head>
 
-  <body onscroll="myscrollfunction()">
+  <body onscroll="myscrollfunction()" onload="disableloader()">
+    <div class="loader">
+    <div class="pswp__preloader__icn">
+      <div class="pswp__preloader__cut">
+        <div class="pswp__preloader__donut"></div>
+      </div>
+    </div>
+    </div>
     <div class="floatingbtn" id="gototop">
       <a href="#projectname" style="text-decoration: none"
         ><img
