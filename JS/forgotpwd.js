@@ -20,8 +20,3 @@ document.onreadystatechange=function(){
 
     }
 }
-
-
-document.getElementById("form").submit(function(e) {
-    e.preventDefault();
-});

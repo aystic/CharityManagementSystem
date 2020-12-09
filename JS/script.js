@@ -1,10 +1,22 @@
-function disableloader(){
-  setTimeout(function(){
-    document.getElementsByClassName("loader")[0].classList.add("invisible");
-    // document.getElementsByClassName("loader")[0].classList.add("invisible");
-  },3000)
-}
+document.querySelector("video").play();
+document.querySelector("video").playbackRate=1.25;
 
+document.onreadystatechange=function(){
+    if(document.readyState==="complete"){
+        setTimeout(function(){
+        document.querySelector(".loader").classList.add("fadeloader");
+        },3000)
+        setInterval(() => {
+        document.querySelector(".loader").classList.add("invisible");
+          
+        }, 3500);
+      }
+    else{
+      window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      }, false);
+    }
+}
 let scrollinpx = window.scrollY;
 let btn = document.getElementById("gototop");
 btn.classList.add("invisible");

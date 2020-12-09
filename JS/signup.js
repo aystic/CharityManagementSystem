@@ -1,3 +1,26 @@
+document.querySelector("video").play();
+document.querySelector("video").playbackRate=1.25;
+
+document.onreadystatechange=function(){
+    if(document.readyState==="complete"){
+        setTimeout(function(){
+        // document.querySelector("body").classList.add("invisible");
+        document.querySelector(".loader").classList.add("fadeloader");
+        },1000)
+        setInterval(() => {
+        document.querySelector(".loader").classList.add("invisible");
+        // document.querySelector("body").classList.remove("invisible");
+          
+        }, 1500);
+      }
+    else{
+      window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      }, false);
+
+    }
+}
+
 if (!localStorage.getItem("usercount")) {
   localStorage.setItem("usercount", "0");
 }
@@ -15,7 +38,7 @@ document.getElementById("form").submit(function (e) {
 });
 
 let submitbtn = document.getElementsByClassName("signupbtn")[0];
-submitbtn.click();
+// submitbtn.click();
 
 let email = document.getElementsByClassName("input-box")[0];
 let pwd = document.getElementsByClassName("input-box")[1];

@@ -1,3 +1,4 @@
+//js
 document.querySelector("video").play();
 document.querySelector("video").playbackRate=1.25;
 
@@ -21,7 +22,43 @@ document.onreadystatechange=function(){
     }
 }
 
+//css
 
-document.getElementById("form").submit(function(e) {
-    e.preventDefault();
-});
+#video{
+  height: 100px;
+  width: 100px;
+  margin-top: 20%;
+  margin-left: 47%;
+  border-radius: 10px;
+  background-color: black;
+}
+.loader{
+  background-color: rgb(30, 30, 30);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+}
+.fadeloader{
+  animation-name: fading;
+  animation-duration: 500ms;
+}
+@keyframes fading{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+
+
+//html
+
+<div class="loader">
+        <div id="loader_animation"><video id="video" src="/IMAGES/loader.mp4" muted="muted" autoplay loop></video></div>
+</div>

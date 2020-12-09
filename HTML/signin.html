@@ -3,7 +3,7 @@
   <head>
     <script>
       window.history.forward();
-  </script>
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignIn</title>
@@ -19,9 +19,19 @@
     <link rel="icon" href="/IMAGES/favicon.png" />
   </head>
   <body>
-    
+    <div class="loader">
+      <div id="loader_animation">
+        <video
+          id="video"
+          src="/IMAGES/loader.mp4"
+          muted="muted"
+          autoplay
+          loop
+        ></video>
+      </div>
+    </div>
     <div id="messagebg">
-      <div class="message" style="margin-left: 462px; margin-top: -15px ;">
+      <div class="message" style="margin-left: 462px; margin-top: -15px">
         <img
           id="msgimage"
           src="/IMAGES/check.png"
@@ -45,7 +55,7 @@
     </button>
     <div class="signupform">
       <form id="form" action="#">
-        <p style="font-size: 25px;">SignIn</p>
+        <p style="font-size: 25px">SignIn</p>
         <p>Enter Credentials!</p>
         <input
           type="email"
@@ -62,16 +72,17 @@
         <button type="submit" class="signupbtn">SignIn</button>
         <hr />
       </form>
-      <a><p>
-        New user?<span
-          id="signuplink"
-          onclick="redirecttosignuppage()"
-          style="color: blue"
-        >
-          SignUp!</span
-        >
-      </p>
-    </a>
+      <a
+        ><p>
+          New user?<span
+            id="signuplink"
+            onclick="redirecttosignuppage()"
+            style="color: blue"
+          >
+            SignUp!</span
+          >
+        </p>
+      </a>
       <p>
         <a href="forgotpassword.html" style="text-decoration: none"
           >Forgot Password?</a

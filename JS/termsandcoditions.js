@@ -6,7 +6,7 @@ document.onreadystatechange=function(){
         setTimeout(function(){
         // document.querySelector("body").classList.add("invisible");
         document.querySelector(".loader").classList.add("fadeloader");
-        },1000)
+        },1000);
         setInterval(() => {
         document.querySelector(".loader").classList.add("invisible");
         // document.querySelector("body").classList.remove("invisible");
@@ -20,8 +20,3 @@ document.onreadystatechange=function(){
 
     }
 }
-
-
-document.getElementById("form").submit(function(e) {
-    e.preventDefault();
-});

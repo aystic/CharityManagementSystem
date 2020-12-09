@@ -4,7 +4,7 @@
     <script>
       window.history.forward();
     </script>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link href="/CSS/style.css" rel="stylesheet" />
@@ -23,13 +23,17 @@
     <link rel="icon" href="/IMAGES/favicon.png" />
   </head>
 
-  <body onscroll="myscrollfunction()" onload="disableloader()">
+  <body onscroll="myscrollfunction()">
     <div class="loader">
-    <div class="pswp__preloader__icn">
-      <div class="pswp__preloader__cut">
-        <div class="pswp__preloader__donut"></div>
+      <div id="loader_animation">
+        <video
+          id="video"
+          src="/IMAGES/loader.mp4"
+          muted="muted"
+          autoplay  
+          loop
+        ></video>
       </div>
-    </div>
     </div>
     <div class="floatingbtn" id="gototop">
       <a href="#projectname" style="text-decoration: none"
@@ -59,13 +63,50 @@
           >Donate</a
         >
       </div> -->
-      <a href="#" class="toplink " style="text-decoration: none;" onclick="donateredirect()"><div class="topbtn" id="donatebtn">Donate</div></a>
-      <a href="#" class="toplink" style="text-decoration: none;" onclick="requestfordonationredirect()"><div class="topbtn" id="requestbutton">Request for donation</div></a>
-      <a href="#howitworksnavigate" class="toplink" style="text-decoration: none;"><div class="topbtn">How it works?</div></a>
-      <a href="#contactushead" class="toplink" style="text-decoration: none;" ><div class="topbtn">Contact</div></a>
-      <a href="#" class="toplink" style="text-decoration: none;" onclick="signup()"><div class="topbtn" id="tosignin" >SignIn/SignUp</div></a>
-      <a href="#" class="toplink" style="text-decoration: none;" onclick="account()"><div class="topbtn" id="accountbtn">My Account</div></a>
-      <a href="#" class="toplink" style="text-decoration: none;" onclick="signout()"><div class="topbtn" id="isloggedin">SignOut</div></a>
+      <a
+        href="#"
+        class="toplink"
+        style="text-decoration: none"
+        onclick="donateredirect()"
+        ><div class="topbtn" id="donatebtn">Donate</div></a
+      >
+      <a
+        href="#"
+        class="toplink"
+        style="text-decoration: none"
+        onclick="requestfordonationredirect()"
+        ><div class="topbtn" id="requestbutton">Request for donation</div></a
+      >
+      <a
+        href="#howitworksnavigate"
+        class="toplink"
+        style="text-decoration: none"
+        ><div class="topbtn">How it works?</div></a
+      >
+      <a href="#contactushead" class="toplink" style="text-decoration: none"
+        ><div class="topbtn">Contact</div></a
+      >
+      <a
+        href="#"
+        class="toplink"
+        style="text-decoration: none"
+        onclick="signup()"
+        ><div class="topbtn" id="tosignin">SignIn/SignUp</div></a
+      >
+      <a
+        href="#"
+        class="toplink"
+        style="text-decoration: none"
+        onclick="account()"
+        ><div class="topbtn" id="accountbtn">My Account</div></a
+      >
+      <a
+        href="#"
+        class="toplink"
+        style="text-decoration: none"
+        onclick="signout()"
+        ><div class="topbtn" id="isloggedin">SignOut</div></a
+      >
 
       <!-- <div class="topbtn" id="requestbutton">
         <a

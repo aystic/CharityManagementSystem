@@ -1,3 +1,26 @@
+document.querySelector("video").play();
+document.querySelector("video").playbackRate=1.25;
+
+document.onreadystatechange=function(){
+    if(document.readyState==="complete"){
+        setTimeout(function(){
+        // document.querySelector("body").classList.add("invisible");
+        document.querySelector(".loader").classList.add("fadeloader");
+        },1000)
+        setInterval(() => {
+        document.querySelector(".loader").classList.add("invisible");
+        // document.querySelector("body").classList.remove("invisible");
+          
+        }, 1500);
+      }
+    else{
+      window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      }, false);
+
+    }
+}
+
 //message components
 let message = document.getElementsByClassName("message")[0];
 let messagebtn=document.getElementById("messagebtn");
@@ -10,7 +33,7 @@ let email = document.getElementsByClassName("emailbox")[0];
 let pwd = document.getElementsByClassName("pwdbox")[0];
 let btn = document.getElementsByClassName("signupbtn")[0];
 let count=0;
-btn.click();
+// btn.click();
 document.getElementById("form").submit(function(e) {
   e.preventDefault();
 });
