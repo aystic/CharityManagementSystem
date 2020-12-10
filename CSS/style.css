@@ -4,6 +4,8 @@ body {
   font-family: "IBM Plex Mono", monospace;
   color: lightyellow;
   margin: 0px;
+  animation-name: start;
+  animation-duration: 3000ms;
 }
 @keyframes start {
   from {
