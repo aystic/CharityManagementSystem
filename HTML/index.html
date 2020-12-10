@@ -3,6 +3,28 @@
   <head>
     <script>
       window.history.forward();
+      document.querySelector("video").play();
+      document.querySelector("video").playbackRate = 2;
+
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          setTimeout(function () {
+            document.querySelector(".loader").classList.add("fadeloader");
+          }, 2500);
+          setInterval(() => {
+            document.querySelector("body").classList.remove("invisible");
+            document.querySelector(".loader").classList.add("invisible");
+          }, 3000);
+        } else {
+          window.addEventListener(
+            "contextmenu",
+            function (e) {
+              e.preventDefault();
+            },
+            false
+          );
+        }
+      };
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +46,16 @@
   </head>
 
   <body onscroll="myscrollfunction()">
-    <div class="loader">
+    <div
+      class="loader"
+      style="background-color: rgb(30, 30, 30);
+          position: fixed;
+          height: 100%;
+          width: 100%;
+          z-index: 10;
+          top: 0;
+          left: 0;"
+    >
       <div id="loader_animation">
         <video
           id="video"
@@ -32,6 +63,12 @@
           muted="muted"
           autoplay
           loop
+          style="height: 100px;
+              width: 100px;
+              margin-top: 20%;
+              margin-left: 47%;
+              border-radius: 10px;
+              background-color: black;"  
         ></video>
       </div>
     </div>

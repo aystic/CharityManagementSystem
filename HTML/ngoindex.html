@@ -53,7 +53,7 @@
       </p>
     </div>
     <div class="requestform">
-      <form id="form" action="#">
+      <form id="form" action="#" onsubmit="return false;">
         <input
           id="name"
           required
@@ -132,7 +132,6 @@
             <li>
               <input
                 type="file"
-                required
                 class="Uploadbtn"
                 placeholder="Upload"
               />
@@ -146,7 +145,7 @@
         </p>
         <textarea id="textarea"></textarea>
         <hr />
-        <button id="submitbtn">Submit</button>
+        <button id="submitbtn" type="submit">Submit</button>
       </form>
     </div>
   </body>

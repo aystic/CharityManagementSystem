@@ -21,6 +21,10 @@ F
     }
 }
 
+document.getElementById("form").submit(function (e) {
+    e.preventDefault();
+});
+
 
 let addfile = document.getElementById('addnewfile');
 let removefile = document.getElementById('removenewfile');
@@ -42,25 +46,31 @@ let ngocontact = document.getElementById('contact');
 let ngodifficulties = document.getElementById('textarea');
 let btn = document.getElementById('submitbtn');
 let detailsSubmitted=[];
-btn.onclick = function () {
-    if (ngoname != "" && ngoaddress != "" && ngopincode != "" && ngocity != "" && ngostate != "" && ngocontact != "") {
-        detailsSubmitted.push(
-            localStorage.loggedinuser,
-            ngoname,
-            ngoaddress,
-            ngopincode,
-            ngocity,
-            ngostate,
-            ngocontact,
-            ngodifficulties
-        )
-        alert("form submitted successfully!")
+// btn.addEventListener("click",function(){
+//         if (ngoname != "" && ngoaddress != "" && ngopincode != "" && ngocity != "" && ngostate != "" && ngocontact != "") {
+//             detailsSubmitted.push(
+//                 localStorage.loggedinuser.split(",")[5],
+//                 ngoname,
+//                 ngoaddress,
+//                 ngopincode,
+//                 ngocity,
+//                 ngostate,
+//                 ngocontact,
+//                 ngodifficulties
+//             );
+//             localStorage.setItem("userDetails"+localStorage.loggedinuser.split(",")[5].slice(4,localStorage.loggedinuser.split(",")[5].length),detailsSubmitted);
+//             alert("Details submitted!");
+//             window.location.replace("/HTML/index.html");
+//         }
+//         else{"
+//             alert("Invalid details!");
+//             document.querySelector("#form").reset();
+//         }
+// });
+btn.addEventListener("click",function(){
+    if(ngoname != "" && ngoaddress != "" && ngocity != "" && ngostate!= "" && ngopincode != "" && ngocontact != "" ){
+        alert("Details submitted!");
+    }else{
+        alert("Invalid Details!");
     }
-    else{
-        alert("Invalid details!");
-    }
-
-};
-document.getElementById("form").submit(function (e) {
-    e.preventDefault();
 });
