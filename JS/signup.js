@@ -103,11 +103,11 @@ submitbtn.addEventListener("click", function () {
       detailssubmitted,
       documentverified
     );
-    // let loggedin=[];
+    let loggedin=[];
     localStorage.setItem("user" + usercount, newuser);
-    // loggedin.push("user"+usercount);
-    // // loggedin.push(newuser[0]);
-    localStorage.loggedinuser = "user"+usercount;
+    loggedin.push(newuser);
+    loggedin.push("user"+usercount);
+    localStorage.loggedinuser =loggedin;
     localStorage.setItem("usercount", usercount);
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");

@@ -1,12 +1,3 @@
-// document.querySelector("body").classList.add("invisible")
-// document.querySelector(".loader").classList.remove("invisible")
-window.addEventListener(
-  "contextmenu",
-  function (e) {
-    e.preventDefault();
-  },
-  false
-);
 document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
@@ -19,6 +10,14 @@ document.onreadystatechange = function () {
       document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
     }, 3000);
+  } else {
+    window.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+      },
+      false
+    );
   }
 };
 let scrollinpx = window.scrollY;

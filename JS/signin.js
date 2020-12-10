@@ -69,10 +69,12 @@ btn.addEventListener("click", function () {
           //ngo
           localStorage.isloggedin = true;
           localStorage.loggedinas = "ngo";
-          // let loggedin=[];
-          // loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
+          let loggedin=[];
+          loggedin.push(users[i]);
+          loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
           // loggedin.push(users[i]);
-          localStorage.loggedinuser = "user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length);
+          // localStorage.loggedinuser = "user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length);
+          localStorage.loggedinuser=loggedin;
           document.getElementsByClassName("loginmessage")[0].textContent =
             "Login as NGO.";
           messagebg.classList.remove("invisible");
@@ -84,10 +86,12 @@ btn.addEventListener("click", function () {
         } else {
           localStorage.isloggedin = true;
           localStorage.loggedinas = "individual";
-          // let loggedin=[];
+          let loggedin=[];
+          loggedin.push(users[i]);
+          loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
           // loggedin.push("user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length));
           // loggedin.push(users[i]);
-          localStorage.loggedinuser = "user"+localStorage.key(key[i]).slice(4,localStorage.key(key[i]).length);
+          localStorage.loggedinuser = loggedin;
           document.getElementsByClassName("loginmessage")[0].textContent =
             "Login as Donor";
           messagebg.classList.remove("invisible");
