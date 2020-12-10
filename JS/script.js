@@ -9,7 +9,10 @@ document.onreadystatechange = function () {
     setInterval(() => {
       document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
+      document.querySelector("body").classList.remove("bodyhide");
+
     }, 3000);
+
   } else {
     window.addEventListener(
       "contextmenu",

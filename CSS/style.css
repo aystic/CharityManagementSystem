@@ -5,7 +5,7 @@ body {
   color: lightyellow;
   margin: 0px;
   animation-name: start;
-  animation-duration: 3000ms;
+  animation-duration: 2000ms;
 }
 @keyframes start {
   from {
@@ -23,7 +23,6 @@ body {
   margin-top: 20%;
   margin-left: 47%;
   border-radius: 10px;
-  background-color: black;
 }
 .loader {
   background-color: rgb(30, 30, 30);
