@@ -5,7 +5,7 @@ body {
   color: lightyellow;
   margin: 0px;
   animation-name: start;
-  animation-duration: 2000ms;
+  animation-duration: 3000ms;
 }
 @keyframes start {
   from {
