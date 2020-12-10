@@ -4,8 +4,6 @@ body {
   font-family: "IBM Plex Mono", monospace;
   color: lightyellow;
   margin: 0px;
-  animation-name: start;
-  animation-duration: 200ms;
 }
 @keyframes start {
   from {
@@ -33,6 +31,8 @@ body {
   z-index: 10;
   top: 0;
   left: 0;
+  animation-name: start;
+  animation-duration: 200ms;
 }
 .fadeloader {
   animation-name: fading;
