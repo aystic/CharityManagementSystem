@@ -1,25 +1,25 @@
-// document.querySelector("video").play();
-// document.querySelector("video").playbackRate = 2;
+document.querySelector("video").play();
+document.querySelector("video").playbackRate = 2;
 
-// document.onreadystatechange = function () {
-//   if (document.readyState === "complete") {
-//     setTimeout(function () {
-//       document.querySelector(".loader").classList.add("fadeloader");
-//     }, 2500);
-//     setInterval(() => {
-//       document.querySelector("body").classList.remove("invisible");
-//       document.querySelector(".loader").classList.add("invisible");
-//     }, 3000);
-//   } else {
-//     window.addEventListener(
-//       "contextmenu",
-//       function (e) {
-//         e.preventDefault();
-//       },
-//       false
-//     );
-//   }
-// };
+document.onreadystatechange = function () {
+  if (document.readyState === "complete") {
+    setTimeout(function () {
+      document.querySelector(".loader").classList.add("fadeloader");
+    }, 2500);
+    setInterval(() => {
+      document.querySelector("body").classList.remove("invisible");
+      document.querySelector(".loader").classList.add("invisible");
+    }, 3000);
+  } else {
+    window.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+      },
+      false
+    );
+  }
+};
 let scrollinpx = window.scrollY;
 let btn = document.getElementById("gototop");
 btn.classList.add("invisible");
