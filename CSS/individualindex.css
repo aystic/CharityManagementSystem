@@ -3,6 +3,7 @@ body {
   background-image: url(/IMAGES/background.jpg);
   color: lightyellow;
   animation-name: start;
+  overflow :visible;
   /* animation-duration: 1000ms; */
 }
 @keyframes start{
@@ -53,7 +54,7 @@ label {
   transition: 400ms;
 }
 #submitbtn:active {
-  border: 2px solid black;
+  border: 3px solid black;
 }
 #textarea {
   height: 200px;
@@ -141,4 +142,55 @@ label {
 }
 .invisible {
   display: none;
+}
+#messagebg {
+  position: fixed;
+  height: 100%;
+  width: 110%;
+  /* margin-left: 5%; */
+  margin-top: -25px;
+  margin-left: -20px;
+  padding-top: 150px;
+  padding-left: 20px;
+
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.message {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 30px;
+  position: fixed;
+  text-align: center;
+  width: 300px;
+  height: fit-content;
+  box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: black;
+  color: lightyellow;
+  opacity: 80%;
+  transition: 400ms;
+}
+.invisible {
+  display: none;
+}
+#messagebtn {
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgba(255, 191, 0, 0.75);
+  border: 2px solid rgba(255, 191, 0, 0.75);
+  height: fit-content;
+  width: fit-content;
+  margin-top: 30px;
+  border-radius: 5px;
+  outline: none;
+  transition: 400ms;
+}
+#messagebtn:hover {
+  border: 2px solid lightyellow;
+}
+#successmsg {
+  margin-top: -30px;
 }

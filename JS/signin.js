@@ -22,9 +22,9 @@ document.onreadystatechange = function () {
     );
   }
 };
-// document.getElementById("form").submit(function (e) {
-//   e.preventDefault();
-// });
+document.getElementById("form").submit(function (e) {
+  e.preventDefault();
+});
 
 //message components
 let message = document.getElementsByClassName("message")[0];
@@ -50,7 +50,9 @@ for (let i = 0; i < localStorage.length; i++) {
     key.push(i);
   }
 }
-
+document.querySelector("form").onsubmit=function(e){
+  return false;
+}
 btn.addEventListener("click", function () {
   if (email.value == "admin_test@gmail.com" && pwd.value == "admin") {
     document.getElementsByClassName("loginmessage")[0].textContent =

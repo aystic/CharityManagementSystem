@@ -22,9 +22,9 @@ document.onreadystatechange = function () {
     );
   }
 };
-// document.getElementById("form").submit(function (e) {
-//   e.preventDefault();
-// });
+document.getElementById("form").submit(function (e) {
+  e.preventDefault();
+});
 
 if (!localStorage.getItem("usercount")) {
   localStorage.setItem("usercount", "0");

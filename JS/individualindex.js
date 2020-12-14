@@ -32,13 +32,16 @@ addfile.onclick = function () {
 removefile.onclick = function () {
     filelist.lastElementChild.remove();
 }
-let ngoname = document.getElementById('name');
-let ngoaddress = document.getElementById('address');
-let ngopincode = document.getElementById('pincode');
-let ngocity = document.getElementById('city');
-let ngostate = document.getElementById('state');
-let ngocontact = document.getElementById('contact');
-let ngodifficulties = document.getElementById('textarea');
+let donorfname = document.getElementById('fname');
+let donorlname = document.getElementById('lname');
+let donoraddress = document.getElementById('address');
+let donorpincode = document.getElementById('pincode');
+let donorcity = document.getElementById('city');
+let donorstate = document.getElementById('state');
+let donorcontact = document.getElementById('contact');
+let donoraadhar = document.getElementById('aadhar');
+let donorpan = document.getElementById('pan');
+let donordocument = document.getElementById('document');
 let btn = document.getElementById('submitbtn');
 let detailsSubmitted=[];
 
@@ -54,17 +57,20 @@ document.getElementById("form").submit(function (e) {
   });
 
 btn.addEventListener("click",function(){
-    if(ngoname.value != "" && ngoaddress.value != "" && ngocity.value != "" && ngostate.value!= "" && ngopincode.value != "" && ngocontact.value != "" ){
+    if(donorfname.value != "" && donorlname.value != "" && donoraddress.value != "" && donorcity.value != "" && donorstate.value!= "" && donorpincode.value != "" && donorcontact.value != "" && donoraadhar.value!="" && donorpan.value!= ""){
         let detailsuser=[];
         detailsuser.push(
-            ngoname.value,
-            ngoaddress.value,
-            ngocity.value,
-            ngostate.value,
-            ngopincode.value,
-            ngocontact.value,
-            // ngodocument.value,
-            ngodifficulties.value
+            donorfname.value,
+            donorlname.value,
+            donoraddress.value,
+            donorcity.value,
+            donorstate.value,
+            donorpincode.value,
+            donorcontact.value,
+            donoraadhar.value,
+            donorpan.value
+            // donordocument.value,
+
         );
         localStorage.setItem("Detailsuser"+localStorage.loggedinuser.split(",")[5].slice(4,5),detailsuser);
         let user=[];
@@ -75,7 +81,6 @@ btn.addEventListener("click",function(){
         localStorage.setItem("loggedinuser",user);
         user.pop();
         localStorage.setItem("user"+localStorage.loggedinuser.split(",")[5].slice(4,5),user);
-        window.location.replace("/HTML/index.html");
         document.getElementsByClassName("loginmessage")[0].textContent =
         "Details Submitted Successfully. Please wait for the verification.";
         messagebg.classList.remove("invisible");

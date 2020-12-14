@@ -31,6 +31,20 @@
         ></video>
       </div>
     </div>
+    <div id="messagebg">
+      <div class="message" style="margin-left: 462px; margin-top: -15px">
+        <img
+          id="msgimage"
+          src="/IMAGES/check.png"
+          alt="check image"
+          title="Icon designed by MOHIT PATHAK"
+          style="height: 75px; width: 75px; margin-bottom: 50px"
+        />
+        <p id="successmsg">Success!</p>
+        <p class="loginmessage" style="margin: 2px"></p>
+        <button id="messagebtn">OK!</button>
+      </div>
+    </div>
     <div style="margin-bottom: 10px">
       <button id="homebtn">
         <a href="index.html" style="text-decoration: none; color: black"
@@ -55,14 +69,14 @@
     <div class="requestform">
       <form id="form" action="#">
         <input
-          id="name"
+          id="fname"
           required
           type="text"
           placeholder="Enter your first name"
           style="width: 40%"
         />
         <input
-          id="name"
+          id="lname"
           required
           type="text"
           placeholder="Enter your last name"
@@ -108,7 +122,7 @@
           style="width: 20%; display: inline-block"
         />
         <input
-          id="contact"
+          id="aadhar"
           required
           minlength="12"
           maxlength="12"
@@ -117,7 +131,7 @@
           style="width: 20%; display: inline-block"
         />
         <input
-          id="contact"
+          id="pan"
           required
           minlength="10"
           maxlength="10"
@@ -157,7 +171,6 @@
             <li>
               <input
                 type="file"
-                required
                 class="Uploadbtn"
                 placeholder="Upload"
               />
@@ -168,9 +181,9 @@
             <p>Enter the difficulties and other details faced by the NGO, Please specify :</p>
             <textarea id="textarea"></textarea> -->
         <hr />
-        <button id="submitbtn">Submit</button>
+        <button id="submitbtn" type="submit">Submit</button>
       </form>
     </div>
   </body>
-  <script src="/JS/ngoindexscript.js"></script>
+  <script src="/JS/individualindex.js"></script>
 </html>
