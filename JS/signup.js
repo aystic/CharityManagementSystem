@@ -65,31 +65,29 @@ for (let i = 0; i < localStorage.length; i++) {
 submitbtn.addEventListener("click", function () {
   for (let i = 0; i < users.length; i++) {
     if (users[i].split(",")[0] == email.value) {
-      message.classList.remove("invisible");
-      messagebg.classList.remove("invisible");
-      document.onkeydown=function(e){
-        return false;
-      }
       alreadyauser = true;
-      message.classList.remove("invisible");
-      messagebg.classList.remove("invisible");
-      document.onkeydown=function(e){
-        return false;
-      }
       document
         .getElementById("msgimage")
         .setAttribute("src", "/IMAGES/caution.png");
       document.getElementById("successmsg").textContent = "Caution!";
       document.getElementsByClassName("loginmessage")[0].textContent =
         "Email ID Already Registered.";
+      message.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      document.onkeydown=function(e){
+        return false;
+      }
       document
         .getElementById("messagebtn")
         .addEventListener("click", function () {
           // console.log("Email ID Already registered! ");
-          message.classList.add("invisible");
-          messagebg.classList.add("invisible");
           alreadyauser = false;
           document.getElementById("form").reset();
+          message.classList.add("invisible");
+          messagebg.classList.add("invisible");
+          document.onkeydown=function(e){
+            return true;
+          }
         });
     }
   }
@@ -115,11 +113,6 @@ submitbtn.addEventListener("click", function () {
     loggedin.push("user"+usercount);
     localStorage.loggedinuser =loggedin;
     localStorage.setItem("usercount", usercount);
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
-      return false;
-    }
     document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/check.png");
@@ -131,11 +124,14 @@ submitbtn.addEventListener("click", function () {
       document.getElementsByClassName("loginmessage")[0].textContent =
         "SignUp as NGO Successfull.";
     }
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document
       .getElementById("messagebtn")
       .addEventListener("click", function () {
-        message.classList.add("invisible");
-        messagebg.classList.add("invisible");
         if (isindividual.checked) {
           localStorage.isloggedin = true;
           localStorage.loggedinas = "individual";
@@ -154,37 +150,40 @@ submitbtn.addEventListener("click", function () {
     terms.checked == false &&
     alreadyauser == false
   ) {
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
-      return false;
-    }
     document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/caution.png");
     document.getElementById("successmsg").textContent = "Caution!";
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please fill the details first.";
-    document
-      .getElementById("messagebtn")
-      .addEventListener("click", function () {
-        message.classList.add("invisible");
-        messagebg.classList.add("invisible");
-        // window.location.replace("/HTML/signup.html");
-        document.getElementById("form").reset();
-      });
-  } else if (alreadyauser == false) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     document.onkeydown=function(e){
       return false;
     }
     document
+      .getElementById("messagebtn")
+      .addEventListener("click", function () {
+        // window.location.replace("/HTML/signup.html");
+        document.getElementById("form").reset();
+        message.classList.add("invisible");
+        messagebg.classList.add("invisible");
+        document.onkeydown=function(e){
+          return true;
+        }
+      });
+  } else if (alreadyauser == false) {
+    document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/cross.png");
     document.getElementById("successmsg").textContent = "Failure!!";
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Invalid Credentials.";
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document
       .getElementById("messagebtn")
       .addEventListener("click", function () {
@@ -192,6 +191,9 @@ submitbtn.addEventListener("click", function () {
         messagebg.classList.add("invisible");
         // window.location.replace("/HTML/signup.html");
         document.getElementById("form").reset();
+        document.onkeydown=function(e){
+          return true;
+        }
       });
   }
 });

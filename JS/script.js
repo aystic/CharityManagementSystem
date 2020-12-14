@@ -10,11 +10,8 @@ document.onreadystatechange = function () {
       document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("bodyhide");
-
     }, 3000);
-
   } else {
-
     window.addEventListener(
       "contextmenu",
       function (e) {
@@ -76,46 +73,50 @@ function donateredirect() {
     localStorage.getItem("loggedinuser").split(",")[4] == "true"
   ) {
     window.location.replace("/HTML/donate.html");
-  }else if(
+  } else if (
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "true"
-  ){
+  ) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please wait for the document verification!";
     messagebtn.addEventListener("click", function () {
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
+      document.onkeydown = function (e) {
+        return true;
+      };
     });
-  } 
-  else if (
+  } else if (
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
   ) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
     messagebtn.addEventListener("click", function () {
       window.location.replace("/HTML/individualindex.html");
     });
   } else {
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
-      return false;
-    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
-    // window.location.replace("/HTML/signin.html");
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
+    messagebtn.addEventListener("click", function () {
+      signup();
+    });
   }
 }
 
@@ -125,65 +126,66 @@ function requestfordonationredirect() {
     localStorage.getItem("loggedinuser").split(",")[4] == "true"
   ) {
     window.location.replace("/HTML/requestfordonation.html");
-    // console.log("loggedin=true, detailssubmitted=true");
   } else if (
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "true"
-  ){
+  ) {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Verification Pending!";
     messagebtn.addEventListener("click", function () {
       messagebg.classList.add("invisible");
       message.classList.add("invisible");
+      document.onkeydown = function (e) {
+        return true;
+      };
     });
-  }else if(
+  } else if (
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
-  ){
+  ) {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification!";
     messagebtn.addEventListener("click", function () {
-      // console.log("loggedin=true, detailssubmitted=false");
       window.location.replace("/HTML/ngoindex.html");
     });
   } else {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
-    // console.log("loggedin=false");
-
-    // window.location.replace("/HTML/signin.html");
+    messagebtn.addEventListener("click", function () {
+      signup();
+    });
   }
 }
 function signout() {
   localStorage.isloggedin = false;
   localStorage.loggedinas = "";
   localStorage.loggedinuser = "";
-  messagebg.classList.remove("invisible");
-  message.classList.remove("invisible");
-  document.onkeydown=function(e){
-    return false;
-  }
   messagecross.classList.add("invisible");
   document.getElementById("msgimage").setAttribute("src", "/IMAGES/check.png");
   document.getElementById("msgimage").style.marginTop = "20px";
   document.getElementsByClassName("loginmessage")[0].textContent =
     "Signed Out successfully!";
+  messagebg.classList.remove("invisible");
+  message.classList.remove("invisible");
+  document.onkeydown = function (e) {
+    return false;
+  };
   messagebtn.addEventListener("click", function () {
     window.location.replace("/HTML/index.html");
   });
@@ -205,4 +207,7 @@ function account() {
 function messagecrossbtn() {
   message.classList.add("invisible");
   messagebg.classList.add("invisible");
+  document.onkeydown = function (e) {
+    return true;
+  };
 }
