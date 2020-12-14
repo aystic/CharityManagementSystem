@@ -1,4 +1,7 @@
-document.querySelector("video").play();
+if(localStorage.isloggedin!=true || localStorage.loggedinuser.split(",")[2] !="false" || localStorage.loggedinuser.split(",")[3] !="true" || localStorage.loggedinuser.split(",")[4] !="true"){
+  window.location.replace("/HTML/signin.html");
+}else{
+  document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
@@ -25,3 +28,6 @@ document.onreadystatechange = function () {
 document.getElementById("form").submit(function (e) {
   e.preventDefault();
 });
+
+}
+

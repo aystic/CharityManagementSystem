@@ -1,4 +1,7 @@
-document.querySelector("video").play();
+if(localStorage.isloggedin!=true || localStorage.loggedinuser.split(",")[2] !="true"){
+  window.location.replace("/HTML/signin.html");
+}else{
+  document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
 document.onreadystatechange = function () {
@@ -49,4 +52,6 @@ if (localStorage.loggedinuser.split(",")[3] == "false") {
   messagebtn.addEventListener("click", function () {
     window.location.replace("/HTML/index.html");
   });
+}
+
 }
