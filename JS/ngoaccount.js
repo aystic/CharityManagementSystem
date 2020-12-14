@@ -35,7 +35,7 @@ if (localStorage.loggedinuser.split(",")[3] == "false") {
     .getElementById("msgimage")
     .setAttribute("src", "/IMAGES/caution.png ");
   document.getElementById("successmsg").textContent = "Caution!";
-  document.getElementsByClassName("loginmessage")[0].textContent =
+  document.getElementById("loginmessage").textContent =
     "Please Submit the required documents for verification first.";
   messagebtn.addEventListener("click", function () {
     window.location.replace("/HTML/ngoindex.html");
