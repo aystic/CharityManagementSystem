@@ -40,10 +40,12 @@ if (localStorage.loggedinuser.split(",")[3] == "false") {
   messagebtn.addEventListener("click", function () {
     window.location.replace("/HTML/ngoindex.html");
   });
-} else if (localStorage.loggedinuser.split(",")[4] == "false") {
+} else if (
+  localStorage.loggedinuser.split(",")[4] == "false" &&
+  localStorage.loggedinuser.split(",")[3] == "true" ){
   message.classList.remove("invisible");
   messagebg.classList.remove("invisible");
-  document.getElementById("msgimg").setAttribute("src", "/IMAGES/cross.png");
+  document.getElementById("msgimage").setAttribute("src", "/IMAGES/cross.png");
   document.getElementById("successmsg").textContent = "Access Denied!";
   document.getElementById("loginmessage").textContent = "Verification Pending.";
   messagebtn.addEventListener("click", function () {

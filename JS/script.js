@@ -73,10 +73,24 @@ let messagecross = document.getElementById("messagecrossbtn");
 function donateredirect() {
   if (
     localStorage.isloggedin == "true" &&
-    localStorage.getItem("loggedinuser").split(",")[3] == "true"
+    localStorage.getItem("loggedinuser").split(",")[4] == "true"
   ) {
     window.location.replace("/HTML/donate.html");
-  } else if (
+  }else if(
+    localStorage.isloggedin == "true" &&
+    localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
+    localStorage.getItem("loggedinuser").split(",")[3] == "true"
+  ){
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.getElementsByClassName("loginmessage")[0].textContent =
+      "Please wait for the document verification!";
+    messagebtn.addEventListener("click", function () {
+      message.classList.add("invisible");
+      messagebg.classList.add("invisible");
+    });
+  } 
+  else if (
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
   ) {
@@ -99,18 +113,31 @@ function donateredirect() {
 function requestfordonationredirect() {
   if (
     localStorage.isloggedin == "true" &&
-    localStorage.getItem("loggedinuser").split(",")[3] == "true"
+    localStorage.getItem("loggedinuser").split(",")[4] == "true"
   ) {
     window.location.replace("/HTML/requestfordonation.html");
     // console.log("loggedin=true, detailssubmitted=true");
   } else if (
     localStorage.isloggedin == "true" &&
-    localStorage.getItem("loggedinuser").split(",")[3] == "false"
-  ) {
+    localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
+    localStorage.getItem("loggedinuser").split(",")[3] == "true"
+  ){
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
-      "Please submit your details for verification first!";
+      "Verification Pending!";
+    messagebtn.addEventListener("click", function () {
+      messagebg.classList.add("invisible");
+      message.classList.add("invisible");
+    });
+  }else if(
+    localStorage.isloggedin == "true" &&
+    localStorage.getItem("loggedinuser").split(",")[3] == "false"
+  ){
+    messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
+    document.getElementsByClassName("loginmessage")[0].textContent =
+      "Please submit your details for verification!";
     messagebtn.addEventListener("click", function () {
       // console.log("loggedin=true, detailssubmitted=false");
       window.location.replace("/HTML/ngoindex.html");

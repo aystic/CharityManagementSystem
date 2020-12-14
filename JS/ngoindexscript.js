@@ -17,7 +17,6 @@ document.onreadystatechange=function(){
       window.addEventListener('contextmenu', function (e) {
         e.preventDefault();
       }, false);
-F
     }
 }
 
@@ -68,7 +67,28 @@ let detailsSubmitted=[];
 //         }
 // });
 btn.addEventListener("click",function(){
-    if(ngoname != "" && ngoaddress != "" && ngocity != "" && ngostate!= "" && ngopincode != "" && ngocontact != "" ){
+    if(ngoname.value != "" && ngoaddress.value != "" && ngocity.value != "" && ngostate.value!= "" && ngopincode.value != "" && ngocontact.value != "" ){
+        let detailsuser=[];
+        detailsuser.push(
+            ngoname.value,
+            ngoaddress.value,
+            ngocity.value,
+            ngostate.value,
+            ngopincode.value,
+            ngocontact.value,
+            // ngodocument.value,
+            ngodifficulties.value
+        );
+        localStorage.setItem("Detailsuser"+localStorage.loggedinuser.split(",")[5].slice(4,5),detailsuser);
+        let user=[];
+        for(let i=0;i<6;i++){
+            user.push(localStorage.loggedinuser.split(",")[i]);
+        }
+        user[3]="true";
+        localStorage.setItem("loggedinuser",user);
+        user.pop();
+        localStorage.setItem("user"+localStorage.loggedinuser.split(",")[5].slice(4,5),user);
+        window.location.replace("/HTML/index.html");
         alert("Details submitted!");
     }else{
         alert("Invalid Details!");
