@@ -67,9 +67,15 @@ submitbtn.addEventListener("click", function () {
     if (users[i].split(",")[0] == email.value) {
       message.classList.remove("invisible");
       messagebg.classList.remove("invisible");
+      document.onkeydown=function(e){
+        return false;
+      }
       alreadyauser = true;
       message.classList.remove("invisible");
       messagebg.classList.remove("invisible");
+      document.onkeydown=function(e){
+        return false;
+      }
       document
         .getElementById("msgimage")
         .setAttribute("src", "/IMAGES/caution.png");
@@ -111,6 +117,9 @@ submitbtn.addEventListener("click", function () {
     localStorage.setItem("usercount", usercount);
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/check.png");
@@ -147,6 +156,9 @@ submitbtn.addEventListener("click", function () {
   ) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/caution.png");
@@ -164,6 +176,9 @@ submitbtn.addEventListener("click", function () {
   } else if (alreadyauser == false) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document
       .getElementById("msgimage")
       .setAttribute("src", "/IMAGES/cross.png");

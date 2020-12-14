@@ -31,6 +31,9 @@ messagebg.classList.add("invisible");
 if (localStorage.loggedinuser.split(",")[3] == "false") {
   message.classList.remove("invisible");
   messagebg.classList.remove("invisible");
+  document.onkeydown=function(e){
+    return false;
+  }
   document
     .getElementById("msgimage")
     .setAttribute("src", "/IMAGES/caution.png ");
@@ -45,6 +48,9 @@ if (localStorage.loggedinuser.split(",")[3] == "false") {
   localStorage.loggedinuser.split(",")[3] == "true" ){
   message.classList.remove("invisible");
   messagebg.classList.remove("invisible");
+  document.onkeydown=function(e){
+    return false;
+  }
   document.getElementById("msgimage").setAttribute("src", "/IMAGES/cross.png");
   document.getElementById("successmsg").textContent = "Access Denied!";
   document.getElementById("loginmessage").textContent = "Verification Pending.";

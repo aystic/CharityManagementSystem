@@ -55,6 +55,9 @@ btn.addEventListener("click", function () {
       "Login as ADMIN.";
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     messagebtn.addEventListener("click", function () {
       //redirect("admin");
       window.location.replace("/HTML/adminindex.html");
@@ -79,6 +82,9 @@ btn.addEventListener("click", function () {
             "Login as NGO.";
           messagebg.classList.remove("invisible");
           message.classList.remove("invisible");
+          document.onkeydown=function(e){
+            return false;
+          }
           messagebtn.addEventListener("click", function () {
             // redirect("ngo");
             window.location.replace("/HTML/index.html");
@@ -96,6 +102,9 @@ btn.addEventListener("click", function () {
             "Login as Donor";
           messagebg.classList.remove("invisible");
           message.classList.remove("invisible");
+          document.onkeydown=function(e){
+            return false;
+          }
           messagebtn.addEventListener("click", function () {
             // redirect("individual");
             window.location.replace("/HTML/index.html");
@@ -115,6 +124,9 @@ btn.addEventListener("click", function () {
         "Invalid Credentials!";
       messagebg.classList.remove("invisible");
       message.classList.remove("invisible");
+      document.onkeydown=function(e){
+        return false;
+      }
       messagebtn.addEventListener("click", function () {
         //redirect("error");
         window.location.replace("/HTML/signin.html");

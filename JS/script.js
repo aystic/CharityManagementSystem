@@ -83,6 +83,9 @@ function donateredirect() {
   ){
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please wait for the document verification!";
     messagebtn.addEventListener("click", function () {
@@ -96,6 +99,9 @@ function donateredirect() {
   ) {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
     messagebtn.addEventListener("click", function () {
@@ -104,6 +110,9 @@ function donateredirect() {
   } else {
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
     // window.location.replace("/HTML/signin.html");
@@ -124,6 +133,9 @@ function requestfordonationredirect() {
   ){
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Verification Pending!";
     messagebtn.addEventListener("click", function () {
@@ -136,6 +148,9 @@ function requestfordonationredirect() {
   ){
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification!";
     messagebtn.addEventListener("click", function () {
@@ -145,6 +160,9 @@ function requestfordonationredirect() {
   } else {
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
+    document.onkeydown=function(e){
+      return false;
+    }
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
     // console.log("loggedin=false");
@@ -152,13 +170,15 @@ function requestfordonationredirect() {
     // window.location.replace("/HTML/signin.html");
   }
 }
-
 function signout() {
   localStorage.isloggedin = false;
   localStorage.loggedinas = "";
   localStorage.loggedinuser = "";
   messagebg.classList.remove("invisible");
   message.classList.remove("invisible");
+  document.onkeydown=function(e){
+    return false;
+  }
   messagecross.classList.add("invisible");
   document.getElementById("msgimage").setAttribute("src", "/IMAGES/check.png");
   document.getElementById("msgimage").style.marginTop = "20px";
