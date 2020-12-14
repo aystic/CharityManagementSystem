@@ -78,13 +78,13 @@ function donateredirect() {
     localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "true"
   ) {
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please wait for the document verification!";
+      message.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
     messagebtn.addEventListener("click", function () {
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
@@ -96,13 +96,13 @@ function donateredirect() {
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
   ) {
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
+      message.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
     messagebtn.addEventListener("click", function () {
       window.location.replace("/HTML/individualindex.html");
     });
@@ -131,13 +131,13 @@ function requestfordonationredirect() {
     localStorage.getItem("loggedinuser").split(",")[4] == "false" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "true"
   ) {
-    messagebg.classList.remove("invisible");
-    message.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Verification Pending!";
+      messagebg.classList.remove("invisible");
+      message.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
     messagebtn.addEventListener("click", function () {
       messagebg.classList.add("invisible");
       message.classList.add("invisible");
@@ -149,24 +149,24 @@ function requestfordonationredirect() {
     localStorage.isloggedin == "true" &&
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
   ) {
-    messagebg.classList.remove("invisible");
-    message.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification!";
+      messagebg.classList.remove("invisible");
+      message.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
     messagebtn.addEventListener("click", function () {
       window.location.replace("/HTML/ngoindex.html");
     });
   } else {
-    messagebg.classList.remove("invisible");
-    message.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
+      messagebg.classList.remove("invisible");
+      message.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
     messagebtn.addEventListener("click", function () {
       signup();
     });

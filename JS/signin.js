@@ -99,7 +99,7 @@ btn.addEventListener("click", function () {
           // loggedin.push(users[i]);
           localStorage.loggedinuser = loggedin;
           document.getElementsByClassName("loginmessage")[0].textContent =
-            "Login as Donor";
+            "Login as Donor.";
           messagebg.classList.remove("invisible");
           message.classList.remove("invisible");
           document.onkeydown=function(e){
