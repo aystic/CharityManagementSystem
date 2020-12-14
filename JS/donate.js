@@ -1,4 +1,4 @@
-if(localStorage.isloggedin!=true || localStorage.loggedinuser.split(",")[2] !="true" || localStorage.loggedinuser.split(",")[3] !="true" || localStorage.loggedinuser.split(",")[4] !="true"){
+if(localStorage.isloggedin!="true" || localStorage.loggedinuser.split(",")[2] !="true" || localStorage.loggedinuser.split(",")[3] !="true" || localStorage.loggedinuser.split(",")[4] !="true"){
   window.location.replace("/HTML/signin.html");
 }else{
   document.querySelector("video").play();

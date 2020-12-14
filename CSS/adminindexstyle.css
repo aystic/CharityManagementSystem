@@ -16,11 +16,12 @@ body {
 }
 /* font-family: 'Fredericka the Great', cursive; */
 #head {
-  display: flex;
+  display: inline-block;
   font-family: "Fredericka the Great", cursive;
   color: whitesmoke;
   font-size: 30px;
-  justify-content: center;
+  margin-left: 25%;
+  /* justify-content: center; */
 }
 #list {
   color: whitesmoke;
@@ -114,7 +115,7 @@ body {
   padding-top: 150px;
   padding-left: 20px;
 
-  z-index: 10;
+  z-index: 5;
   background-color: rgba(0, 0, 0, 0.4);
   /* background-color: cornflowerblue; */
 }
@@ -152,4 +153,21 @@ body {
 }
 #successmsg {
   margin-top: -30px;
+}
+#logout{
+  display: inline-block;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 20px;
+  border: 2px solid #ffbf00;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(255, 191, 0,0.5);
+  transition: 400ms;
+}
+#logout:hover{
+  border: 2px solid white;
+  background-color: rgba(255, 191, 0,1);
+  transition: 400ms;
 }

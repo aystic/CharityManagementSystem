@@ -54,7 +54,8 @@ document.querySelector("form").onsubmit=function(e){
   return false;
 }
 btn.addEventListener("click", function () {
-  if (email.value == "admin_test@gmail.com" && pwd.value == "admin") {
+  if (email.value == "admin_cms@gmail.com" && pwd.value == "admin") {
+    localStorage.loggedinas="admin";
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Login as ADMIN.";
     messagebg.classList.remove("invisible");

@@ -1,4 +1,4 @@
-if(localStorage.isloggedin!=true || localStorage.loggedinuser.split(",")[2] !="false"){
+if(localStorage.isloggedin!="true" || localStorage.loggedinuser.split(",")[2] !="false"){
   window.location.replace("/HTML/signin.html");
 }else{
   document.querySelector("video").play();
