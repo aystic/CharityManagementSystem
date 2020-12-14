@@ -1,3 +1,4 @@
+
 document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
@@ -6,11 +7,11 @@ document.onreadystatechange = function () {
     setTimeout(function () {
       // document.querySelector("body").classList.add("invisible");
       document.querySelector(".loader").classList.add("fadeloader");
-    }, 1000);
+    }, 500);
     setInterval(() => {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("invisible");
-    }, 1500);
+    }, 1000);
   } else {
     window.addEventListener(
       "contextmenu",
@@ -21,6 +22,9 @@ document.onreadystatechange = function () {
     );
   }
 };
+// document.getElementById("form").submit(function (e) {
+//   e.preventDefault();
+// });
 
 //message components
 let message = document.getElementsByClassName("message")[0];
@@ -34,9 +38,7 @@ let pwd = document.getElementsByClassName("pwdbox")[0];
 let btn = document.getElementsByClassName("signupbtn")[0];
 let count = 0;
 // btn.click();
-document.getElementById("form").submit(function (e) {
-  e.preventDefault();
-});
+
 
 //getting all the users in an array
 let users = [];
@@ -62,7 +64,8 @@ btn.addEventListener("click", function () {
       //redirect("admin");
       window.location.replace("/HTML/adminindex.html");
     });
-  } else {
+  } else if(email.value!="" && pwd.value!="")
+  {
     for (let i = 0; i < users.length; i++) {
       if (
         email.value == users[i].split(",")[0] &&
@@ -129,17 +132,19 @@ btn.addEventListener("click", function () {
       }
       messagebtn.addEventListener("click", function () {
         //redirect("error");
-        document.getElementById("form").reset();
-        messagebg.classList.add("invisible");
-        message.classList.add("invisible");
-        document.onkeydown=function(e){
-          return true;
-        }
+        // document.getElementById("form").reset();
+        // messagebg.classList.add("invisible");
+        // message.classList.add("invisible");
+        // document.onkeydown=function(e){
+        //   return true;
+        // }
         // window.location.replace("/HTML/signin.html");
+        window.location.reload();
       });
     }
   }
 });
+
 
 
 function redirecttosignuppage() {

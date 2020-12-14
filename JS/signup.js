@@ -1,3 +1,4 @@
+
 document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
@@ -6,11 +7,11 @@ document.onreadystatechange = function () {
     setTimeout(function () {
       // document.querySelector("body").classList.add("invisible");
       document.querySelector(".loader").classList.add("fadeloader");
-    }, 1000);
+    }, 500);
     setInterval(() => {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("invisible");
-    }, 1500);
+    }, 1000);
   } else {
     window.addEventListener(
       "contextmenu",
@@ -21,6 +22,9 @@ document.onreadystatechange = function () {
     );
   }
 };
+// document.getElementById("form").submit(function (e) {
+//   e.preventDefault();
+// });
 
 if (!localStorage.getItem("usercount")) {
   localStorage.setItem("usercount", "0");
@@ -34,9 +38,6 @@ message.classList.add("invisible");
 messagebg.classList.add("invisible");
 
 //formelemtns
-document.getElementById("form").submit(function (e) {
-  e.preventDefault();
-});
 
 let submitbtn = document.getElementsByClassName("signupbtn")[0];
 // submitbtn.click();
@@ -82,12 +83,7 @@ submitbtn.addEventListener("click", function () {
         .addEventListener("click", function () {
           // console.log("Email ID Already registered! ");
           alreadyauser = false;
-          document.getElementById("form").reset();
-          message.classList.add("invisible");
-          messagebg.classList.add("invisible");
-          document.onkeydown=function(e){
-            return true;
-          }
+          window.location.reload();
         });
     }
   }
@@ -142,60 +138,58 @@ submitbtn.addEventListener("click", function () {
           window.location.replace("/HTML/ngoindex.html");
         }
       });
-  } else if (
-    email.value == "" &&
-    pwd.value == "" &&
-    isindividual.checked == false &&
-    isngo.checked == false &&
-    terms.checked == false &&
-    alreadyauser == false
-  ) {
-    document
-      .getElementById("msgimage")
-      .setAttribute("src", "/IMAGES/caution.png");
-    document.getElementById("successmsg").textContent = "Caution!";
-    document.getElementsByClassName("loginmessage")[0].textContent =
-      "Please fill the details first.";
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
-      return false;
     }
-    document
-      .getElementById("messagebtn")
-      .addEventListener("click", function () {
-        // window.location.replace("/HTML/signup.html");
-        document.getElementById("form").reset();
-        message.classList.add("invisible");
-        messagebg.classList.add("invisible");
-        document.onkeydown=function(e){
-          return true;
-        }
-      });
-  } else if (alreadyauser == false) {
-    document
-      .getElementById("msgimage")
-      .setAttribute("src", "/IMAGES/cross.png");
-    document.getElementById("successmsg").textContent = "Failure!!";
-    document.getElementsByClassName("loginmessage")[0].textContent =
-      "Invalid Credentials.";
-    message.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    document.onkeydown=function(e){
-      return false;
-    }
-    document
-      .getElementById("messagebtn")
-      .addEventListener("click", function () {
-        message.classList.add("invisible");
-        messagebg.classList.add("invisible");
-        // window.location.replace("/HTML/signup.html");
-        document.getElementById("form").reset();
-        document.onkeydown=function(e){
-          return true;
-        }
-      });
-  }
+  // } else if (
+  //   email.value == "" &&
+  //   pwd.value == "" &&
+  //   isindividual.checked == false &&
+  //   isngo.checked == false &&
+  //   terms.checked == false &&
+  //   alreadyauser == false
+  // ) {
+  //   document
+  //     .getElementById("msgimage")
+  //     .setAttribute("src", "/IMAGES/caution.png");
+  //   document.getElementById("successmsg").textContent = "Caution!";
+  //   document.getElementsByClassName("loginmessage")[0].textContent =
+  //     "Please fill the details first.";
+  //   message.classList.remove("invisible");
+  //   messagebg.classList.remove("invisible");
+  //   document.onkeydown=function(e){
+  //     return false;
+  //   }
+  //   document
+  //     .getElementById("messagebtn")
+  //     .addEventListener("click", function () {
+  //       // window.location.replace("/HTML/signup.html");
+  //       document.getElementById("form").reset();
+  //       window.location.reload();
+  //     });
+  // } 
+  // else if (alreadyauser == false) {
+  //   document
+  //     .getElementById("msgimage")
+  //     .setAttribute("src", "/IMAGES/cross.png");
+  //   document.getElementById("successmsg").textContent = "Failure!!";
+  //   document.getElementsByClassName("loginmessage")[0].textContent =
+  //     "Invalid Credentials.";
+  //   message.classList.remove("invisible");
+  //   messagebg.classList.remove("invisible");
+  //   document.onkeydown=function(e){
+  //     return false;
+  //   }
+  //   document
+  //     .getElementById("messagebtn")
+  //     .addEventListener("click", function () {
+  //       message.classList.add("invisible");
+  //       messagebg.classList.add("invisible");
+  //       // window.location.replace("/HTML/signup.html");
+  //       document.getElementById("form").reset();
+  //       document.onkeydown=function(e){
+  //         return true;
+  //       }
+  //     });
+  // }
 });
 //});
 

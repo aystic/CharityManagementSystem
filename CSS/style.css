@@ -63,13 +63,9 @@ body {
 }
 .topbtn {
   display: inline-flex;
-  /* margin: 10px; */
-  /* margin-left: 50px; */
-  /* width: 150px; */
-  /* flex-grow:1; */
-  /* align-self: center; */
-  justify-content: center;
-  margin-inline-end: 100px;
+  width: fit-content;
+  margin-left: 50px;
+  margin-right: 50px;
   background-color: #252526ff;
   font-family: "Fredericka the Great", cursive;
   border-radius: 10px;
@@ -79,11 +75,12 @@ body {
   border: solid 2px #ffbf00;
 }
 #topbtnparent {
+  display: flex;
+  justify-content: center;
   margin: 20px;
-  display: block;
-  padding-left: 50px;
-  text-align: center;
-  /* justify-content: space-around; */
+  margin-left: 50px;
+  margin-right: 50px;
+  /* align-items: center ; */
   background-color: #252526ff;
 }
 .toplink {

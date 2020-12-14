@@ -6,11 +6,11 @@ document.onreadystatechange = function () {
     setTimeout(function () {
       // document.querySelector("body").classList.add("invisible");
       document.querySelector(".loader").classList.add("fadeloader");
-    }, 1000);
+    }, 500);
     setInterval(() => {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("invisible");
-    }, 1500);
+    }, 1000);
   } else {
     window.addEventListener(
       "contextmenu",
