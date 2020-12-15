@@ -13,7 +13,7 @@ if (localStorage.loggedinas != "admin") {
       setInterval(() => {
         document.querySelector(".loader").classList.add("invisible");
         // document.querySelector("body").classList.remove("invisible");
-      }, 1000);
+      }, 900);
       window.addEventListener(
         "contextmenu",
         function (e) {

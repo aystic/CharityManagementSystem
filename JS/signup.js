@@ -11,7 +11,7 @@ document.onreadystatechange = function () {
     setInterval(() => {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("invisible");
-    }, 1000);
+    }, 900);
   } else {
     window.addEventListener(
       "contextmenu",
@@ -22,9 +22,12 @@ document.onreadystatechange = function () {
     );
   }
 };
+
+/*
 document.getElementById("form").submit(function (e) {
   e.preventDefault();
 });
+*/
 
 if (!localStorage.getItem("usercount")) {
   localStorage.setItem("usercount", "0");

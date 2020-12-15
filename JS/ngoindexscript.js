@@ -14,7 +14,7 @@ document.onreadystatechange=function(){
         document.querySelector(".loader").classList.add("invisible");
         // document.querySelector("body").classList.remove("invisible");
           
-        }, 1000);
+        }, 900);
       }
     else{
       window.addEventListener('contextmenu', function (e) {

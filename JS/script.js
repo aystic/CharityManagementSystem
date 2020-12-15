@@ -5,12 +5,12 @@ document.onreadystatechange = function () {
   if (document.readyState === "complete") {
     setTimeout(function () {
       document.querySelector(".loader").classList.add("fadeloader");
-    }, 500);
+    }, 1500);
     setInterval(() => {
       document.querySelector("body").classList.remove("invisible");
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("bodyhide");
-    }, 1000);
+    }, 1900);
     document.onkeydown = function (e) {
       return true;
     };

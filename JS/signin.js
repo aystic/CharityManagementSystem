@@ -1,4 +1,3 @@
-
 document.querySelector("video").play();
 document.querySelector("video").playbackRate = 2;
 
@@ -11,7 +10,14 @@ document.onreadystatechange = function () {
     setInterval(() => {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("invisible");
-    }, 1000);
+    }, 900);
+    window.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+      },
+      true
+    );
   } else {
     window.addEventListener(
       "contextmenu",
@@ -22,9 +28,16 @@ document.onreadystatechange = function () {
     );
   }
 };
+
+/*
 // document.getElementById("form").submit(function (e) {
 //   e.preventDefault();
 // });
+document.querySelector("form").onsubmit=function(e){
+  return false;
+}
+*/
+
 
 //message components
 let message = document.getElementsByClassName("message")[0];
@@ -50,9 +63,7 @@ for (let i = 0; i < localStorage.length; i++) {
     key.push(i);
   }
 }
-document.querySelector("form").onsubmit=function(e){
-  return false;
-}
+
 btn.addEventListener("click", function () {
   if (email.value == "admin_cms@gmail.com" && pwd.value == "admin") {
     localStorage.loggedinas="admin";
