@@ -22,9 +22,9 @@ document.onreadystatechange = function () {
     );
   }
 };
-document.getElementById("form").submit(function (e) {
-  e.preventDefault();
-});
+// document.getElementById("form").submit(function (e) {
+//   e.preventDefault();
+// });
 
 //message components
 let message = document.getElementsByClassName("message")[0];

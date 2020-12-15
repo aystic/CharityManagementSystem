@@ -11,13 +11,13 @@ document.onreadystatechange = function () {
       document.querySelector(".loader").classList.add("invisible");
       // document.querySelector("body").classList.remove("bodyhide");
     }, 1000);
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return true;
-    }
+    };
   } else {
-    document.onkeydown=function(e){
+    document.onkeydown = function (e) {
       return false;
-    }
+    };
     window.addEventListener(
       "contextmenu",
       function (e) {
@@ -86,11 +86,11 @@ function donateredirect() {
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please wait for the document verification!";
-      message.classList.remove("invisible");
-      messagebg.classList.remove("invisible");
-      document.onkeydown = function (e) {
-        return false;
-      };
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
     messagebtn.addEventListener("click", function () {
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
@@ -104,19 +104,20 @@ function donateredirect() {
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification first!";
-      message.classList.remove("invisible");
-      messagebg.classList.remove("invisible");
-      document.onkeydown = function (e) {
-        return false;
-      };
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
     messagebtn.addEventListener("click", function () {
       window.location.replace("/HTML/individualindex.html");
     });
   } else {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
-    message.classList.remove("invisible");
+
     messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
     document.onkeydown = function (e) {
       return false;
     };
@@ -139,11 +140,11 @@ function requestfordonationredirect() {
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Verification Pending!";
-      messagebg.classList.remove("invisible");
-      message.classList.remove("invisible");
-      document.onkeydown = function (e) {
-        return false;
-      };
+    messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
     messagebtn.addEventListener("click", function () {
       messagebg.classList.add("invisible");
       message.classList.add("invisible");
@@ -157,22 +158,22 @@ function requestfordonationredirect() {
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please submit your details for verification!";
-      messagebg.classList.remove("invisible");
-      message.classList.remove("invisible");
-      document.onkeydown = function (e) {
-        return false;
-      };
+    messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
     messagebtn.addEventListener("click", function () {
       window.location.replace("/HTML/ngoindex.html");
     });
   } else {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Please SignIn to access this feature!";
-      messagebg.classList.remove("invisible");
-      message.classList.remove("invisible");
-      document.onkeydown = function (e) {
-        return false;
-      };
+    messagebg.classList.remove("invisible");
+    message.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
     messagebtn.addEventListener("click", function () {
       signup();
     });

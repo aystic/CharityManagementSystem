@@ -51,6 +51,7 @@ body {
     opacity: 0;
   }
 }
+
 #projectname {
   display: block;
   padding-top: 10px;
@@ -61,49 +62,68 @@ body {
   background-color: #252526ff;
   margin: 0px;
 }
-.topbtn {
-  display: inline-flex;
-  width: fit-content;
+#topbtnparent {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 50px;
   margin-right: 50px;
   background-color: #252526ff;
-  font-family: "Fredericka the Great", cursive;
-  border-radius: 10px;
+}
+.topbtn {
+  display: inline-block;
   padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  background-color: #252526ff;
+  font-family: "Fredericka the Great", cursive;
   transform: scale(1, 1);
   transition-duration: 400ms;
   border: solid 2px #ffbf00;
 }
-#topbtnparent {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  /* align-items: center ; */
-  background-color: #252526ff;
-}
-.toplink {
-  color: lightyellow;
-  background-color: #252526ff;
-  transform: scale(1, 1);
-  transition-duration: 400ms;
-}
 .topbtn:hover {
+  color: black;
   background-color: #ffbf00;
   transform: scale(1.25, 1.25);
   transition: 400ms;
 }
-/* .topbtn:hover .toplink */
-.toplink:hover .topbtn {
-  background-color: #ffbf00;
-  color: black;
-  transition: 400ms;
-}
+
 .topbtn:active {
   transform: scale(0.95, 0.95);
   transition: 400ms;
 }
+
+.toplink{
+  color: lightyellow;
+  background-color: #252526ff;
+  transition: 400ms;
+  padding: 10px;
+}
+.topbtn:hover .toplink{
+  background-color: #ffbf00;
+  color: black;
+  transition: 400ms; 
+}
+
+/* .toplink {
+  color: lightyellow;
+  background-color: #252526ff;
+  transform: scale(1, 1);
+  transition-duration: 400ms; 
+}*/
+/* .toplink:hover .topbtn{
+
+}
+
+.topbtn:hover .toplink{
+  background-color: #ffbf00;
+  color: black;
+  transition: 400ms;
+} */
+
 #image {
   display: block;
   margin: auto;
@@ -271,6 +291,57 @@ hr {
 .invisible {
   display: none;
 }
+
+/* .msgfadein{
+  animation-name: fadein;
+  animation-duration: 500ms;
+}
+@keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 0.8
+  }
+}
+.msgbgfadein{
+  animation-name: bgfadein;
+  animation-duration: 200ms;
+}
+@keyframes bgfadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.msgfadeout{
+  animation-name: msgfadeout;
+  animation-duration: 200ms;
+}
+@keyframes msgfadeout{
+  from{
+    opacity: 0.8;
+  }
+  to{
+    opacity: 0;
+  }
+}
+.msgbgfadeout{
+  animation-name: msgbgfadeout;
+  animation-duration: 500ms;
+}
+@keyframes msgbgfadeout{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+} */
+
+
 #messagebg {
   position: fixed;
   height: 100%;
