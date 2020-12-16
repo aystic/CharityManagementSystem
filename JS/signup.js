@@ -51,6 +51,8 @@ let isindividual = document.getElementById("Individual");
 let isngo = document.getElementById("NGO");
 let documentverified = false;
 let detailssubmitted = false;
+let accepted=false;
+let rejected=false;
 let terms = document.getElementById("termsbox");
 let alreadyauser = false;
 let usercount = JSON.parse(localStorage.getItem("usercount"));
@@ -104,7 +106,9 @@ submitbtn.addEventListener("click", function () {
       pwd.value,
       isindividual.checked,
       detailssubmitted,
-      documentverified
+      documentverified,
+      accepted,
+      rejected
     );
     let loggedin=[];
     localStorage.setItem("user" + usercount, newuser);

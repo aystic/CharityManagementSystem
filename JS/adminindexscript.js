@@ -32,6 +32,16 @@ if (localStorage.loggedinas != "admin") {
     }
   };
 
+  
+  let totalusers=document.getElementById("total");
+  let ngos=document.getElementById("totalngo");
+  let donors=document.getElementById("totaldonor");
+  totalusers.textContent="Total Users = "+JSON.parse(localStorage.Totalusers);
+  ngos.textContent="NGOs = "+JSON.parse(localStorage.Totalngos);
+  donors.textContent="Donors = "+JSON.parse(localStorage.Totaldonors);
+
+
+
   let message = document.getElementsByClassName("message")[0];
   let messagebg = document.getElementById("messagebg");
   let fetch = document.getElementById("messagebtn");
@@ -47,6 +57,7 @@ if (localStorage.loggedinas != "admin") {
   let key = [];
   let type=[];
   let userno=[];
+  let listdetails=[];
   for (let i = 0; i < localStorage.length; i++) {
     if (localStorage.key(i).slice(0, 4) == "user") {
       if (
@@ -61,11 +72,13 @@ if (localStorage.loggedinas != "admin") {
           type.push("ngo");
         }
         userno.push(localStorage.key(i).slice(4,localStorage.key(i).length));
+        listdetails.push(i);
       }
     }
   }
-
+  localStorage.setItem("listdetails",userno);
   let details=[];
+  let order=[];
 //getting the details
 for(let i=0;i<localStorage.length;i++){
   if(localStorage.key(i).slice(0,11)=="Detailsuser"){
@@ -83,7 +96,10 @@ for(let i=0;i<localStorage.length;i++){
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[7]);
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[8]);
           temp.push("donor");
-          details.push(temp);
+          temp.push(i);
+          details[j]=temp;
+          order.push(j);
+
         }else{
           let temp=[];
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[0]);
@@ -93,7 +109,11 @@ for(let i=0;i<localStorage.length;i++){
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[4]);
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[5]);
           temp.push(localStorage.getItem(localStorage.key(i)).split(",")[6]);
-          details.push(temp);
+          temp.push("");
+          temp.push("");
+          temp.push("ngo");
+          temp.push(i);
+          details[j]=temp;
         }  
       
     }
@@ -103,10 +123,15 @@ for(let i=0;i<localStorage.length;i++){
 }
 
 
+message.classList.add("invisible");
+messagebg.classList.add("invisible");
+
+
   document.getElementsByClassName("loginmessage")[0].textContent =
     pendingRequests + " Requests Pending for Verification!";
-  message.classList.remove("invisible");
-  messagebg.classList.remove("invisible");
+  // message.classList.remove("invisible");
+  // messagebg.classList.remove("invisible");
+
 
   fetch.onclick = function () {
     message.classList.add("invisible");
@@ -132,7 +157,7 @@ for(let i=0;i<localStorage.length;i++){
         details[i][7] +
         "</li><li>PAN CARD NO. : " +
         details[i][8] +
-        '</li><li><button id="documentsdownloadbtn">Download the Documents!</button><button id="acceptbtn">Accept!</button><button id="rejectbtn">Reject</button></li></ul></ol>';
+        '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept'+i+'" onclick="accept('+i+')">Accept!</button><button class="rejectbtn" id="reject'+i+'" onclick="reject('+i+')">Reject</button></li></ul></ol>';
       list.append(li);
       } else {
         //ngo
@@ -151,7 +176,7 @@ for(let i=0;i<localStorage.length;i++){
           details[i][5] +
           "</li><li>DIFFICULTIES FACED BY NGO : " +
           details[i][6] +
-          '</li><li><button id="documentsdownloadbtn">Download the Documents!</button><button id="acceptbtn">Accept!</button><button id="rejectbtn">Reject</button></li></ul></ol>';
+          '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept'+i+'" onclick="accept('+i+')">Accept!</button><button class="rejectbtn" id="reject'+i+'" onclick="reject('+i+')">Reject</button></li></ul></ol>';
         list.append(li);
       }
     }
@@ -162,4 +187,76 @@ for(let i=0;i<localStorage.length;i++){
     localStorage.isloggedin="false";
     window.location.replace("/HTML/index.html");
   }
+
+
+function accept(j){
+
+  document.getElementsByClassName("loginmessage")[0].textContent ="Are You Sure You Want To Proceed With The Approval?";
+  document.getElementById("messagebtn").textContent="OK!";
+  messagebg.classList.remove("invisible");
+  message.classList.remove("invisible");
+  document.onkeydown = function (e) {
+    return false;
+  };
+  document.getElementById("messagebtn").addEventListener("click",function(){
+    let verifieduser=localStorage.listdetails.split(",")[j];
+    let valueofverifieduser=localStorage.getItem("user"+verifieduser);
+    valueofverifieduser=valueofverifieduser.split(",");
+    valueofverifieduser[4]="true";
+    valueofverifieduser[5]="true";
+    if(valueofverifieduser[3]=="true"){
+      totaldonors++;
+      donors++;
+    }else{
+      totaldonors++;
+      ngos++;
+    }
+
+    localStorage.Totalusers=totalusers;
+    localStorage.Totalngos=ngos;
+    localStorage.Totaldonors=donors;
+    totalusers.textContent="Total Users = "+JSON.parse(localStorage.Totalusers);
+    ngos.textContent="NGOs = "+JSON.parse(localStorage.Totalngos);
+    donors.textContent="Donors = "+JSON.parse(localStorage.Totaldonors);
+
+    localStorage.setItem("user"+verifieduser,valueofverifieduser);
+    document.getElementById("accept"+j).classList.add("clicked");
+    document.getElementById("reject"+j).classList.add("clicked");
+    document.onkeydown = function (e) {
+      return true;
+    };
+    messagebg.classList.add("invisible");
+    message.classList.add("invisible");
+  });
+}
+
+
+function reject(j){
+
+
+
+  document.getElementsByClassName("loginmessage")[0].textContent ="Are You Sure You Want To Proceed With The Rejection?";
+  document.getElementById("messagebtn").textContent="OK!";
+  messagebg.classList.remove("invisible");
+  message.classList.remove("invisible");
+  document.onkeydown = function (e) {
+    return false;
+  };
+  document.getElementById("messagebtn").addEventListener("click",function(){
+    let verifieduser=localStorage.listdetails.split(",")[j];
+    let valueofverifieduser=localStorage.getItem("user"+verifieduser);
+    valueofverifieduser=valueofverifieduser.split(",");
+    valueofverifieduser[4]="true";
+    valueofverifieduser[6]="true";
+    localStorage.setItem("user"+verifieduser,valueofverifieduser);
+    document.getElementById("accept"+j).classList.add("clicked");
+    document.getElementById("reject"+j).classList.add("clicked");
+    document.onkeydown = function (e) {
+      return true;
+    };
+    messagebg.classList.add("invisible");
+    message.classList.add("invisible");
+  });
+}
+
 }

@@ -44,6 +44,9 @@ if (!JSON.parse(localStorage.getItem("storageavailable"))) {
   localStorage.setItem("isloggedin", false);
   localStorage.setItem("loggedinas", "");
   localStorage.setItem("loggedinuser", "");
+  localStorage.setItem("Totalusers", "0");
+  localStorage.setItem("Totalngos", "0");
+  localStorage.setItem("Totaldonors", "0");
 }
 
 // hiding and showing the signoutbutton
