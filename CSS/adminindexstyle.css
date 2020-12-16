@@ -26,7 +26,7 @@ body {
 #list {
   color: whitesmoke;
 }
-#fetchbtn {
+/* #fetchbtn {
   margin-left: 45%;
   background-color: green;
   height: 50px;
@@ -39,7 +39,7 @@ body {
 #fetchbtn:active {
   border: 3px solid black;
   transition: 100ms;
-}
+} */
 #documentsdownloadbtn {
   margin: 5px;
   background-color: #ffbf00;
@@ -135,7 +135,7 @@ body {
   opacity: 80%;
   transition: 400ms;
 }
-#messagebtn {
+.msgbtn {
   font-family: "Fredericka the Great", cursive;
   font-weight: bold;
   font-size: 20px;
@@ -148,7 +148,7 @@ body {
   outline: none;
   transition: 400ms;
 }
-#messagebtn:hover {
+.msgbtn:hover {
   border: 2px solid lightyellow;
 }
 #successmsg {
