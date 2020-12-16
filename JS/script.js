@@ -14,6 +14,13 @@ document.onreadystatechange = function () {
     document.onkeydown = function (e) {
       return true;
     };
+    window.addEventListener(
+      "contextmenu",
+      function (e) {
+        e.preventDefault();
+      },
+      true
+    );
   } else {
     document.onkeydown = function (e) {
       return false;
