@@ -21,3 +21,6 @@ document.onreadystatechange = function () {
     );
   }
 };
+document.getElementById("homebtn").addEventListener("click",function(){
+  window.close();
+});

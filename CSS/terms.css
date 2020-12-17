@@ -22,20 +22,20 @@ h2 {
 }
 #homebtn {
   display: inline;
-  background-color: #ffbf0059;
+  background-color: rgba(255, 191, 0,0.5);
   border: solid #ffbf00;
   border-radius: 15px;
   height: 50px;
   width: 50px;
   font-family: "Fredericka the Great", cursive;
   transition: 300ms;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-top: 20px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
 #homebtn:hover {
-  background-color: #ffbf00;
+  background-color: rgb(255, 191, 0);
   transition: 300ms;
 }
 
