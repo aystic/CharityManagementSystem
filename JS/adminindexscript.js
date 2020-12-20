@@ -32,11 +32,6 @@ if (localStorage.loggedinas != "admin") {
     }
   };
 
-
-
-
-
-
   let message = document.getElementsByClassName("message")[0];
   let messagebg = document.getElementById("messagebg");
   let fetch = document.getElementById("fetchbtn");
@@ -59,12 +54,14 @@ if (localStorage.loggedinas != "admin") {
         localStorage.getItem(localStorage.key(i)).split(",")[4] == "false"
       ) {
         pendingRequests++;
-        let usernumber=localStorage.key(i).slice(4,localStorage.key(i).length);
-        key.push((usernumber+String(i)));
+        let usernumber = localStorage
+          .key(i)
+          .slice(4, localStorage.key(i).length);
+        key.push(usernumber + String(i));
         if (localStorage.getItem(localStorage.key(i)).split(",")[2] == "true") {
-          type.push(String(usernumber)+"donor");
+          type.push(String(usernumber) + "donor");
         } else {
-          type.push(String(usernumber)+"ngo");
+          type.push(String(usernumber) + "ngo");
         }
         userno.push(usernumber);
         // listdetails.push(i);
@@ -82,11 +79,9 @@ if (localStorage.loggedinas != "admin") {
   // message.classList.add("invisible");
   // messagebg.classList.add("invisible");
 
-
-
   if (pendingRequests == 0) {
     document.getElementsByClassName("loginmessage")[0].textContent =
-    "No Requests Pending for Verification!";
+      "No Requests Pending for Verification!";
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     fetch.classList.add("invisible");
@@ -100,57 +95,93 @@ if (localStorage.loggedinas != "admin") {
       messagebg.classList.add("invisible");
       message.classList.add("invisible");
     });
-  }else{
+  } else {
     document.getElementsByClassName("loginmessage")[0].textContent =
-    pendingRequests + " Requests Pending for Verification!";
+      pendingRequests + " Requests Pending for Verification!";
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     fetch.classList.remove("invisible");
     btn.classList.add("invisible");
     initialbtn.classList.add("invisible");
     fetch.onclick = function () {
-      document.getElementById("head").textContent="Pending Verification Requests :";
+      document.getElementById("head").textContent =
+        "Pending Verification Requests :";
       refreshdashboard("print");
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
       let details = [];
 
       //getting the details
-    
-      for(let i=0;i<pendingRequests;i++){
-        for(let j=0;j<localStorage.length;j++){
-          if (localStorage.key(j).slice(0, 11) == "Detailsuser"){
-            if(localStorage.key(j).slice(11, localStorage.key(j).length) == userno[i]){
-              if (type[i].slice(1,type[i].length) == "donor") {
+
+      for (let i = 0; i < pendingRequests; i++) {
+        for (let j = 0; j < localStorage.length; j++) {
+          if (localStorage.key(j).slice(0, 11) == "Detailsuser") {
+            if (
+              localStorage.key(j).slice(11, localStorage.key(j).length) ==
+              userno[i]
+            ) {
+              if (type[i].slice(1, type[i].length) == "donor") {
                 let temp = [];
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[0]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[1]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[2]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[3]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[4]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[5]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[6]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[7]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[8]);
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[0]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[1]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[2]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[3]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[4]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[5]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[6]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[7]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[8]
+                );
                 temp.push("donor");
                 temp.push(i);
-                details[userno[i]]=temp;
+                details[userno[i]] = temp;
                 // details[userno[j]] = temp;
                 // details[j] = temp;
               } else {
                 let temp = [];
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[0]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[1]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[2]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[3]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[4]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[5]);
-                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[6]);
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[0]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[1]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[2]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[3]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[4]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[5]
+                );
+                temp.push(
+                  localStorage.getItem(localStorage.key(j)).split(",")[6]
+                );
                 temp.push("");
                 temp.push("");
                 temp.push("ngo");
                 temp.push(i);
-                details[userno[i]]=temp;
+                details[userno[i]] = temp;
                 // details[userno[j]] = temp;
                 // details[j] = temp;
               }
@@ -238,14 +269,12 @@ if (localStorage.loggedinas != "admin") {
         valueofverifieduser = valueofverifieduser.split(",");
         valueofverifieduser[4] = "true";
         valueofverifieduser[5] = "true";
-        if(valueofverifieduser[2]=="true"){
+        if (valueofverifieduser[2] == "true") {
           refreshdashboard("donor");
-        }
-        else if(valueofverifieduser[2]=="false"){
+        } else if (valueofverifieduser[2] == "false") {
           refreshdashboard("ngo");
-  
         }
-  
+
         localStorage.setItem("user" + verifieduser, valueofverifieduser);
         document.getElementById("accept" + j).classList.add("clicked");
         document.getElementById("reject" + j).classList.add("clicked");
@@ -254,10 +283,10 @@ if (localStorage.loggedinas != "admin") {
         };
         messagebg.classList.add("invisible");
         message.classList.add("invisible");
-        window.location.reload(); 
+        window.location.reload();
       });
     }
-  
+
     function reject(j) {
       document.getElementsByClassName("loginmessage")[0].textContent =
         "Are You Sure You Want To Proceed With The Rejection?";
@@ -284,49 +313,45 @@ if (localStorage.loggedinas != "admin") {
         messagebg.classList.add("invisible");
         message.classList.add("invisible");
       });
+    }
   }
-
-  
-
   function logout() {
     localStorage.loggedinas = "";
     localStorage.isloggedin = "false";
     window.location.replace("/HTML/index.html");
   }
-  
-  }
 
-let totalusers = document.getElementById("total");
-let ngos = document.getElementById("totalngo");
-let donors = document.getElementById("totaldonor");
-function refreshdashboard(type){
-    if(type=="donor"){
-      let counttotal=Number(localStorage.Totalusers);
-      let countdonor=Number(localStorage.Totaldonors);
+  let totalusers = document.getElementById("total");
+  let ngos = document.getElementById("totalngo");
+  let donors = document.getElementById("totaldonor");
+  function refreshdashboard(type) {
+    if (type == "donor") {
+      let counttotal = Number(localStorage.Totalusers);
+      let countdonor = Number(localStorage.Totaldonors);
       counttotal++;
       countdonor++;
-      localStorage.Totalusers=counttotal;
-      localStorage.Totaldonors=countdonor;
-      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
+      localStorage.Totalusers = counttotal;
+      localStorage.Totaldonors = countdonor;
+      totalusers.textContent =
+        "Total Users = " + Number(localStorage.Totalusers);
       ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
       donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
-
-    }else if (type=="ngo"){
-      let counttotal=Number(localStorage.Totalusers);
-      let countngo=Number(localStorage.Totalngos);
+    } else if (type == "ngo") {
+      let counttotal = Number(localStorage.Totalusers);
+      let countngo = Number(localStorage.Totalngos);
       counttotal++;
       countngo++;
-      localStorage.Totalusers=counttotal;
-      localStorage.Totalngos=countngo;
-      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
+      localStorage.Totalusers = counttotal;
+      localStorage.Totalngos = countngo;
+      totalusers.textContent =
+        "Total Users = " + Number(localStorage.Totalusers);
+      ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
+      donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
+    } else if (type == "print") {
+      totalusers.textContent =
+        "Total Users = " + Number(localStorage.Totalusers);
       ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
       donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
     }
-    else if(type=="print"){
-      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
-      ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
-      donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
-    }
+  }
 }
-}
-
