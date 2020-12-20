@@ -83,6 +83,49 @@ messagebg.classList.add("invisible");
 let messagebtn = document.getElementById("messagebtn");
 let messagecross = document.getElementById("messagecrossbtn");
 
+window.setTimeout(function(){
+  if(localStorage.isloggedin=="true" && localStorage.loggedinuser.split(",")[4]=="true" && localStorage.loggedinuser.split(",")[7]=="false" ){
+    if(localStorage.loggedinuser.split(",")[5]=="true"){
+      //verification successfull
+      document.getElementById("msgimage").setAttribute("src","/IMAGES/check.png");
+      document.getElementsByClassName("loginmessage")[0].textContent =
+        "Your details have been verified! ";
+      message.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
+      messagebtn.addEventListener("click", function () {
+        message.classList.add("invisible");
+        messagebg.classList.add("invisible");
+        document.onkeydown = function (e) {
+          return true;
+        };
+      });
+  
+    }else if(localStorage.loggedinuser.split(",")[6]=="true"){
+    //failed verification
+    document.getElementsByClassName("loginmessage")[0].textContent =
+    "Details verification failed!";
+    document.getElementById("msgimage").setAttribute("src","/IMAGES/cross.png");
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
+    document.onkeydown = function (e) {
+      return false;
+    };
+    messagebtn.addEventListener("click", function () {
+      message.classList.add("invisible");
+      messagebg.classList.add("invisible");
+      document.onkeydown = function (e) {
+        return true;
+      };
+    });
+  
+    }
+  }
+},2500);
+
+
 function donateredirect() {
   if (
     localStorage.isloggedin == "true" &&

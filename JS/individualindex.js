@@ -75,15 +75,15 @@ btn.addEventListener("click",function(){
             // donordocument.value,
 
         );
-        localStorage.setItem("Detailsuser"+localStorage.loggedinuser.split(",")[7].slice(4,5),detailsuser);
+        localStorage.setItem("Detailsuser"+localStorage.loggedinuser.split(",")[8].slice(4,5),detailsuser);
         let user=[];
-        for(let i=0;i<8;i++){
+        for(let i=0;i<9;i++){
             user.push(localStorage.loggedinuser.split(",")[i]);
         }
         user[3]="true";
         localStorage.setItem("loggedinuser",user);
         user.pop();
-        localStorage.setItem("user"+localStorage.loggedinuser.split(",")[7].slice(4,5),user);
+        localStorage.setItem("user"+localStorage.loggedinuser.split(",")[8].slice(4,5),user);
         document.getElementsByClassName("loginmessage")[0].textContent =
         "Details Submitted Successfully. Please wait for the verification.";
         messagebg.classList.remove("invisible");

@@ -56,6 +56,7 @@ let rejected=false;
 let terms = document.getElementById("termsbox");
 let alreadyauser = false;
 let usercount = JSON.parse(localStorage.getItem("usercount"));
+let verificationprompt=false;
 usercount++;
 
 //creating an array of existing users
@@ -108,7 +109,8 @@ submitbtn.addEventListener("click", function () {
       detailssubmitted,
       documentverified,
       accepted,
-      rejected
+      rejected,
+      verificationprompt
     );
     let loggedin=[];
     localStorage.setItem("user" + usercount, newuser);

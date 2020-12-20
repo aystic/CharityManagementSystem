@@ -9,11 +9,11 @@ if (localStorage.loggedinas != "admin") {
       setTimeout(function () {
         // document.querySelector("body").classList.add("invisible");
         document.querySelector(".loader").classList.add("fadeloader");
-      }, 500);
+      }, 200);
       setInterval(() => {
         document.querySelector(".loader").classList.add("invisible");
         // document.querySelector("body").classList.remove("invisible");
-      }, 900);
+      }, 600);
       window.addEventListener(
         "contextmenu",
         function (e) {
@@ -82,6 +82,7 @@ if (localStorage.loggedinas != "admin") {
   if (pendingRequests == 0) {
     document.getElementsByClassName("loginmessage")[0].textContent =
       "No Requests Pending for Verification!";
+    document.getElementById("messagecrossbtn").classList.add("invisible");
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     fetch.classList.add("invisible");
@@ -98,6 +99,8 @@ if (localStorage.loggedinas != "admin") {
   } else {
     document.getElementsByClassName("loginmessage")[0].textContent =
       pendingRequests + " Request(s) Pending for Verification!";
+    document.getElementById("messagecrossbtn").classList.add("invisible");
+
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     fetch.classList.remove("invisible");
@@ -212,7 +215,7 @@ if (localStorage.loggedinas != "admin") {
             details[userno[i]][7] +
             "</li><li>PAN CARD NO. : " +
             details[userno[i]][8] +
-            '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept' +
+            '</li><li><button class="documentsdownloadbtn" >Download the Documents!</button><button class="acceptbtn" id="accept' +
             userno[i] +
             '" onclick="accept(' +
             userno[i] +
@@ -239,7 +242,7 @@ if (localStorage.loggedinas != "admin") {
             details[userno[i]][5] +
             "</li><li>DIFFICULTIES FACED BY NGO : " +
             details[userno[i]][6] +
-            '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept' +
+            '</li><li><button class="documentsdownloadbtn">Download the Documents!</button><button class="acceptbtn" id="accept' +
             userno[i] +
             '" onclick="accept(' +
             userno[i] +
@@ -255,6 +258,7 @@ if (localStorage.loggedinas != "admin") {
     function accept(j) {
       document.getElementsByClassName("loginmessage")[0].textContent =
         "Are You Sure You Want To Proceed With The Approval?";
+      document.getElementById("messagecrossbtn").classList.remove("invisible");
       fetch.classList.add("invisible");
       initialbtn.classList.add("invisible");
       btn.classList.remove("invisible");
@@ -281,8 +285,6 @@ if (localStorage.loggedinas != "admin") {
         document.onkeydown = function (e) {
           return true;
         };
-        messagebg.classList.add("invisible");
-        message.classList.add("invisible");
         window.location.reload();
       });
     }
@@ -290,6 +292,7 @@ if (localStorage.loggedinas != "admin") {
     function reject(j) {
       document.getElementsByClassName("loginmessage")[0].textContent =
         "Are You Sure You Want To Proceed With The Rejection?";
+      document.getElementById("messagecrossbtn").classList.remove("invisible");
       fetch.classList.add("invisible");
       initialbtn.classList.add("invisible");
       btn.classList.remove("invisible");
@@ -310,8 +313,7 @@ if (localStorage.loggedinas != "admin") {
         document.onkeydown = function (e) {
           return true;
         };
-        messagebg.classList.add("invisible");
-        message.classList.add("invisible");
+        window.location.reload();
       });
     }
   }
@@ -319,6 +321,10 @@ if (localStorage.loggedinas != "admin") {
     localStorage.loggedinas = "";
     localStorage.isloggedin = "false";
     window.location.replace("/HTML/index.html");
+  }
+  function messagecrossbtn() {
+    messagebg.classList.add("invisible");
+    message.classList.add("invisible");
   }
 
   let totalusers = document.getElementById("total");
