@@ -97,7 +97,7 @@ if (localStorage.loggedinas != "admin") {
     });
   } else {
     document.getElementsByClassName("loginmessage")[0].textContent =
-      pendingRequests + " Requests Pending for Verification!";
+      pendingRequests + " Request(s) Pending for Verification!";
     message.classList.remove("invisible");
     messagebg.classList.remove("invisible");
     fetch.classList.remove("invisible");
