@@ -67,6 +67,7 @@ for (let i = 0; i < localStorage.length; i++) {
 btn.addEventListener("click", function () {
   if (email.value == "admin@cms" && pwd.value == "admin") {
     localStorage.loggedinas="admin";
+    localStorage.isloggedin="true";
     document.getElementsByClassName("loginmessage")[0].textContent =
       "Login as ADMIN.";
     messagebg.classList.remove("invisible");

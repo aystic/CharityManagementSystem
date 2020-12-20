@@ -3,7 +3,13 @@ body {
   background-image: url(/IMAGES/background.jpg);
   color: lightyellow;
 }
+#head{
+  display: inline-block; 
+  font-size: 25pt;
+  margin-left: 18%;
+}
 .requestform {
+  display: flex;
   margin: auto;
   text-align: center;
   background-color: whitesmoke;
@@ -39,7 +45,6 @@ label {
   width: 400px;
   resize: none;
 }
-
 #video {
   height: 100px;
   width: 100px;
