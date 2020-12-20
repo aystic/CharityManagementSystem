@@ -98,6 +98,12 @@ window.setTimeout(function(){
       messagebtn.addEventListener("click", function () {
         message.classList.add("invisible");
         messagebg.classList.add("invisible");
+        let temp=localStorage.loggedinuser.split(",");
+        temp[7]="true";
+        let tempuser=temp[8];
+        localStorage.loggedinuser=temp;
+        temp.pop();
+        localStorage.setItem(tempuser,temp);
         document.onkeydown = function (e) {
           return true;
         };
@@ -116,6 +122,12 @@ window.setTimeout(function(){
     messagebtn.addEventListener("click", function () {
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
+      let temp=localStorage.loggedinuser.split(",");
+      temp[7]="true";
+      let tempuser=temp[8];
+      localStorage.loggedinuser=temp;
+      temp.pop();
+      localStorage.setItem(tempuser,temp);
       document.onkeydown = function (e) {
         return true;
       };
