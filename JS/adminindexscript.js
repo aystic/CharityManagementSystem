@@ -2,7 +2,7 @@ if (localStorage.loggedinas != "admin") {
   window.location.replace("/HTML/signin.html");
 } else {
   document.querySelector("video").play();
-  document.querySelector("video").playbackRate = 2;
+  document.querySelector("video").playbackRate = 3;
 
   document.onreadystatechange = function () {
     if (document.readyState === "complete") {
@@ -33,9 +33,8 @@ if (localStorage.loggedinas != "admin") {
   };
 
 
-  let totalusers = document.getElementById("total");
-  let ngos = document.getElementById("totalngo");
-  let donors = document.getElementById("totaldonor");
+
+
 
 
   let message = document.getElementsByClassName("message")[0];
@@ -60,81 +59,41 @@ if (localStorage.loggedinas != "admin") {
         localStorage.getItem(localStorage.key(i)).split(",")[4] == "false"
       ) {
         pendingRequests++;
-        key.push(i);
+        let usernumber=localStorage.key(i).slice(4,localStorage.key(i).length);
+        key.push((usernumber+String(i)));
         if (localStorage.getItem(localStorage.key(i)).split(",")[2] == "true") {
-          type.push("donor");
+          type.push(String(usernumber)+"donor");
         } else {
-          type.push("ngo");
+          type.push(String(usernumber)+"ngo");
         }
-        userno.push(localStorage.key(i).slice(4, localStorage.key(i).length));
-        listdetails.push(i);
+        userno.push(usernumber);
+        // listdetails.push(i);
       }
     }
   }
+  key.sort();
+  type.sort();
+  userno.sort();
+  // localStorage.setItem("test",type)
+
   localStorage.setItem("listdetails", userno);
-  let details = [];
 
-  //getting the details
-  for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(i).slice(0, 11) == "Detailsuser") {
-      for (let j = 0; j < pendingRequests; j++) {
-        if (
-          localStorage.key(i).slice(11, localStorage.key(i).length) == userno[j]
-        ) {
-          if (type[j] == "donor") {
-            let temp = [];
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[0]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[1]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[2]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[3]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[4]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[5]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[6]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[7]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[8]);
-            temp.push("donor");
-            temp.push(i);
-            // details[userno[j]] = temp;
-            details[j] = temp;
-          } else {
-            let temp = [];
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[0]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[1]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[2]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[3]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[4]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[5]);
-            temp.push(localStorage.getItem(localStorage.key(i)).split(",")[6]);
-            temp.push("");
-            temp.push("");
-            temp.push("ngo");
-            temp.push(i);
-            // details[userno[j]] = temp;
-            details[j] = temp;
-          }
-        }
-      }
-    }
-  }
-
+  // localStorage.setItem("test",details)
   // message.classList.add("invisible");
   // messagebg.classList.add("invisible");
 
-  document.getElementsByClassName("loginmessage")[0].textContent =
-    pendingRequests + " Requests Pending for Verification!";
 
-  message.classList.remove("invisible");
-  messagebg.classList.remove("invisible");
 
   if (pendingRequests == 0) {
+    document.getElementsByClassName("loginmessage")[0].textContent =
+    "No Requests Pending for Verification!";
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
     fetch.classList.add("invisible");
     btn.classList.add("invisible");
     initialbtn.classList.remove("invisible");
     initialbtn.addEventListener("click", function () {
-      // totalusers.textContent ="Total Users = "+ JSON.parse(localStorage.Totalusers);
-      // ngos.textContent = "NGOs = " + JSON.parse(localStorage.Totalngos);
-      // donors.textContent = "Donors = " + JSON.parse(localStorage.Totaldonors);
-
+      refreshdashboard("print");
       document.onkeydown = function (e) {
         return true;
       };
@@ -142,79 +101,189 @@ if (localStorage.loggedinas != "admin") {
       message.classList.add("invisible");
     });
   }else{
+    document.getElementsByClassName("loginmessage")[0].textContent =
+    pendingRequests + " Requests Pending for Verification!";
+    message.classList.remove("invisible");
+    messagebg.classList.remove("invisible");
     fetch.classList.remove("invisible");
     btn.classList.add("invisible");
     initialbtn.classList.add("invisible");
     fetch.onclick = function () {
-      // totalusers.textContent ="Total Users = "+ JSON.parse(localStorage.Totalusers);
-      // ngos.textContent = "NGOs = " + JSON.parse(localStorage.Totalngos);
-      // donors.textContent = "Donors = " + JSON.parse(localStorage.Totaldonors);
-
+      document.getElementById("head").textContent="Pending Verification Requests :";
+      refreshdashboard("print");
       message.classList.add("invisible");
       messagebg.classList.add("invisible");
+      let details = [];
+
+      //getting the details
+    
+      for(let i=0;i<pendingRequests;i++){
+        for(let j=0;j<localStorage.length;j++){
+          if (localStorage.key(j).slice(0, 11) == "Detailsuser"){
+            if(localStorage.key(j).slice(11, localStorage.key(j).length) == userno[i]){
+              if (type[i].slice(1,type[i].length) == "donor") {
+                let temp = [];
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[0]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[1]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[2]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[3]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[4]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[5]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[6]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[7]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[8]);
+                temp.push("donor");
+                temp.push(i);
+                details[userno[i]]=temp;
+                // details[userno[j]] = temp;
+                // details[j] = temp;
+              } else {
+                let temp = [];
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[0]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[1]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[2]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[3]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[4]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[5]);
+                temp.push(localStorage.getItem(localStorage.key(j)).split(",")[6]);
+                temp.push("");
+                temp.push("");
+                temp.push("ngo");
+                temp.push(i);
+                details[userno[i]]=temp;
+                // details[userno[j]] = temp;
+                // details[j] = temp;
+              }
+            }
+          }
+        }
+      }
       for (let i = 0; i < pendingRequests; i++) {
         let li = document.createElement("li");
-        if (details[i][9] == "donor") {
+        if (details[userno[i]][9] == "donor") {
           //donor
           li.innerHTML =
             "<ol>DONOR : <ul><li>NAME : " +
-            details[i][0] +
+            details[userno[i]][0] +
             " " +
-            details[i][1] +
+            details[userno[i]][1] +
             "</li><li>ADDRESS : " +
-            details[i][2] +
+            details[userno[i]][2] +
             "</li><li>CITY : " +
-            details[i][3] +
+            details[userno[i]][3] +
             "</li><li>STATE : " +
-            details[i][4] +
+            details[userno[i]][4] +
             "</li><li>PINCODE : " +
-            details[i][5] +
+            details[userno[i]][5] +
             "</li><li>CONTACT : " +
-            details[i][6] +
+            details[userno[i]][6] +
             "</li><li>AADHAR NO. : " +
-            details[i][7] +
+            details[userno[i]][7] +
             "</li><li>PAN CARD NO. : " +
-            details[i][8] +
+            details[userno[i]][8] +
             '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept' +
-            i +
+            userno[i] +
             '" onclick="accept(' +
-            i +
+            userno[i] +
             ')">Accept!</button><button class="rejectbtn" id="reject' +
-            i +
+            userno[i] +
             '" onclick="reject(' +
-            i +
+            userno[i] +
             ')">Reject</button></li></ul></ol>';
           list.append(li);
         } else {
           //ngo
           li.innerHTML =
             "<ol>NGO : <ul><li>NAME : " +
-            details[i][0] +
+            details[userno[i]][0] +
             "</li><li>ADDRESS : " +
-            details[i][1] +
+            details[userno[i]][1] +
             "</li><li>CITY : " +
-            details[i][2] +
+            details[userno[i]][2] +
             "</li><li>STATE : " +
-            details[i][3] +
+            details[userno[i]][3] +
             "</li><li>PINCODE : " +
-            details[i][4] +
+            details[userno[i]][4] +
             "</li><li>CONTACT : " +
-            details[i][5] +
+            details[userno[i]][5] +
             "</li><li>DIFFICULTIES FACED BY NGO : " +
-            details[i][6] +
+            details[userno[i]][6] +
             '</li><li><button class="documentsdownloadbtn" disabled>Download the Documents!</button><button class="acceptbtn" id="accept' +
-            i +
+            userno[i] +
             '" onclick="accept(' +
-            i +
+            userno[i] +
             ')">Accept!</button><button class="rejectbtn" id="reject' +
-            i +
+            userno[i] +
             '" onclick="reject(' +
-            i +
+            userno[i] +
             ')">Reject</button></li></ul></ol>';
           list.append(li);
         }
       }
     };
+    function accept(j) {
+      document.getElementsByClassName("loginmessage")[0].textContent =
+        "Are You Sure You Want To Proceed With The Approval?";
+      fetch.classList.add("invisible");
+      initialbtn.classList.add("invisible");
+      btn.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      message.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
+      btn.addEventListener("click", function () {
+        let verifieduser = j;
+        let valueofverifieduser = localStorage.getItem("user" + verifieduser);
+        valueofverifieduser = valueofverifieduser.split(",");
+        valueofverifieduser[4] = "true";
+        valueofverifieduser[5] = "true";
+        if(valueofverifieduser[2]=="true"){
+          refreshdashboard("donor");
+        }
+        else if(valueofverifieduser[2]=="false"){
+          refreshdashboard("ngo");
+  
+        }
+  
+        localStorage.setItem("user" + verifieduser, valueofverifieduser);
+        document.getElementById("accept" + j).classList.add("clicked");
+        document.getElementById("reject" + j).classList.add("clicked");
+        document.onkeydown = function (e) {
+          return true;
+        };
+        messagebg.classList.add("invisible");
+        message.classList.add("invisible");
+        window.location.reload(); 
+      });
+    }
+  
+    function reject(j) {
+      document.getElementsByClassName("loginmessage")[0].textContent =
+        "Are You Sure You Want To Proceed With The Rejection?";
+      fetch.classList.add("invisible");
+      initialbtn.classList.add("invisible");
+      btn.classList.remove("invisible");
+      messagebg.classList.remove("invisible");
+      message.classList.remove("invisible");
+      document.onkeydown = function (e) {
+        return false;
+      };
+      btn.addEventListener("click", function () {
+        let verifieduser = j;
+        let valueofverifieduser = localStorage.getItem("user" + verifieduser);
+        valueofverifieduser = valueofverifieduser.split(",");
+        valueofverifieduser[4] = "true";
+        valueofverifieduser[6] = "true";
+        localStorage.setItem("user" + verifieduser, valueofverifieduser);
+        document.getElementById("accept" + j).classList.add("clicked");
+        document.getElementById("reject" + j).classList.add("clicked");
+        document.onkeydown = function (e) {
+          return true;
+        };
+        messagebg.classList.add("invisible");
+        message.classList.add("invisible");
+      });
   }
 
   
@@ -224,81 +293,40 @@ if (localStorage.loggedinas != "admin") {
     localStorage.isloggedin = "false";
     window.location.replace("/HTML/index.html");
   }
-
-  function accept(j) {
-    document.getElementsByClassName("loginmessage")[0].textContent =
-      "Are You Sure You Want To Proceed With The Approval?";
-    fetch.classList.add("invisible");
-    initialbtn.classList.add("invisible");
-    btn.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    message.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
-    btn.addEventListener("click", function () {
-      let verifieduser = localStorage.listdetails.split(",")[j];
-      let valueofverifieduser = localStorage.getItem("user" + verifieduser);
-      valueofverifieduser = valueofverifieduser.split(",");
-      valueofverifieduser[4] = "true";
-      valueofverifieduser[5] = "true";
-
-      // let u=0;
-      // let n=0;
-      // let d=0;
-      // u=JSON.parse(localStorage.Totalusers);
-      // n=JSON.parse(localStorage.Totalngos);
-      // d=JSON.parse(localStorage.Totaldonors);
-
-      // if (valueofverifieduser[2] === "true") {
-      //   d++;
-      // } else if(valueofverifieduser[2] === "false") {
-      //   n++;
-      // }
-      // u=n+d;
-      // localStorage.Totalusers = u;
-      // localStorage.Totalngos = n;
-      // localStorage.Totaldonors = d;
-      // totalusers.textContent ="Total Users = "+ JSON.parse(localStorage.Totalusers);
-      // ngos.textContent = "NGOs = " + JSON.parse(localStorage.Totalngos);
-      // donors.textContent = "Donors = " + JSON.parse(localStorage.Totaldonors);
-
-      localStorage.setItem("user" + verifieduser, valueofverifieduser);
-      document.getElementById("accept" + j).classList.add("clicked");
-      document.getElementById("reject" + j).classList.add("clicked");
-      document.onkeydown = function (e) {
-        return true;
-      };
-      messagebg.classList.add("invisible");
-      message.classList.add("invisible");
-    });
+  
   }
 
-  function reject(j) {
-    document.getElementsByClassName("loginmessage")[0].textContent =
-      "Are You Sure You Want To Proceed With The Rejection?";
-    fetch.classList.add("invisible");
-    initialbtn.classList.add("invisible");
-    btn.classList.remove("invisible");
-    messagebg.classList.remove("invisible");
-    message.classList.remove("invisible");
-    document.onkeydown = function (e) {
-      return false;
-    };
-    btn.addEventListener("click", function () {
-      let verifieduser = localStorage.listdetails.split(",")[j];
-      let valueofverifieduser = localStorage.getItem("user" + verifieduser);
-      valueofverifieduser = valueofverifieduser.split(",");
-      valueofverifieduser[4] = "true";
-      valueofverifieduser[6] = "true";
-      localStorage.setItem("user" + verifieduser, valueofverifieduser);
-      document.getElementById("accept" + j).classList.add("clicked");
-      document.getElementById("reject" + j).classList.add("clicked");
-      document.onkeydown = function (e) {
-        return true;
-      };
-      messagebg.classList.add("invisible");
-      message.classList.add("invisible");
-    });
-  }
+let totalusers = document.getElementById("total");
+let ngos = document.getElementById("totalngo");
+let donors = document.getElementById("totaldonor");
+function refreshdashboard(type){
+    if(type=="donor"){
+      let counttotal=Number(localStorage.Totalusers);
+      let countdonor=Number(localStorage.Totaldonors);
+      counttotal++;
+      countdonor++;
+      localStorage.Totalusers=counttotal;
+      localStorage.Totaldonors=countdonor;
+      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
+      ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
+      donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
+
+    }else if (type=="ngo"){
+      let counttotal=Number(localStorage.Totalusers);
+      let countngo=Number(localStorage.Totalngos);
+      counttotal++;
+      countngo++;
+      localStorage.Totalusers=counttotal;
+      localStorage.Totalngos=countngo;
+      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
+      ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
+      donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
+    }
+    else if(type=="print"){
+      totalusers.textContent ="Total Users = "+ Number(localStorage.Totalusers);
+      ngos.textContent = "NGOs = " + Number(localStorage.Totalngos);
+      donors.textContent = "Donors = " + Number(localStorage.Totaldonors);
+    }
 }
+}
+
