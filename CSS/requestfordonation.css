@@ -100,7 +100,7 @@ label {
   /* margin-left: 5%; */
   margin-top: -25px;
   margin-left: -20px;
-  padding-top: 130px;
+  padding-top: 150px;
   padding-left: 20px;
 
   z-index: 1;
@@ -112,7 +112,7 @@ label {
   position: fixed;
   text-align: center;
   width: 300px;
-  height: 300px;
+  height: fit-content;
   box-shadow: 0px 0px 3px rgba(200, 200, 200, 0.5);
   margin: auto;
   padding: 20px;
@@ -140,4 +140,93 @@ label {
 }
 #successmsg {
   margin-top: -30px;
+}
+.requestform {
+  margin: auto;
+  margin-bottom: 50px;
+
+  /* text-align: center; */
+  /* text-align: center; */
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 60%;
+  padding-left:5%;
+  padding-right:5%;
+  border-radius: 20px;
+  height: fit-content;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10pt;
+  color: black;
+}
+input {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
+  color: black;
+  /* font-weight: bold; */
+}
+label {
+  color: black;
+}
+#submitbtn {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 20px;
+  width: 100px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 3px solid green;
+  outline: none;
+  padding: 10px;
+  background-color: green;
+  transition: 400ms;
+}
+#submitbtn:hover {
+  background-color: #ffbf00;
+  border: 3px solid black;
+  transition: 400ms;
+}
+#submitbtn:active {
+  border: 3px solid black;
+}
+#textarea {
+  height: 200px;
+  width: 400px;
+  resize: none;
+  font-weight: bold;
+}
+#addnewfile {
+  height: 20px;
+  width: 20px;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
+  border-radius: 3px;
+  padding: 3px;
+  transition: 400ms;
+}
+#addnewfile:hover {
+  border: 2px solid black;
+}
+#removenewfile {
+  height: 20px;
+  width: 20px;
+  background-color: #ff000099;
+  border: 2px solid #ff000099;
+  border-radius: 3px;
+  padding: 3px;
+  transition: 400ms;
+}
+#removenewfile:hover {
+  border: 2px solid black;
+}
+#filelistdiv {
+  width: 300px;
+  height: fit-content;
+  margin: auto;
+}
+#filelistdiv li {
+  color: red;
+  padding: 0;
+  margin: 0;
 }

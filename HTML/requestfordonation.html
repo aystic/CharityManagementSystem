@@ -116,6 +116,101 @@
         <button type="submit" class="submitbtn">Submit</button>
       </form>
     </div> -->
+
+    <div class="requestform">
+      <form id="form" action="#">
+        <input
+          id="accountno1"
+          required
+          type="text"
+          placeholder="Enter Bank Account Number of the NGO"
+          style="width: 75%"
+        /><br />
+        <input
+        id="accountno2"
+        required
+        type="text"
+        placeholder="Enter Re-enter Bank Account Number of the NGO"
+        style="width: 75%"
+      />
+<br />
+        <!-- <input
+          id="city"
+          required
+          type="text"
+          placeholder="City"
+          style="width: 20%; display: inline-block"
+        />
+        <input
+          id="state"
+          required
+          type="text"
+          placeholder="State"
+          style="width: 20%; display: inline-block"
+        /> -->
+        <input
+          id="ifsc"
+          required
+          type="text"
+          placeholder="IFSC Code"
+          style="width: 20%; display: inline-block"
+        /><br />
+        <input
+          id="branch"
+          required
+          type="text"
+          placeholder="Bank Name & Branch Name"
+          style="width: 100%; display: inline-block"
+        /><br />
+        <!--     
+                <p style="display: inline-block;">Type of donation needed :</p>
+                <input type="checkbox" class="donation">
+                <label>Money</label>
+                <input type="checkbox" class="donation">
+                <label>Books</label>
+                <input type="checkbox" class="donation">
+                <label>Medicines</label>
+                <input type="checkbox" class="donation">
+                <label>clothes</label><br> -->
+        <p style="display: inline-block">
+          Please upload the Bank passbook's scanned image (.jpeg, .png or .jpg only):
+        </p>
+        <div>
+          <img
+            id="addnewfile"
+            src="/IMAGES/clip.png"
+            alt="add new attachment"
+            title="Icon made by Freepik from flaticons.com"
+          />
+          <img
+            id="removenewfile"
+            src="/IMAGES/error.png"
+            alt="remove attachment"
+            title="Icon made by Freepik from flaticons.com"
+          />
+        </div>
+        <div id="filelistdiv">
+          <ol id="filelist">
+            <!-- <li>
+              <input
+                type="file"
+                class="Uploadbtn"
+                placeholder="Upload"
+                disabled
+              />
+            </li> -->
+          </ol>
+        </div>
+        <br />
+        <p>
+          What do you need donation for? Please
+          specify :
+        </p>
+        <textarea id="textarea" required></textarea>
+        <hr />
+        <button id="submitbtn" type="submit" >Submit</button>
+      </form>
+    </div>
     <script src="/JS/requestfordonation.js"></script>
   </body>
 </html>
