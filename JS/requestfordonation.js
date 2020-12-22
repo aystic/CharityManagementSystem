@@ -158,7 +158,7 @@ if (localStorage.isloggedin != "true") {
         // details.push(ifsc.value);
         // details.push(branch.value);
         // details.push(textarea.value);
-        for(let i=0;i<7;i++){
+        for(let i=0;i<6;i++){
           details[i]=localStorage.getItem("Details"+user).split(",")[i];
         }
         details.push(accountno2.value);

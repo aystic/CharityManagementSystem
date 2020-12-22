@@ -1,3 +1,13 @@
+body{
+  font-family: "Fredericka the Great", cursive;
+  background-image: url(/IMAGES/background.jpg);
+  color: lightyellow;
+}
+#head{
+  display: inline-block; 
+  font-size: 25pt;
+  margin-left: 32%;
+}
 
 #video {
   height: 100px;
@@ -94,4 +104,41 @@
 }
 #successmsg {
   margin-top: -30px;
+}
+.documentsdownloadbtn{
+  display: inline-block;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 15px;
+  color: lightyellow;
+  border: 2px solid #ffbf00;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: rgba(255, 191, 0,0.5);
+  transition: 400ms;
+}
+.documentsdownloadbtn:hover{
+  color: black;
+  border: 2px solid #f2f28d;
+  background-color: rgba(255, 191, 0,1);
+}
+.donatebtn{
+  display: inline-block;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 15px;
+  color: lightyellow;
+  border: 2px solid #ffbf00;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: rgba(255, 191, 0,0.5);
+  transition: 400ms;
+}
+.donatebtn:hover{
+  border: 2px solid #008000;
+  color: black;
+  background-color: rgba(255, 191, 0,1);
+  transition: 400ms;
 }
