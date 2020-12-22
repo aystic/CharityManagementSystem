@@ -69,7 +69,8 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 //submission of form
-submitbtn.addEventListener("click", function () {
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
   for (let i = 0; i < users.length; i++) {
     if (users[i].split(",")[0] == email.value) {
       alreadyauser = true;

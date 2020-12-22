@@ -42,7 +42,7 @@ let ngocity = document.getElementById('city');
 let ngostate = document.getElementById('state');
 let ngocontact = document.getElementById('contact');
 let ngodifficulties = document.getElementById('textarea');
-let btn = document.getElementById('submitbtn');
+// let btn = document.getElementById('submitbtn');
 let detailsSubmitted=[];
 
 let messagebg=document.getElementById("messagebg");
@@ -52,11 +52,9 @@ let messagebtn=document.getElementById("messagebtn");
 messagebg.classList.add("invisible");
 message.classList.add("invisible");
 
-document.getElementById("form").submit(function (e) {
-    e.preventDefault();
-  });
 
-btn.addEventListener("click",function(){
+document.getElementById("form").addEventListener("submit",function(e){
+    e.preventDefault();
     if(ngoname.value != "" && ngoaddress.value != "" && ngocity.value != "" && ngostate.value!= "" && ngopincode.value != "" && ngocontact.value != "" ){
         let detailsuser=[];
         detailsuser.push(
@@ -78,7 +76,7 @@ btn.addEventListener("click",function(){
         localStorage.setItem("loggedinuser",user);
         user.pop();
         localStorage.setItem("user"+localStorage.loggedinuser.split(",")[8].slice(4,5),user);
-        window.location.replace("/HTML/index.html");
+        // window.location.replace("/HTML/index.html");
         document.getElementsByClassName("loginmessage")[0].textContent =
         "Details Submitted Successfully. Please wait for the verification.";
         messagebg.classList.remove("invisible");

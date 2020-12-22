@@ -55,11 +55,9 @@ let messagebtn=document.getElementById("messagebtn");
 messagebg.classList.add("invisible");
 message.classList.add("invisible");
 
-document.getElementById("form").submit(function (e) {
-    e.preventDefault();
-  });
 
-btn.addEventListener("click",function(){
+document.getElementById("form").addEventListener("submit",function(e){
+    e.preventDefault();
     if(donorfname.value != "" && donorlname.value != "" && donoraddress.value != "" && donorcity.value != "" && donorstate.value!= "" && donorpincode.value != "" && donorcontact.value != "" && donoraadhar.value!="" && donorpan.value!= ""){
         let detailsuser=[];
         detailsuser.push(

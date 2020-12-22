@@ -48,7 +48,7 @@ messagebg.classList.add("invisible");
 
 let email = document.getElementsByClassName("emailbox")[0];
 let pwd = document.getElementsByClassName("pwdbox")[0];
-let btn = document.getElementsByClassName("signupbtn")[0];
+// let btn = document.getElementsByClassName("signupbtn")[0];
 let count = 0;
 // btn.click();
 
@@ -64,7 +64,8 @@ for (let i = 0; i < localStorage.length; i++) {
   }
 }
 
-btn.addEventListener("click", function () {
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
   if (email.value == "admin@cms" && pwd.value == "admin") {
     localStorage.loggedinas="admin";
     localStorage.isloggedin="true";
