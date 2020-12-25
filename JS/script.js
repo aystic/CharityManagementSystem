@@ -87,6 +87,7 @@ window.setTimeout(function(){
   if(localStorage.isloggedin=="true" && localStorage.loggedinuser.split(",")[4]=="true" && localStorage.loggedinuser.split(",")[7]=="false" ){
     if(localStorage.loggedinuser.split(",")[5]=="true"){
       //verification successfull
+      // document.getElementById("messagecrossbtn").classList.add("invisible");
       document.getElementById("msgimage").setAttribute("src","/IMAGES/check.png");
       document.getElementsByClassName("loginmessage")[0].textContent =
         "Your details have been verified! ";
@@ -111,6 +112,7 @@ window.setTimeout(function(){
   
     }else if(localStorage.loggedinuser.split(",")[6]=="true"){
     //failed verification
+    // document.getElementById("messagecrossbtn").classList.add("invisible");
     document.getElementsByClassName("loginmessage")[0].textContent =
     "Details verification failed!";
     document.getElementById("msgimage").setAttribute("src","/IMAGES/cross.png");
@@ -204,7 +206,7 @@ function requestfordonationredirect() {
     localStorage.getItem("loggedinuser").split(",")[3] == "true"
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
-      "Verification Pending!";
+      "Please wait for the document verification!";
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.onkeydown = function (e) {
@@ -222,7 +224,7 @@ function requestfordonationredirect() {
     localStorage.getItem("loggedinuser").split(",")[3] == "false"
   ) {
     document.getElementsByClassName("loginmessage")[0].textContent =
-      "Please submit your details for verification!";
+      "Please submit your details for verification first!";
     messagebg.classList.remove("invisible");
     message.classList.remove("invisible");
     document.onkeydown = function (e) {

@@ -78,7 +78,7 @@ document.getElementById("form").addEventListener("submit",function(e){
         localStorage.setItem("user"+localStorage.loggedinuser.split(",")[8].slice(4,5),user);
         // window.location.replace("/HTML/index.html");
         document.getElementsByClassName("loginmessage")[0].textContent =
-        "Details Submitted Successfully. Please wait for the verification.";
+        "Please wait for the verification.";
         messagebg.classList.remove("invisible");
         message.classList.remove("invisible");
         document.onkeydown=function(e){

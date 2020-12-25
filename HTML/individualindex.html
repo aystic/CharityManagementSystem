@@ -72,12 +72,14 @@
           id="fname"
           required
           type="text"
+          minlength="3"
           placeholder="Enter your first name"
           style="width: 40%"
         />
         <input
           id="lname"
           required
+          minlength="2"
           type="text"
           placeholder="Enter your last name"
           style="width: 40%"
@@ -106,8 +108,7 @@
         <input
           id="pincode"
           required
-          minlength="6"
-          maxlength="6"
+          pattern="[0-9]{6}"
           type="text"
           placeholder="Pincode"
           style="width: 20%; display: inline-block"
@@ -115,8 +116,7 @@
         <input
           id="contact"
           required
-          minlength="10"
-          maxlength="10"
+          pattern="[0-9]{10}"
           type="text"
           placeholder="Contact details"
           style="width: 20%; display: inline-block"
@@ -124,8 +124,7 @@
         <input
           id="aadhar"
           required
-          minlength="12"
-          maxlength="12"
+          pattern="[0-9]{12}"
           type="text"
           placeholder="Aadhar number"
           style="width: 20%; display: inline-block"
@@ -133,8 +132,7 @@
         <input
           id="pan"
           required
-          minlength="10"
-          maxlength="10"
+          pattern="[a-zA-z]{5}[0-9]{4}[a-zA-Z]{1}"
           type="text"
           placeholder="PAN number"
           style="width: 20%; display: inline-block"

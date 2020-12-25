@@ -13,6 +13,12 @@ body {
     opacity: 1;
   }
 }
+input:invalid{
+  border: red solid 2px;
+}
+input:valid{
+  border: green solid 2px;
+}
 .requestform {
   margin: auto;
   margin-bottom: 50px;

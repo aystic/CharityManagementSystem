@@ -16,6 +16,12 @@ body {
     opacity: 1;
   }
 } */
+input:invalid{
+  border: red solid 3px;
+}
+input:valid{
+  border: green solid 3px;
+}
 .signupform {
   font-family: "Fredericka the Great", cursive;
   text-align: center;
@@ -50,10 +56,6 @@ body {
   transition: 400ms;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.signupbtn:hover {
-  background-color: #ffbf00;
-  transition: 100ms;
 }
 .signupbtn:hover {
   border: 3px solid black;

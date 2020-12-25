@@ -46,9 +46,9 @@ if (localStorage.loggedinuser.split(",")[3] == "false") {
 } else if (localStorage.loggedinuser.split(",")[4] == "false") {
   message.classList.remove("invisible");
   messagebg.classList.remove("invisible");
-  document.getElementById("msgimg").setAttribute("src", "/IMAGES/cross.png");
+  document.getElementById("msgimage").setAttribute("src", "/IMAGES/cross.png");
   document.getElementById("successmsg").textContent = "Access Denied!";
-  document.getElementById("loginmessage").textContent = "Verification Pending.";
+  document.getElementsByClassName("loginmessage")[0].textContent = "Verification Pending.";
   messagebtn.addEventListener("click", function () {
     window.location.replace("/HTML/index.html");
   });

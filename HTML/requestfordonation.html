@@ -121,6 +121,7 @@
       <form id="form" action="#">
         <input
           id="accountno1"
+          pattern="[0-9]{15}"
           required
           type="text"
           placeholder="Enter Bank Account Number of the NGO"
@@ -128,6 +129,7 @@
         /><br />
         <input
         id="accountno2"
+        pattern="[0-9]{15}"
         required
         type="text"
         placeholder="Enter Re-enter Bank Account Number of the NGO"
@@ -151,9 +153,10 @@
         <input
           id="ifsc"
           required
+          pattern="[a-zA-Z]{4}[0-9]{6}"
           type="text"
-          placeholder="IFSC Code"
-          style="width: 20%; display: inline-block"
+          placeholder="IFSC Code : ABCD012345"
+          style="width: max-content; display: inline-block"
         /><br />
         <input
           id="branch"
@@ -206,7 +209,7 @@
           What do you need donation for? Please
           specify :
         </p>
-        <textarea id="textarea" required></textarea>
+        <textarea id="textarea" required maxlength="200"></textarea>
         <hr />
         <button id="submitbtn" type="submit" >Submit</button>
       </form>

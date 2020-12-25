@@ -8,6 +8,12 @@ body {
   font-size: 25pt;
   margin-left: 18%;
 }
+input:invalid{
+  border: red solid 2px;
+}
+input:valid{
+  border: green solid 2px;
+}
 .requestform {
   display: flex;
   margin: auto;

@@ -13,6 +13,12 @@ body {
     opacity: 1;
   }
 }
+input:invalid{
+  border: red solid 3px;
+}
+input:valid{
+  border: green solid 3px;
+}
 .signupform {
   font-family: "Fredericka the Great", cursive;
   text-align: center;

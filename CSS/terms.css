@@ -13,12 +13,21 @@ body {
     opacity: 1;
   }
 }
+
 h2 {
-  display: inline;
+  display: inline-block;
   font-family: "Fredericka the Great", cursive;
-  text-align: center;
+  /* text-align: center; */
+  margin-left: 33%;
   color: mediumseagreen;
-  margin-left: 35%;
+  /* margin-left: 35%; */
+}
+hr {
+  border: dotted;
+  border-top: none;
+  border-width: 10px;
+  width: 10%;
+  border-color: #636e7299;
 }
 #homebtn {
   display: inline;

@@ -66,7 +66,7 @@ for (let i = 0; i < localStorage.length; i++) {
 
 document.getElementById("form").addEventListener("submit", function (e) {
   e.preventDefault();
-  if (email.value == "admin@cms" && pwd.value == "admin") {
+  if (email.value == "admin@cms" && pwd.value == "admincms") {
     localStorage.loggedinas="admin";
     localStorage.isloggedin="true";
     document.getElementsByClassName("loginmessage")[0].textContent =
