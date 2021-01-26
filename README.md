@@ -18,10 +18,10 @@ Admin will get the report of NGOs who get donations. NGOs can register and raise
 Donor can simply register and login using credentials. They will get the notification of the request raised by NGOs for donation. They need to fill the details regarding donation on approval of request. Donor will get the date of donation. They can also view Donation history.
 
 # What does it do?
--It provides a digital platform for the NGOs and the donors to interact.<br>
--NGOs can raise a request for donation.<br>
--Donors will be notified of the donation requests and can respond to donation requests.<br>
--Hence, It will become very easy for the NGOs to reach prospective donors, While donors will be able to donate in just few clicks.
+- It provides a digital platform for the NGOs and the donors to interact.<br>
+- NGOs can raise a request for donation.<br>
+- Donors will be notified of the donation requests and can respond to donation requests.<br>
+- Hence, It will become very easy for the NGOs to reach prospective donors, While donors will be able to donate in just few clicks.
 # Website Structure
 ![Website Structure](IMAGES/WebsiteStructure.jpeg)
 
