@@ -24,12 +24,12 @@ Donor can simply register and login using credentials. They will get the notific
 
 # Technologies Used
 ### FrontEnd
--HTML<br>
--CSS<br>
--JS<br>
+- HTML<br>
+- CSS<br>
+- JS<br>
 <br>
 ### Backend
--I have used Local Storage to store the data for giving the functionality to the website and to manipulate it I have used JS.
+- I have used Local Storage to store the data for giving the functionality to the website and to manipulate it I have used JS.
 
 # Get In Touch
 [![](IMAGES/linkedin.png)][LinkedIn]
