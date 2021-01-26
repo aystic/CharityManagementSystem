@@ -32,9 +32,9 @@ Donor can simply register and login using credentials. They will get the notific
 -I have used Local Storage to store the data for giving the functionality to the website and to manipulate it I have used JS.
 
 # Get In Touch
-[![](IMAGES/linkedin.png)](LinkedIn)
-[![](IMAGES/instagram.png)](Instagram)
-[![](IMAGES/github.png)](GitHub)
+[![](IMAGES/linkedin.png)][LinkedIn]
+[![](IMAGES/instagram.png)][Instagram]
+[![](IMAGES/github.png)][GitHub]
 **********
 *********
 
