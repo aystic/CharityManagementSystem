@@ -1,2 +1,4 @@
-/.vscode
-loader.txt
+### vscode ###
+.vscode/
+*.pdf
+*.pptm
