@@ -1,3 +1,6 @@
+*********
+********
+
 # Welcome to my project : Charity Management System
 <br>
 
