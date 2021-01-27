@@ -72,8 +72,9 @@ Donor can simply register and login using credentials. They will get the notific
 
 <br>
 
-[![](IMAGES/linkedin.png)][LinkedIn]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![](IMAGES/github.png)][GitHub]
+[![LinkedIn](https://github.com/aystic/aystic/blob/main/Images/linkedinlogosmall.png)][LinkedIn]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub](https://github.com/aystic/aystic/blob/main/Images/githublogosmall.png)][GitHub]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Email](https://github.com/aystic/aystic/blob/main/Images/emaillogosmall.png)][Email]
 
 <br>
 
@@ -84,3 +85,4 @@ Donor can simply register and login using credentials. They will get the notific
 [Youtube]: <https://youtu.be/pc-hVD-qUNM>
 [LinkedIn]: <https://www.linkedin.com/in/aystic/>
 [GitHub]: <https://github.com/aystic>
+[Email]: <mailto: pmohitb3011@gmail.com>
