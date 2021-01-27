@@ -44,6 +44,6 @@ Donor can simply register and login using credentials. They will get the notific
 
 
 [Youtube]: <https://youtu.be/pc-hVD-qUNM>
-[Instagram]: <https://www.instagram.com/pmohit_404/>
+[Instagram]: <https://www.instagram.com/aystic0_0/>
 [LinkedIn]: <https://www.linkedin.com/in/aystic/>
 [GitHub]: <https://github.com/aystic>
