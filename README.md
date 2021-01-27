@@ -3,7 +3,7 @@
 <br>
 <br>
 
-![Title](IMAGES/title.png)
+[![Title](IMAGES/title.png)](#)
 
 <br>
 
@@ -45,7 +45,7 @@ Donor can simply register and login using credentials. They will get the notific
 ## Website Structure
 <br>
 
-![Website Structure](IMAGES/WebsiteStructure.png)
+[![Website Structure](IMAGES/WebsiteStructure.png)](#)
 
 <br>
 
